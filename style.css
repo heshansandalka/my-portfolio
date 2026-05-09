@@ -740,6 +740,33 @@ footer {
         height: 220px;
     }
 }
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .contact-box-container {
+        flex-direction: column; /* කොටස් දෙක එක පිට එක සිටින සේ වෙනස් කරයි */
+        margin: 20px 15px;      /* දෙපැත්තෙන් ස්වල්පයක් ඉඩ තබයි */
+        border-radius: 16px;
+    }
+
+    .contact-left, 
+    .modern-form {
+        flex: none;
+        width: 100%;           /* සම්පූර්ණ පළල ලබා දෙයි */
+        padding: 30px 20px;    /* ජංගම දුරකථන සඳහා padding අඩු කරයි */
+    }
+
+    .info-item:hover {
+        transform: none;       /* Mobile වලදී hover effect එක ඉවත් කිරීම වඩාත් සුදුසුයි */
+    }
+
+    .contact-left {
+        text-align: center;    /* මැදට පෙළගස්වයි */
+    }
+
+    .info-item {
+        justify-content: center;
+    }
+}
 /* Container settings */
 .contact-buttons {
     display: flex;
