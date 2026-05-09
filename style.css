@@ -740,3 +740,53 @@ footer {
         height: 220px;
     }
 }
+/* Container settings */
+.contact-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Base button style */
+.btn-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+/* LinkedIn specific color */
+.linkedin {
+    background-color: #0077b5;
+}
+
+/* GitHub specific color */
+.github {
+    background-color: #333;
+}
+
+/* Icon size */
+.btn-icon i {
+    font-size: 1.5rem;
+}
+
+/* Hover effects */
+.btn-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+/* Active effect when clicking */
+.btn-icon:active {
+    transform: translateY(0);
+}
