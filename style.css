@@ -90,73 +90,71 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
-/* Hero section එකේ layout එක පින්තූරය මැදට එන සේ සකස් කිරීම */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-}
-
+/* Hero Container එකේ Layout එක */
 .hero-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* පින්තූරයේ container එක */
 .hero-image {
     position: relative;
-    width: 350px; /* ඔබට අවශ්‍ය ප්‍රමාණය */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
-/* පින්තූරයේ style එක - රවුම සහ background අයින් කර ඇත */
 .hero-image img {
-    width: 100%;
+    width: 400px; /* පින්තූරයේ ප්‍රමාණය */
     height: auto;
     object-fit: contain;
-    z-index: 5;
-    position: relative;
-    /* රවුම අයින් කිරීමට border-radius ඉවත් කළා */
+    
+    /* පින්තූරයේ පසුබිම සහ රවුම ඉවත් කිරීම */
     border-radius: 0; 
     border: none;
-    box-shadow: none;
-    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.4)); /* පින්තූරය වටා මෘදු එළියක් */
-    animation: floating 4s ease-in-out infinite;
+    background: transparent;
+
+    /* පින්තූරයේ හැඩයටම එන Glow එක (Kalana's Style) */
+    filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.6));
+    
+    /* පාවෙන Animation එක */
+    animation: floatingImg 4s ease-in-out infinite;
+    z-index: 5;
 }
 
-/* පින්තූරයට යටින් එන ලස්සන Animation වළල්ල */
+/* පාවෙන Animation එක */
+@keyframes floatingImg {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* පින්තූරයට යටින් ඇති වැඩිපුර Glow එක (Optional) */
 .hero-image::after {
     content: '';
     position: absolute;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+    width: 250px;
+    height: 250px;
+    background: rgba(56, 189, 248, 0.2);
+    filter: blur(80px);
+    border-radius: 50%;
     z-index: 1;
-    animation: pulseGlow 3s ease-in-out infinite;
 }
 
-/* පින්තූරය උඩ පහළ යන Animation එක */
-@keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-25px); }
-}
-
-/* පින්තූරය වටා ඇති එළිය ලොකු කුඩා වන Animation එක */
-@keyframes pulseGlow {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-}
-
-/* Mobile වලදී පින්තූරයේ ප්‍රමාණය වෙනස් කිරීම */
+/* Mobile වලදී සකස් කිරීම */
 @media (max-width: 768px) {
-    .hero-image {
+    .hero-container {
+        flex-direction: column-reverse; /* Text එක යටට පින්තූරය උඩට */
+        text-align: center;
+    }
+    .hero-image img {
         width: 280px;
     }
 }
