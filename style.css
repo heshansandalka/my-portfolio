@@ -949,37 +949,41 @@ body {
     border-color: #38bdf8;
 }
 
-#backToTop {
-    display: none; /* මුලින්ම පෙනෙන්නේ නැත */
+/* WhatsApp Button එක මඳක් ඉහළට ගමු */
+.whatsapp-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px; /* කලින් 40px තිබුණේ, දැන් Back to Top එකට ඉඩ තබා ඉහළට ගත්තා */
     right: 30px;
-    z-index: 99;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
-    color: #0f172a;
-    cursor: pointer;
+    background-color: #25d366;
+    color: white;
+    width: 50px; /* ප්‍රමාණය මඳක් අඩු කළා Back to Top එකට ගැලපෙන්න */
+    height: 50px;
+    border-radius: 12px; /* Back to Top එකේ හැඩයටම සමාන කළා */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* Back to Top Button එක පහළින්ම තබමු */
+#backToTop {
+    display: none; 
+    position: fixed;
+    bottom: 30px; /* මෙය පහළින්ම පවතී */
+    right: 30px;
     width: 50px;
     height: 50px;
     border-radius: 12px;
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #0f172a;
+    z-index: 999;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
 }
 
-#backToTop:hover {
+/* Hover Effects */
+.whatsapp-float:hover, #backToTop:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
-    filter: brightness(1.1);
-}
-
-/* Mobile වලදී මඳක් කුඩා කිරීමට */
-@media (max-width: 768px) {
-    #backToTop {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
 }
