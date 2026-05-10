@@ -219,23 +219,6 @@ window.addEventListener("mousemove", function (e) {
     cursorOutline.style.top = `${posY}px`;
 });
 
-const cursorDot = document.querySelector(".cursor-dot");
-const cursorOutline = document.querySelector(".cursor-outline");
-
-window.addEventListener("mousemove", (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    // Smooth චලනය සඳහා
-    cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-    }, { duration: 500, fill: "forwards" });
-});
-
 // හැම link එකක් සහ WhatsApp button එකක් උඩටම mouse එක ගියපු ගමන් රවුම ලොකු වෙන්න
 const links = document.querySelectorAll("a, button, .whatsapp-float");
 
