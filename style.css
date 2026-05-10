@@ -425,8 +425,8 @@ nav ul li a:hover::after {
 
 /* Contact Me බොත්තම (Card එකක පෙනුම ඇති) */
 .contact-card-btn {
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
-    color: #0f172a !important;
+   border: 2px solid #38bdf8;
+    color: #38bdf8;
     padding: 12px 25px;
     border-radius: 12px;
     font-weight: 600;
@@ -435,7 +435,6 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
 
 .contact-card-btn:hover {
