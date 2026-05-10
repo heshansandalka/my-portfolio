@@ -243,3 +243,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+const backToTopButton = document.getElementById("backToTop");
+
+// පිටුව 300px වඩා පහළට Scroll කළහොත් බොත්තම පෙන්වන්න
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// බොත්තම ක්ලික් කළ විට ඉහළටම යන්න
+backToTopButton.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
