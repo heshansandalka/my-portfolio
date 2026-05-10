@@ -96,65 +96,109 @@ document.querySelectorAll('#nav-menu li a').forEach(link => {
     });
 });
 
-// Starry Background Animation
-const canvas = document.getElementById('starfield');
+const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
 
-let stars = [];
-const starCount = 150; // තරු ගණන (අවශ්‍ය නම් වැඩිකරන්න)
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+let particlesArray;
+let mouse = {
+    x: null,
+    y: null,
+    radius: 150 // මවුස් එක වටා බලපෑම ඇති වන ප්‍රමාණය
 }
 
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
 
-// තරු නිර්මාණය කිරීම
-class Star {
-    constructor() {
-        this.reset();
+// Particle එකක ස්වභාවය
+class Particle {
+    constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
     }
-
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.5;
-        this.speed = Math.random() * 0.2; // තරු චලනය වන වේගය
-        this.opacity = Math.random();
-    }
-
-    update() {
-        this.y += this.speed;
-        if (this.y > canvas.height) {
-            this.y = 0;
-            this.x = Math.random() * canvas.width;
-        }
-    }
-
+    // Particle එක ඇඳීම
     draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = '#38bdf8'; // Particles වල පාට (Sky Blue)
         ctx.fill();
     }
-}
-
-function initStars() {
-    for (let i = 0; i < starCount; i++) {
-        stars.push(new Star());
+    // තිරය ඇතුළේ චලනය පාලනය
+    update() {
+        if (this.x > canvas.width || this.x < 0) {
+            this.directionX = -this.directionX;
+        }
+        if (this.y > canvas.height || this.y < 0) {
+            this.directionY = -this.directionY;
+        }
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
     }
 }
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    stars.forEach(star => {
-        star.update();
-        star.draw();
-    });
-    requestAnimationFrame(animate);
+// Particles සමූහය සෑදීම
+function init() {
+    particlesArray = [];
+    let numberOfParticles = (canvas.height * canvas.width) / 9000;
+    for (let i = 0; i < numberOfParticles; i++) {
+        let size = (Math.random() * 2) + 1;
+        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+        let directionX = (Math.random() * 2) - 1;
+        let directionY = (Math.random() * 2) - 1;
+        let color = '#38bdf8';
+
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+    }
 }
 
-initStars();
+// එකිනෙක යා කරමින් ඉරි ඇඳීම (Connect function)
+function connect() {
+    let opacityValue = 1;
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+            
+            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                opacityValue = 1 - (distance / 20000);
+                ctx.strokeStyle = `rgba(56, 189, 248, ${opacityValue})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+// ඇනිමේෂන් එක පවත්වාගෙන යාම
+function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+    }
+    connect();
+}
+
+// Window එක resize කරන විට වෙනස් වීම
+window.addEventListener('resize', function() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    init();
+});
+
+// මුලින්ම පණ ගැන්වීම
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+init();
 animate();
