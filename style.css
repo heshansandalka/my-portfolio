@@ -90,73 +90,30 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
-/* Hero Container එකේ Layout එක */
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero-image {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+    gap: 60px;
+    max-width: 1100px;
 }
 
 .hero-image img {
-    width: 400px; /* පින්තූරයේ ප්‍රමාණය */
-    height: auto;
-    object-fit: contain;
-    
-    /* පින්තූරයේ පසුබිම සහ රවුම ඉවත් කිරීම */
-    border-radius: 0; 
-    border: none;
-    background: transparent;
-
-    /* පින්තූරයේ හැඩයටම එන Glow එක (Kalana's Style) */
-    filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.6));
-    
-    /* පාවෙන Animation එක */
-    animation: floatingImg 4s ease-in-out infinite;
-    z-index: 5;
-}
-
-/* පාවෙන Animation එක */
-@keyframes floatingImg {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* පින්තූරයට යටින් ඇති වැඩිපුර Glow එක (Optional) */
-.hero-image::after {
-    content: '';
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(56, 189, 248, 0.2);
-    filter: blur(80px);
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    z-index: 1;
-}
-
-/* Mobile වලදී සකස් කිරීම */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column-reverse; /* Text එක යටට පින්තූරය උඩට */
-        text-align: center;
-    }
-    .hero-image img {
-        width: 280px;
-    }
+    object-fit: cover;
+    border: 5px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
@@ -459,29 +416,60 @@ nav ul li a:hover::after {
 /* =========================================
    3. Hero Section
    ========================================= */
-.hero {
-    min-height: 100vh;
+/* බොත්තම් දෙක පිහිටන ආකාරය */
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Contact Me බොත්තම (Card එකක පෙනුම ඇති) */
+.contact-card-btn {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    color: #0f172a !important;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 10%;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
 
-.hero-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1100px;
+.contact-card-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+    filter: brightness(1.1);
 }
 
-.hero-content {
-    text-align: left;
-}
-
-.highlight {
+/* View Work (Outline) බොත්තම */
+.btn-outline {
+    border: 2px solid #38bdf8;
     color: #38bdf8;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
 }
 
+.btn-outline:hover {
+    background: rgba(56, 189, 248, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Mobile වලදී බොත්තම් මැදට ගැනීමට */
+@media (max-width: 768px) {
+    .hero-btns {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
 .hero-image img {
     width: 300px;
     height: 300px;
@@ -961,3 +949,4 @@ body {
     background-color: rgba(56, 189, 248, 0.1);
     border-color: #38bdf8;
 }
+
