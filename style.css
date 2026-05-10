@@ -862,3 +862,59 @@ body {
     z-index: 9998;
     transition: all 0.15s ease-out; /* රවුම මවුස් එක පස්සෙන් එන smooth ගතිය */
 }
+body {
+    cursor: none;
+}
+
+/* මැද කුඩා තිත */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+}
+
+/* වටේ ලොකු රවුම */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.1s ease-out;
+}
+
+/* WhatsApp Button Style */
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* මවුස් එක Hover වන විට රවුම ලොකු වෙන්න */
+.cursor-hover {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+}
