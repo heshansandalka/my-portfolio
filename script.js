@@ -95,3 +95,66 @@ document.querySelectorAll('#nav-menu li a').forEach(link => {
         navMenu.classList.remove('active');
     });
 });
+
+// Starry Background Animation
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+const starCount = 150; // තරු ගණන (අවශ්‍ය නම් වැඩිකරන්න)
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// තරු නිර්මාණය කිරීම
+class Star {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 1.5;
+        this.speed = Math.random() * 0.2; // තරු චලනය වන වේගය
+        this.opacity = Math.random();
+    }
+
+    update() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+            this.y = 0;
+            this.x = Math.random() * canvas.width;
+        }
+    }
+
+    draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function initStars() {
+    for (let i = 0; i < starCount; i++) {
+        stars.push(new Star());
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => {
+        star.update();
+        star.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+initStars();
+animate();
