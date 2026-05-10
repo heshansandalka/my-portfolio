@@ -90,30 +90,56 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
-/* --- Hero Section --- */
-.hero {
-    min-height: 100vh;
+/* Hero Image Container - මැදට ගැනීමට */
+.hero-image {
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 0 10%;
-}
-
-.hero-container {
-    display: flex;
     align-items: center;
-    gap: 60px;
-    max-width: 1100px;
 }
 
+/* පින්තූරයේ නව පෙනුම */
 .hero-image img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+    width: 350px; /* ඔබට අවශ්‍ය ප්‍රමාණයට වෙනස් කරන්න */
+    height: auto;
+    border-radius: 20px; /* රවුම වෙනුවට මඳක් වක්‍ර වූ කොන් */
     object-fit: cover;
-    border: 5px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
-    animation: floating 3s ease-in-out infinite;
+    z-index: 2;
+    position: relative;
+    border: none; /* පරණ border එක අයින් කිරීම */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* පින්තූරයට යටින් shadow එකක් */
+}
+
+/* පින්තූරය පිටුපස ඇති Animation එක (Neon Glow) */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 370px; /* පින්තූරයට වඩා මඳක් විශාලයි */
+    height: 370px;
+    background: linear-gradient(45deg, #38bdf8, #818cf8, #38bdf8, #818cf8);
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+    filter: blur(20px); /* මෘදු ආලෝකයක් ලබා දීමට */
+    animation: neonGlow 8s linear infinite;
+    opacity: 0.8;
+}
+
+/* පින්තූරය වටා කැරකෙන Border එකක් වැනි Animation එක */
+@keyframes neonGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* පින්තූරය හෙමින් උඩ පහළ යන Animation එක */
+.hero-image img {
+    animation: floatingImg 4s ease-in-out infinite;
+}
+
+@keyframes floatingImg {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 @keyframes floating {
