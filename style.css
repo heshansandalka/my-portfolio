@@ -829,3 +829,36 @@ footer {
     background: #0f172a; /* ඔබේ දැනට තියෙන background color එක */
     pointer-events: none;
 }
+
+body {
+    cursor: none; /* සාමාන්‍ය මවුස් එක ඉවත් කරයි */
+}
+
+/* මැද කුඩා තිත */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* වටේ තියෙන විශාල රවුම */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease-out; /* රවුම මවුස් එක පස්සෙන් එන smooth ගතිය */
+}

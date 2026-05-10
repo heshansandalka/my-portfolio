@@ -190,6 +190,20 @@ function animate() {
     connect();
 }
 
+// ... particles ඇඳීමට අදාළ කේත ...
+connect();
+
+// Mouse Cursor රවුම ඇඳීම
+if (mouse.x !== null && mouse.y !== null) {
+    ctx.beginPath();
+    ctx.arc(mouse.x, mouse.y, mouse.drawRadius, 0, Math.PI * 2, false);
+    ctx.fillStyle = mouse.color;
+    ctx.fill();
+    ctx.lineWidth = 2; // රවුමේ දාරයේ මහත
+    ctx.strokeStyle = 'rgba(56, 189, 248, 1)'; // දාරයේ පාට
+    ctx.stroke();
+}
+
 // Window එක resize කරන විට වෙනස් වීම
 window.addEventListener('resize', function() {
     canvas.width = innerWidth;
@@ -202,3 +216,36 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 init();
 animate();
+
+const canvas = document.getElementById('bg-animation');
+const ctx = canvas.getContext('2d');
+
+let particlesArray;
+let mouse = {
+    x: null,
+    y: null,
+    radius: 150, // default cursor radius
+    drawRadius: 10, // රවුමේ ප්‍රමාණය
+    color: 'rgba(56, 189, 248, 0.8)' // රවුමේ පාට (Sky Blue with opacity)
+}
+
+window.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorOutline = document.querySelector(".cursor-outline");
+
+window.addEventListener("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // තිත මවුස් එකත් එක්කම යයි
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // රවුම මඳක් ප්‍රමද වී smooth ලෙස පස්සෙන් එයි
+    cursorOutline.style.left = `${posX}px`;
+    cursorOutline.style.top = `${posY}px`;
+});
