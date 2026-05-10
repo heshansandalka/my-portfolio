@@ -234,18 +234,3 @@ window.addEventListener('mousemove', function(event) {
     mouse.y = event.y;
 });
 
-const cursorDot = document.querySelector(".cursor-dot");
-const cursorOutline = document.querySelector(".cursor-outline");
-
-window.addEventListener("mousemove", function (e) {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    // තිත මවුස් එකත් එක්කම යයි
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    // රවුම මඳක් ප්‍රමද වී smooth ලෙස පස්සෙන් එයි
-    cursorOutline.style.left = `${posX}px`;
-    cursorOutline.style.top = `${posY}px`;
-});
