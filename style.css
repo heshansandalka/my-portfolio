@@ -477,32 +477,42 @@ nav ul li a:hover::after {
 /* =========================================
    5. Project Section (Glass Cards)
    ========================================= */
+/* 1. Project Container - පේළියකට 2ක් එන ලෙස සකසා ඇත */
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* 45% ක් අවම පළල දීමෙන් පේළියකට 2ක් ලැබෙන බව තහවුරු කරයි */
+    grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
     gap: 30px;
     margin-top: 40px;
+    width: 100%;
 }
 
+/* 2. Glass Card - වීදුරු ගතිය (Glass Effect) සමඟ */
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
+/* Hover Effect */
 .glass-card:hover {
     transform: translateY(-10px);
-    border-color: #38bdf8;
-    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    border-color: rgba(56, 189, 248, 0.5); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* 3. Card Image - උස 180px ලෙස පවත්වාගෙන ඇත */
 .card-image {
     width: 100%;
-    height: 180px;
+    height: 180px; 
     background: #1e293b;
     overflow: hidden;
     position: relative;
@@ -513,7 +523,7 @@ nav ul li a:hover::after {
     height: 100%;
     object-fit: cover;
     opacity: 0.8;
-    transition: 0.4s;
+    transition: 0.5s ease;
 }
 
 .glass-card:hover .card-image img {
@@ -521,13 +531,31 @@ nav ul li a:hover::after {
     opacity: 1;
 }
 
+/* 4. Card Content */
 .card-content {
     padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.card-content h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* 5. Tech Stack & Links */
 .tech-stack {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-top: 15px;
     flex-wrap: wrap;
 }
@@ -539,13 +567,19 @@ nav ul li a:hover::after {
     color: #38bdf8;
     border-radius: 5px;
 }
-/* Card Links Container */
+
 .card-links {
     display: flex;
     gap: 15px;
     margin-top: 25px;
 }
 
+/* Mobile Devices - ෆෝන් එකේදී ලස්සනට එක යට එක වැටීමට */
+@media (max-width: 950px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
 /* Base Style for All Buttons */
 .link-btn {
     flex: 1;

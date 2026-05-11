@@ -262,3 +262,64 @@ backToTopButton.addEventListener("click", function() {
         behavior: "smooth"
     });
 });
+
+const projects = [
+    {
+        title: "CineMate Movie App",
+        description: "Modern movie browsing platform with a dark UI and responsive layouts.",
+        image: "adf1.png",
+        tech: ["HTML", "CSS", "JS"],
+        live: "https://heshansandalka.github.io/CineMate/",
+        github: "https://github.com/heshansandalka/CineMate",
+        badge: "Live"
+    },
+    {
+        title: "EPM System",
+        description: "Full-stack Employee Project Management system built with PHP and MySQL.",
+        image: "adf2.png",
+        tech: ["PHP", "MySQL", "Bootstrap"],
+        live: "#",
+        github: "https://github.com/heshansandalka/EPM-System",
+        badge: "PHP"
+    },
+    {
+        title: "Simple chatBot",
+        description: "Chatbot with Python   .",
+        image: "weather-app-screenshot.png",
+        tech: ["Python"],
+        live: "#",
+        github: "https://github.com/heshansandalka/chatbot-in-Python",
+        badge: "React"
+    }
+];
+
+const projectContainer = document.getElementById('project-list');
+
+function displayProjects() {
+    projectContainer.innerHTML = projects.map((project, index) => `
+        <div class="glass-card" data-aos="fade-up" data-aos-delay="${index * 200}">
+            <div class="card-image">
+                <img src="${project.image}" alt="${project.title}">
+                <span class="badge">${project.badge}</span>
+            </div>
+            <div class="card-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="tech-stack">
+                    ${project.tech.map(t => `<span>${t}</span>`).join('')}
+                </div>
+                <div class="card-links">
+                    <a href="${project.github}" target="_blank" class="link-btn github">
+                        <i class="fa-brands fa-github"></i> Code
+                    </a>
+                    <a href="${project.live}" target="_blank" class="link-btn demo">
+                        <i class="fa-solid fa-rocket"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Function එක call කිරීම
+displayProjects();
