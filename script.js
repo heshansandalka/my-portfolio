@@ -285,7 +285,7 @@ const projects = [
     {
         title: "Simple chatBot",
         description: "Chatbot with Python   .",
-        image: "weather-app-screenshot.png",
+        image: "adf3.png",
         tech: ["Python"],
         live: "#",
         github: "https://github.com/heshansandalka/chatbot-in-Python",
