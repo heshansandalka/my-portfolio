@@ -539,6 +539,81 @@ nav ul li a:hover::after {
     color: #38bdf8;
     border-radius: 5px;
 }
+/* Card Links Container */
+.card-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Base Style for All Buttons */
+.link-btn {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* GitHub Button - Dark Glass Style */
+.link-btn.github {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.link-btn.github:hover {
+    background: #ffffff;
+    color: #0f172a;
+    transform: translateY(-3px);
+}
+
+/* Live Demo & View Button - Blue Glow Style */
+.link-btn.demo {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+}
+
+.link-btn.demo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Button Icon Animation */
+.link-btn i {
+    transition: transform 0.3s ease;
+}
+
+.link-btn:hover i {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Ripple effect animation (Optional) */
+.link-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.link-btn:hover::after {
+    left: 100%;
+}
 
 /* =========================================
    6. Contact Section
