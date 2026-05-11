@@ -289,7 +289,7 @@ const projects = [
         tech: ["Python"],
         live: "#",
         github: "https://github.com/heshansandalka/chatbot-in-Python",
-        badge: "React"
+        badge: "Python"
     }
 ];
 
