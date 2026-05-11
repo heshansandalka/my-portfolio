@@ -284,7 +284,7 @@ const projects = [
     },
     {
         title: "Simple chatBot",
-        description: "Chatbot with Python   .",
+        description: "Chatbot with Python.",
         image: "adf3.png",
         tech: ["Python"],
         live: "#",
