@@ -330,44 +330,48 @@ nav ul li a:hover::after {
    3. Hero Section
    ========================================= */
 /* බොත්තම් දෙක පිහිටන ආකාරය */
+/* Hero Buttons Container - මැදට ගැනීමට */
 .hero-btns {
     display: flex;
     gap: 20px;
     margin-top: 30px;
+    justify-content: center; /* මෙයයි වැදගත්ම කොටස */
+    align-items: center;
 }
 
-/* Contact Me බොත්තම (Card එකක පෙනුම ඇති) */
-.contact-card-btn {
-   border: 2px solid #38bdf8;
+/* බොත්තම් වලට අමතර අලංකරණයක් (කැමති නම්) */
+.contact-card-btn, .btn-outline {
+    border: 2px solid #38bdf8;
     color: #38bdf8;
-    padding: 12px 25px;
+    padding: 14px 30px;
     border-radius: 12px;
     font-weight: 600;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* View Work (Outline) බොත්තම */
+.btn-outline {
+    border: 2px solid #38bdf8;
+    color: #38bdf8;
+   border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-card-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
     filter: brightness(1.1);
-}
-
-/* View Work (Outline) බොත්තම */
-.btn-outline {
-    border: 2px solid #38bdf8;
-    color: #38bdf8;
-    padding: 12px 25px;
-    border-radius: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {

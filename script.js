@@ -323,4 +323,3 @@ function displayProjects() {
 
 // Function එක call කිරීම
 displayProjects();
-
