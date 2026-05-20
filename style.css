@@ -58,7 +58,7 @@ body {
 
     .hero-image-side img {
         width: 100% !important;   /* තිරයේ පළලට අනුව පින්තූරය විශාල වේ */
-        max-width: 350px !important; /* උපරිම ප්‍රමාණය 350px දක්වා සීමා කරයි */
+        max-width: 600px !important; /* උපරිම ප්‍රමාණය 350px දක්වා සීමා කරයි */
         height: auto !important;  /* ප්‍රමාණයට අනුව උස සකසයි */
         border-radius: 20px;
     }
