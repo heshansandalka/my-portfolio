@@ -83,6 +83,23 @@ body {
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+/* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
+@media (max-width: 768px) {
+    .typing-container {
+        font-size: 1.2rem !important; /* Phone එකේදී අකුරු ප්‍රමාණය තරමක් අඩු කිරීම */
+        text-align: center;           /* පෙළ මැදට ගැනීම */
+        margin-top: 10px;
+    }
+
+    /* ඔබේ Container එකත් මැදට ගැනීමට */
+    .hero-container {
+        display: flex;
+        flex-direction: column;       /* පින්තූරය උඩින්, පෙළ යටින් තබයි */
+        align-items: center;          /* සියල්ල මැදට එන ලෙස */
+        width: 100%;
+        padding: 10px;
+    }
+}
 
 .hero-description {
     font-size: 1.1rem;
