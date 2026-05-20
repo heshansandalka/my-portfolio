@@ -388,20 +388,28 @@ nav ul li a:hover::after {
 }
 /* පින්තූරය මැදට ගැනීමට සහ රවුම් හැඩය ඉවත් කිරීමට */
 .hero-image img {
-    width: 350px;       /* ඔබට අවශ්‍ය පරිදි ප්‍රමාණය මෙතැනින් වෙනස් කළ හැක */
-    height: auto;       /* ප්‍රමාණයට අනුව උස ස්වයංක්‍රීයව වෙනස් වේ */
-    border-radius: 0;   /* රවුම් හැඩය ඉවත් කරයි */
-    border: none;       /* පින්තූරය වටා තිබූ බෝඩරය ඉවත් කරයි */
-    box-shadow: none;   /* පින්තූරය වටා තිබූ සෙවනැල්ල (shadow) ඉවත් කරයි */
-    animation: none;    /* floating animation එක ඉවත් කරයි */
+    width: 350px;       
+    height: auto;
+    border-radius: 0;   
+    border: none;
+    
+    /* Drop shadow එක සහ animation එක එකට තැබීම */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    
+    /* Floating animation එක නැවත එකතු කිරීම */
+    animation: float 3s ease-in-out infinite;
+    
+    background: transparent;
     display: block;
-    margin: 0 auto;     /* පින්තූරය මැදට ගනී */
-    object-fit: cover;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
-@keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+/* Floating animation එකේ සැකසුම (මෙය CSS එකේ අවසානයට එක් කරන්න) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .btn {
