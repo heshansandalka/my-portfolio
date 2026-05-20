@@ -94,7 +94,7 @@ body {
 
 /* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
 @media (max-width: 768px) {
-    .hero-container {
+    .hero-container1 {
         display: flex;
         flex-direction: column; /* පින්තූරයට යටින් පෙළ */
         align-items: center;
