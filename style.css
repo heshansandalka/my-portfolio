@@ -447,16 +447,23 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 768px) {
-    /* Meka thamai oyage photo eke size eka phone ekata wenas karanne */
+    .hero-image-side {
+        width: 100%; /* Me div eka mulu width eka ganna one */
+        text-align: center;
+    }
+
     .hero-image-side img {
-        width: 250px !important;  /* Mekin size eka podi wenawa */
-        height: 250px !important; /* Meka wenas karala size eka loku karanna puluwan */
+        width: 320px !important;  /* 250px wenuwata 320px wage karala balanna */
+        height: 320px !important; /* height ekath size ekata hariyanna denna */
         margin: 0 auto;
         display: block;
+        object-fit: cover;        /* Image eka crop nowi shape wenna */
+        border-radius: 20px;      /* border radius thiyanawa nam */
     }
 
     .hero-text-side {
         text-align: center;
+        padding: 0 20px;          /* Wata-pitin podi gap ekak */
     }
 }
 .btn {
