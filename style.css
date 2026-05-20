@@ -84,36 +84,7 @@ body {
     100% { opacity: 1; }
 }
 
-/* පින්තූරය පාලනය කිරීමට */
-.hero-image img {
-    width: 300px;        /* Desktop එකේදී පින්තූරය */
-    height: 300px;
-    border-radius: 20px;
-    object-fit: cover;
-}
 
-/* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
-@media (max-width: 768px) {
-    .hero-container1 {
-        display: flex;
-        flex-direction: column; /* පින්තූරයට යටින් පෙළ */
-        align-items: center;
-    }
-
-    .hero-image img {
-        width: 250px !important; /* Phone එකේදී පින්තූරය */
-        height: 250px !important;
-    }
-
-    .hero-text {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .typing-container {
-        font-size: 1.2rem;
-    }
-}
 
 .hero-description {
     font-size: 1.1rem;
