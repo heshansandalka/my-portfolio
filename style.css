@@ -39,28 +39,35 @@ body {
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
 }
 
-/* CSS එක මෙසේ වෙනස් කරන්න */
-@media (max-width: 768px) {
-    /* hero-image-side වෙනුවට hero-image භාවිතා කරන්න */
-    .hero-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex;
+/* තිරය හරවන විට (Landscape) අන්තර්ගතය ගැලපීම */
+@media (max-width: 900px) and (orientation: landscape) {
+    .hero-container {
+        flex-direction: row !important; /* පින්තූරය සහ අකුරු පැත්තෙන් පැත්තට */
         justify-content: center;
-        padding: 0 10px;
+        align-items: center;
+        padding-top: 80px;
     }
 
-    /* hero-image-side img වෙනුවට hero-image img භාවිතා කරන්න */
-    .hero-image img {
-        width: 100% !important; 
-        max-width: 100% !important; 
-        height: auto !important;    
-        object-fit: contain;
-        border-radius: 20px;
-        margin: 0 auto;
+    .hero-image-side img {
+        width: 180px !important; /* Landscape වලදී පින්තූරය කුඩා කිරීම */
+        height: 180px !important;
+    }
+
+    .hero-content {
+        width: 50%;
+        text-align: left;
     }
 }
 
+/* සාමාන්‍ය ජංගම දුරකථන තිරය (Portrait) */
+@media (max-width: 768px) {
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+    }
+}
 
 .typed-cursor {
     color: #38bdf8;
