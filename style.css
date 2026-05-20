@@ -39,34 +39,25 @@ body {
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
 }
 
-/* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
+/* CSS එක මෙසේ වෙනස් කරන්න */
 @media (max-width: 768px) {
-    .hero-container-custom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    /* පින්තූරය විශාල කිරීමට */
-    .hero-image-side {
-        width: 100% !important;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .hero-image-side img {
-        width: 100% !important;   /* තිරයේ පළලට අනුව පින්තූරය විශාල වේ */
-        max-width: 600px !important; /* උපරිම ප්‍රමාණය 350px දක්වා සීමා කරයි */
-        height: auto !important;  /* ප්‍රමාණයට අනුව උස සකසයි */
-        border-radius: 20px;
-    }
-
-    /* කාඩ්පත තිරයේ පළලටම දිගු කිරීමට */
-    .hero-card {
+    /* hero-image-side වෙනුවට hero-image භාවිතා කරන්න */
+    .hero-image {
         width: 100% !important;
         max-width: 100% !important;
+        display: flex;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    /* hero-image-side img වෙනුවට hero-image img භාවිතා කරන්න */
+    .hero-image img {
+        width: 100% !important; 
+        max-width: 100% !important; 
+        height: auto !important;    
+        object-fit: contain;
+        border-radius: 20px;
+        margin: 0 auto;
     }
 }
 
