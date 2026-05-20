@@ -39,6 +39,20 @@ body {
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
 }
 
+/* දුරකථන තිර සඳහා සැකසුම */
+@media (max-width: 768px) {
+    .hero-container-custom {
+        flex-direction: column; /* අයිතම එක යට එක තබයි */
+        padding: 20px;          /* තිරයේ දෙපසින් ඉඩ තබයි */
+    }
+
+    .hero-card {
+        width: 100% !important; /* කාඩ්පත තිරයේ පළලටම සකසයි */
+        margin-top: 20px;
+        padding: 20px;          /* කුඩා තිරයකදී padding එක අඩු කිරීම */
+    }
+}
+
 .hero-description {
     font-size: 1.1rem;
     margin-bottom: 25px;
