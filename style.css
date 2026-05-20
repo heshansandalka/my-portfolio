@@ -17,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 .hero-title {
-    font-size: 3.5rem;   /* අවශ්‍ය පරිදි අකුරු ප්‍රමාණය වෙනස් කරන්න */
+    font-size: 2.5rem;   /* අවශ්‍ය පරිදි අකුරු ප්‍රමාණය වෙනස් කරන්න */
     line-height: 1.2;    /* පේළි දෙක අතර පරතරය */
     text-align: center;    
     color: #f8fafc;      /* වර්ණය */
