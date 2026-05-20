@@ -84,7 +84,8 @@ body {
     100% { opacity: 1; }
 }
 /* ප්‍රධාන බහාලුම */
-.typing-container {
+/* ප්‍රධාන බහාලුම */
+.hero-container {
     display: flex;
     flex-wrap: wrap; /* කුඩා තිරවලදී පෙළ පහළට බැසීමට මෙය අත්‍යවශ්‍යයි */
     align-items: center;
@@ -95,7 +96,7 @@ body {
 
 /* ජංගම දුරකථන තිර සඳහා (768px ට අඩු) */
 @media (max-width: 768px) {
-    .typing-container {
+    .hero-container {
         flex-direction: column; /* පින්තූරය උඩින්, පෙළ යටින් තබයි */
         text-align: center;     /* පෙළ මැදට කරයි */
     }
