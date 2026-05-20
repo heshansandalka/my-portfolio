@@ -16,7 +16,39 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+.hero-card {
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px);           
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;                        /* පෑඩින් එක මඳක් වැඩි කළා */
+    border-radius: 20px;
+    
+    /* මෙතැනදී max-width වෙනුවට width එක 100% කිරීමෙන් සම්පූර්ණ පළල ලබා ගනී */
+    width: 100%;                          
+    max-width: 100%;                      
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
 
+/* කාඩ්පත මත මවුස් එක තැබූ විට චලනය වීමට */
+.hero-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #cbd5e1;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
 
 /* --- Modern Floating Navbar --- */
 nav {
