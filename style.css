@@ -61,6 +61,29 @@ body {
     }
 }
 
+.typing-container {
+    font-size: 1.5rem;    /* මෙහි අගය ඔබ කැමති පරිදි වෙනස් කරන්න */
+    color: #f8fafc;       /* "And I'm a" කොටසේ වර්ණය */
+    font-weight: 500;
+}
+
+.typing-text {
+    color: #38bdf8;       /* ටයිප් වන අකුරු වල වර්ණය */
+    font-weight: bold;
+    font-size: 1.5rem;    /* ඉහත අගයම මෙයටත් දෙන්න */
+}
+
+.typed-cursor {
+    color: #38bdf8;
+    animation: typedjsBlink 0.7s infinite;
+}
+
+@keyframes typedjsBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .hero-description {
     font-size: 1.1rem;
     margin-bottom: 25px;

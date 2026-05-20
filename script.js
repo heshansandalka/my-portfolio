@@ -323,3 +323,19 @@ function displayProjects() {
 
 // Function එක call කිරීම
 displayProjects();
+
+// Typing Animation Setup
+document.addEventListener('DOMContentLoaded', () => {
+    new Typed('.typing-text', {
+        strings: [
+            'Software Engineering Student', 
+            'Web Developer', 
+            'UI/UX Enthusiast', 
+            'AI Content Creator'
+        ], 
+        typeSpeed: 100,      
+        backSpeed: 50,       
+        backDelay: 2000,     
+        loop: true           
+    });
+});
