@@ -84,30 +84,34 @@ body {
     100% { opacity: 1; }
 }
 
-/* ප්‍රධාන බහාලුම */
-.hero-container {
-    display: flex;
-    flex-wrap: wrap; /* කුඩා තිරවලදී පෙළ පහළට බැසීමට මෙය අත්‍යවශ්‍යයි */
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
+/* පින්තූරය පාලනය කිරීමට */
+.hero-image img {
+    width: 300px;        /* Desktop එකේදී පින්තූරය */
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-/* ජංගම දුරකථන තිර සඳහා (768px ට අඩු) */
+/* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
 @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column; /* පින්තූරය උඩින්, පෙළ යටින් තබයි */
-        text-align: center;     /* පෙළ මැදට කරයි */
+        display: flex;
+        flex-direction: column; /* පින්තූරයට යටින් පෙළ */
+        align-items: center;
+    }
+
+    .hero-image img {
+        width: 250px !important; /* Phone එකේදී පින්තූරය */
+        height: 250px !important;
     }
 
     .hero-text {
-        width: 100%;            /* පෙළට සම්පූර්ණ පළල ලබා දෙයි */
-        margin-top: 15px;       /* පින්තූරය සහ පෙළ අතර පරතරය */
+        text-align: center;
+        margin-top: 20px;
     }
 
     .typing-container {
-        font-size: 1.2rem;      /* Phone එකේදී අකුරු ප්‍රමාණය */
+        font-size: 1.2rem;
     }
 }
 
