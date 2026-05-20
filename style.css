@@ -108,19 +108,7 @@ nav ul li a:hover::after {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
-@media (max-width: 768px) {
-    /* Meka thamai oyage photo eke size eka phone ekata wenas karanne */
-    .hero-image-side img {
-        width: 250px !important;  /* Mekin size eka podi wenawa */
-        height: 250px !important; /* Meka wenas karala size eka loku karanna puluwan */
-        margin: 0 auto;
-        display: block;
-    }
 
-    .hero-text-side {
-        text-align: center;
-    }
-}
 
 .highlight { color: #38bdf8; }
 
@@ -437,6 +425,19 @@ nav ul li a:hover::after {
     100% { transform: translateY(0px); }
 }
 
+@media (max-width: 768px) {
+    /* Meka thamai oyage photo eke size eka phone ekata wenas karanne */
+    .hero-image-side img {
+        width: 250px !important;  /* Mekin size eka podi wenawa */
+        height: 250px !important; /* Meka wenas karala size eka loku karanna puluwan */
+        margin: 0 auto;
+        display: block;
+    }
+
+    .hero-text-side {
+        text-align: center;
+    }
+}
 .btn {
     display: inline-block;
     margin-top: 20px;
