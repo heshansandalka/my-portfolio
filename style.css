@@ -95,7 +95,7 @@ body {
 
 /* ජංගම දුරකථන තිර සඳහා (768px ට අඩු) */
 @media (max-width: 768px) {
-    .hero-container {
+    .typing-container {
         flex-direction: column; /* පින්තූරය උඩින්, පෙළ යටින් තබයි */
         text-align: center;     /* පෙළ මැදට කරයි */
     }
