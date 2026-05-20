@@ -39,17 +39,34 @@ body {
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
 }
 
-/* දුරකථන තිර සඳහා සැකසුම */
+/* ජංගම දුරකථන සඳහා විශේෂ සැකසුම */
 @media (max-width: 768px) {
     .hero-container-custom {
-        flex-direction: column; /* අයිතම එක යට එක තබයි */
-        padding: 20px;          /* තිරයේ දෙපසින් ඉඩ තබයි */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
 
+    /* පින්තූරය විශාල කිරීමට */
+    .hero-image-side {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-image-side img {
+        width: 100% !important;   /* තිරයේ පළලට අනුව පින්තූරය විශාල වේ */
+        max-width: 350px !important; /* උපරිම ප්‍රමාණය 350px දක්වා සීමා කරයි */
+        height: auto !important;  /* ප්‍රමාණයට අනුව උස සකසයි */
+        border-radius: 20px;
+    }
+
+    /* කාඩ්පත තිරයේ පළලටම දිගු කිරීමට */
     .hero-card {
-        width: 100% !important; /* කාඩ්පත තිරයේ පළලටම සකසයි */
-        margin-top: 20px;
-        padding: 20px;          /* කුඩා තිරයකදී padding එක අඩු කිරීම */
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
