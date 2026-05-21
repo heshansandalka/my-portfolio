@@ -97,6 +97,57 @@ body {
     gap: 15px;
 }
 
+/* Education Section Styles */
+#education {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.edu-container {
+    width: 100%;                          
+    max-width: 100%;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.edu-card:hover {
+    border-color: #818cf8; /* Education walata purple/blue shade ekak */
+    transform: translateY(-5px);
+}
+
+.edu-date {
+    color: #818cf8;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.edu-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.edu-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .edu-card {
+        padding: 25px;
+    }
+}
+
 /* --- Modern Floating Navbar --- */
 nav {
     display: flex;
@@ -428,6 +479,8 @@ nav ul li a:hover::after {
     cursor: pointer;
     z-index: 2001;
 }
+
+
 
 /* =========================================
    3. Hero Section
