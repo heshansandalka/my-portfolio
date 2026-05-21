@@ -41,7 +41,8 @@ body {
 
 @media (max-width: 768px) {
     .hero-card {
-        width: 100% !important;        /* තිරයේ සම්පූර්ණ පළල ගන්නවා */
+        width: 100% !important;
+         max-width: 100%;         /* තිරයේ සම්පූර්ණ පළල ගන්නවා */
         padding: 30px 20px !important; /* Phone එකට ගැලපෙන පරිදි පෑඩින් අඩු කළා */
         margin: 20px auto;             /* මැදට වීමට */
         border-radius: 15px;           /* Phone එකේදී ටිකක් කුඩා වක්‍රයක් */
