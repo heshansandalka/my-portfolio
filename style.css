@@ -141,10 +141,11 @@ body {
     line-height: 1.6;
 }
 
-/* Mobile responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .edu-card {
-        padding: 25px;
+        padding: 20px;
+        margin: 15px 10px;
     }
 }
 
