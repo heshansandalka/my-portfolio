@@ -301,7 +301,7 @@ const projects = [
     {
         title: "Sky Plains",
         description: "The natural beauty of Horton Plains.",
-        image: "3.png",
+        image: "adf4.jpeg",
         tech: ["HTML", "CSS", "JS"],
         live: "https://heshansandalka.github.io/Sky-Plains/",
         github: "https://github.com/heshansandalka/Sky-Plains",
