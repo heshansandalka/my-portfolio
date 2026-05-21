@@ -468,7 +468,7 @@ nav ul li a:hover::after {
         text-align: center;
     }
 
-    .hero-image-side img {
+    .hero-image img {
        width: 350px !important;    /* ඔබට අවශ්‍ය පරිදි පළල වැඩි කරන ලදී */
         height: auto !important;    /* height එක auto කිරීමෙන් image එක ඇදීමකට ලක් නොවී shape එකේම පවතියි */
         max-width: 90vw !important; /* Screen එකෙන් පිටතට නොයාමට 90% පළලක් තබාගනී */
