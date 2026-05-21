@@ -489,12 +489,13 @@ nav ul li a:hover::after {
     }
 
     .hero-image-side img {
-        width: 320px !important;  /* 250px wenuwata 320px wage karala balanna */
-        height: 320px !important; /* height ekath size ekata hariyanna denna */
+       width: 350px !important;    /* ඔබට අවශ්‍ය පරිදි පළල වැඩි කරන ලදී */
+        height: auto !important;    /* height එක auto කිරීමෙන් image එක ඇදීමකට ලක් නොවී shape එකේම පවතියි */
+        max-width: 90vw !important; /* Screen එකෙන් පිටතට නොයාමට 90% පළලක් තබාගනී */
         margin: 0 auto;
         display: block;
-        object-fit: cover;        /* Image eka crop nowi shape wenna */
-        border-radius: 20px;      /* border radius thiyanawa nam */
+        object-fit: cover;
+        border-radius: 20px;  /* border radius thiyanawa nam */
     }
 
     .hero-text-side {
