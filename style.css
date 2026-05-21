@@ -544,23 +544,6 @@ nav ul li a:hover::after {
     background: #0ea5e9;
     transform: translateY(-3px);
 }
-/* Phone සඳහා පමණක් විශේෂ සැකසුම */
-@media (max-width: 768px) {
-    .hero-card {
-        /* Phone එකේදී පෑඩින් එක ටිකක් අඩු කිරීමෙන් වැඩියෙන් ඉඩ ලැබේ */
-        padding: 30px 20px !important; 
-        margin: 20px 10px; /* දෙපැත්තෙන් ටිකක් පරතරය තබා ගනී */
-        width: calc(100% - 20px) !important; /* Screen එකේ full width එකෙන් පරතරය අඩු කර ගනී */
-        border-radius: 15px;
-    }
-
-    .hero-description {
-        /* අකුරු ප්‍රමාණය Phone එකේදී කියවීමට පහසු ප්‍රමාණයට සකස් කිරීම */
-        font-size: 1rem !important; 
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-}
 
 /* =========================================
    4. Skills Section
