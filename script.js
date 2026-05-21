@@ -76,23 +76,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+const menuIcon = document.querySelector('.menu-icon'); // ඊතල 3 ඇති අයිකනය
+const navList = document.querySelector('nav ul');      // ඔබේ nav ලැයිස්තුව
 
-// අයිකනය ක්ලික් කළ විට මෙනුව පෙන්වන්න/සඟවන්න
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // අයිකනය 'X' (Close) බවට පත් කිරීමට (Optional)
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
+menuIcon.addEventListener('click', () => {
+    navList.classList.toggle('active'); // active ක්ලාස් එක add/remove කරයි
 });
 
-// ලින්ක් එකක් ක්ලික් කළ පසු මෙනුව ඉබේම වැසීමට
-document.querySelectorAll('#nav-menu li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+// මෙනුවෙන් අයිතමයක් ක්ලික් කළ පසු මෙනුව වැසීමට:
+document.querySelectorAll('nav ul li a').forEach(item => {
+    item.addEventListener('click', () => {
+        navList.classList.remove('active');
     });
 });
 

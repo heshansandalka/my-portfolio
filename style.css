@@ -285,7 +285,7 @@ h2 {
         display: none; /* Mobile menu handles this */
     }
 
-    .menu-toggle {
+    .menu-icon {
         display: block;
         z-index: 2005; /* මෙනුවට වඩා වැඩි අගයක් */
     position: relative;
