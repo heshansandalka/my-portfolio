@@ -287,8 +287,6 @@ h2 {
 
     .menu-icon {
         display: block;
-        z-index: 2005; /* මෙනුවට වඩා වැඩි අගයක් */
-    position: relative;
     }
 
     .hero-container {
