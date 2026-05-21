@@ -463,7 +463,8 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 768px) {
-     .hero-image {
+    /* hero-image-side වෙනුවට hero-image භාවිතා කරන්න */
+    .hero-image {
         width: 100% !important;
         max-width: 100% !important;
         display: flex;
@@ -471,20 +472,14 @@ nav ul li a:hover::after {
         padding: 0 10px;
     }
 
-
+    /* hero-image-side img වෙනුවට hero-image img භාවිතා කරන්න */
     .hero-image img {
-       width: 350px !important;    /* ඔබට අවශ්‍ය පරිදි පළල වැඩි කරන ලදී */
-        height: auto !important;    /* height එක auto කිරීමෙන් image එක ඇදීමකට ලක් නොවී shape එකේම පවතියි */
-        max-width: 90vw !important; /* Screen එකෙන් පිටතට නොයාමට 90% පළලක් තබාගනී */
+        width: 100% !important; 
+        max-width: 100% !important; 
+        height: auto !important;    
+        object-fit: contain;
+        border-radius: 20px;
         margin: 0 auto;
-        display: block;
-        object-fit: cover;
-        border-radius: 20px;  /* border radius thiyanawa nam */
-    }
-
-    .hero-text-side {
-        text-align: center;
-        padding: 0 20px;          /* Wata-pitin podi gap ekak */
     }
 }
 
