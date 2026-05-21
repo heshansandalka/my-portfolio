@@ -281,9 +281,9 @@ const projects = [
     {
         title: "EPM System",
         description: "Full-stack Employee Project Management system built with PHP and MySQL.",
-        image: "adf2.png",
+        image: "adf5.png",
         tech: ["PHP", "MySQL", "Bootstrap"],
-        live: "#",
+        live: "http://localhost/epm_system/index.php",
         github: "https://github.com/heshansandalka/EPM-System",
         badge: "Live"
     },
