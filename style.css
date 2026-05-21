@@ -117,6 +117,17 @@ body {
     backdrop-filter: blur(10px);
     transition: 0.3s;
 }
+.edu-date {
+    display: block;                /* මෙය මගින් එය පේළිය පුරාම දිගු වේ */
+    width: 20%;                   /* කාඩ්පතේ සම්පූර්ණ පළල ලබා ගනී */
+    background: rgba(56, 189, 248, 0.2); 
+    padding: 8px 0;                /* ඉහළ සහ පහළ පෑඩින් පමණක් තබා ගනී */
+    border-radius: 50px; 
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    text-align: center;            /* අකුරු මැදට ගැනීමට */
+    box-sizing: border-box;        /* දිගු වීම පාලනය කිරීමට */
+}
 
 .edu-card:hover {
     border-color: #818cf8; /* Education walata purple/blue shade ekak */
