@@ -151,6 +151,14 @@ body {
         border-radius: 20px;
         box-sizing: border-box;
     }
+    .edu-card h3 {
+        font-size: 1.2rem !important; /* ඔබ ඉල්ලූ පරිදි අකුරු ප්‍රමාණය */
+        line-height: 1.4;
+    }
+
+    .edu-card p {
+        font-size: 0.9rem !important; /* විස්තරය සඳහා තරමක් කුඩා අකුරු */   
+    }
 }
 
 /* --- Modern Floating Navbar --- */
