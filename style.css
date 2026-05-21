@@ -42,11 +42,12 @@ body {
 @media (max-width: 768px) {
     .hero-card {
         width: 100% !important;
-         max-width: 100%;         /* තිරයේ සම්පූර්ණ පළල ගන්නවා */
-        padding: 30px 20px !important; /* Phone එකට ගැලපෙන පරිදි පෑඩින් අඩු කළා */
-        margin: 20px auto;             /* මැදට වීමට */
-        border-radius: 15px;           /* Phone එකේදී ටිකක් කුඩා වක්‍රයක් */
-        box-sizing: border-box;        /* padding එක width එක ඇතුළටම ගැනීම */
+        max-width: 100% !important;
+        padding: 25px 20px !important; 
+        /* margin එක 0 කිරීමෙන් උඩ කාඩ් එක සහ යට කාඩ් එක අතර පරතරය සමතුලිත වේ */
+        margin: 10px 0 !important; 
+        border-radius: 20px;
+        box-sizing: border-box;
     }
 }
 
