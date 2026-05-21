@@ -502,6 +502,42 @@ nav ul li a:hover::after {
         padding: 0 20px;          /* Wata-pitin podi gap ekak */
     }
 }
+
+/* Typing Text Container - පින්තූරයට යටින් පරතරයක් සහිතව */
+.typing-text-container {
+    font-size: 1.5rem;
+    color: #f8fafc;
+    text-align: center;
+    margin-top: 30px; /* පින්තූරයෙන් පහළට පරතරය */
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.typing-text {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* Hero image එකේ alignment එක පාලනය කිරීමට */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; /* මෙහි ඇති bottom margin එක 0 කිරීමෙන් text එක ලඟට එයි */
+}
+
+/* Phone සඳහා විශේෂ සැකසුම */
+@media (max-width: 768px) {
+    .typing-text-container {
+        font-size: 1.2rem; /* Phone එකේදී ටිකක් කුඩා අකුරු */
+        margin-top: 20px;
+    }
+    
+    .hero-image img {
+        width: 250px !important; /* Phone එකේදී පින්තූරයේ ප්‍රමාණය */
+        height: auto !important;
+    }
+}
 .btn {
     display: inline-block;
     margin-top: 20px;
