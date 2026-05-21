@@ -280,7 +280,7 @@ const projects = [
         tech: ["PHP", "MySQL", "Bootstrap"],
         live: "#",
         github: "https://github.com/heshansandalka/EPM-System",
-        badge: "PHP"
+        badge: "Live"
     },
     {
         title: "Simple chatBot",
@@ -291,6 +291,19 @@ const projects = [
         github: "https://github.com/heshansandalka/chatbot-in-Python",
         badge: "Python"
     }
+
+    ,
+    {
+        title: "Sky Plains",
+        description: "The natural beauty of Horton Plains.",
+        image: "3.png",
+        tech: ["HTML", "CSS", "JS"],
+        live: "https://heshansandalka.github.io/Sky-Plains/",
+        github: "https://github.com/heshansandalka/Sky-Plains",
+        badge: "Live"
+    }
+
+    
 ];
 
 const projectContainer = document.getElementById('project-list');
