@@ -533,10 +533,6 @@ nav ul li a:hover::after {
         margin-top: 20px;
     }
     
-    .hero-image img {
-        width: 250px !important; /* Phone එකේදී පින්තූරයේ ප්‍රමාණය */
-        height: auto !important;
-    }
 }
 .btn {
     display: inline-block;
