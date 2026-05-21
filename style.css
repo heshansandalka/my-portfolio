@@ -45,7 +45,7 @@ body {
         max-width: 100% !important;
         padding: 25px 20px !important; 
         /* margin එක 0 කිරීමෙන් උඩ කාඩ් එක සහ යට කාඩ් එක අතර පරතරය සමතුලිත වේ */
-        margin: 10px 0 !important; 
+        
         border-radius: 20px;
         box-sizing: border-box;
     }
