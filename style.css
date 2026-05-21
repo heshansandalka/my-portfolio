@@ -902,6 +902,7 @@ footer {
         display: block;
     }
 
+    /* Mobile Menu Container */
     nav ul {
         display: none; 
         flex-direction: column;
@@ -913,11 +914,36 @@ footer {
         background: rgba(15, 23, 42, 0.98);
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 20px; /* ලැයිස්තු අතර පරතරය */
+        z-index: 1000;
     }
 
     nav ul.active {
         display: flex;
+    }
+
+    /* Mobile Menu Items - අකුරු සහ වටකුරු හැඩය */
+    nav ul li {
+        width: 80%; /* ලැයිස්තුවට පළලක් ලබා දීම */
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.05); /* සැහැල්ලු පසුබිම */
+        border: 1px solid rgba(56, 189, 248, 0.3); /* නිල් පැහැති දාරය */
+        border-radius: 50px; /* වටකුරු හැඩය */
+        color: #f8fafc;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover effect */
+    nav ul li a:hover {
+        background: rgba(56, 189, 248, 0.2);
+        border-color: #38bdf8;
+        transform: scale(1.05);
     }
 
     .hero-container {
