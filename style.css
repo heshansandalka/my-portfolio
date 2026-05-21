@@ -21,10 +21,9 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 20px;
-    max-width: 800px; /* About කාඩ් එකට වැඩි පළලක් */
-    margin: 0 auto;
-    text-align: center;
+    text-align: left;
     backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
 /* කාඩ්පත මත මවුස් එක තැබූ විට චලනය වීමට */
@@ -34,21 +33,21 @@ body {
 }
 /* About Section එක මැදට ගැනීමට */
 #about {
-    padding: 80px 5%;
+    padding: 100px 5%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #about .container {
-    max-width: 800px;
-    width: 100%;
+     width: 800%;                          
+    max-width: 100%;
 }
 
 /* කාඩ්පත ලස්සනට තැබීමට */
 .hero-card {
     text-align: center; /* අකුරු සහ බොත්තම් මැදට ගැනීමට */
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
