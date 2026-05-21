@@ -518,13 +518,6 @@ nav ul li a:hover::after {
     font-weight: 600;
 }
 
-/* Hero image එකේ alignment එක පාලනය කිරීමට */
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0; /* මෙහි ඇති bottom margin එක 0 කිරීමෙන් text එක ලඟට එයි */
-}
 
 /* Phone සඳහා විශේෂ සැකසුම */
 @media (max-width: 768px) {
