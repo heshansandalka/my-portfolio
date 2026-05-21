@@ -141,7 +141,12 @@ body {
     text-align: center;            /* අකුරු මැදට ගැනීමට */
     box-sizing: border-box;        /* දිගු වීම පාලනය කිරීමට */
 }
-
+@media (max-width: 768px) {
+    .edu-date {
+        width: 60%;         /* දුරකථනයේදී පළල වැඩි වේ (60%) */
+        font-size: 0.75rem; /* අකුරු ප්‍රමාණය තරමක් කුඩා කරයි */
+    }
+}
 .edu-card:hover {
     border-color: #818cf8; /* Education walata purple/blue shade ekak */
     transform: translateY(-5px);
@@ -174,7 +179,9 @@ body {
       
         border-radius: 20px;
         box-sizing: border-box;
-    }
+}
+
+
     .edu-card h3 {
         font-size: 1.2rem !important; /* ඔබ ඉල්ලූ පරිදි අකුරු ප්‍රමාණය */
         line-height: 1.4;
