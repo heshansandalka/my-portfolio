@@ -89,13 +89,18 @@ menuToggle.addEventListener('click', () => {
     icon.classList.toggle('fa-xmark');
 });
 
-// ලින්ක් එකක් ක්ලික් කළ පසු මෙනුව ඉබේම වැසීමට
+// ලින්ක් එකක් ක්ලික් කළ පසු මෙනුව ඉබේම වැසීමට සහ අයිකනය නැවත ඉරි 3 කිරීමට
 document.querySelectorAll('#nav-menu li a').forEach(link => {
     link.addEventListener('click', () => {
+        // 1. මෙනුව වසන්න
         navMenu.classList.remove('active');
+        
+        // 2. අයිකනය නැවත ඉරි 3 (fa-bars) බවට පත් කරන්න
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
     });
 });
-
 const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
 
