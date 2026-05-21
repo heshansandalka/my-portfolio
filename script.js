@@ -284,7 +284,7 @@ const projects = [
         image: "adf5.png",
         tech: ["PHP", "MySQL", "Bootstrap"],
         live: "http://localhost/epm_system/index.php",
-        github: "https://github.com/heshansandalka/EPM-System",
+        github: "https://github.com/heshansandalka/epm_system",
         badge: "Live"
     },
     {
