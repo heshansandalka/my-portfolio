@@ -17,26 +17,47 @@ body {
     overflow-x: hidden;
 }
 .hero-card {
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(15px);           
-    -webkit-backdrop-filter: blur(15px);
+   background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;                        /* පෑඩින් එක මඳක් වැඩි කළා */
+    padding: 40px;
     border-radius: 20px;
-    
-    /* මෙතැනදී max-width වෙනුවට width එක 100% කිරීමෙන් සම්පූර්ණ පළල ලබා ගනී */
-    width: 100%;                          
-    max-width: 100%;                      
-    
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    margin: 20px 0;
-    transition: transform 0.3s ease;
+    max-width: 800px; /* About කාඩ් එකට වැඩි පළලක් */
+    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 /* කාඩ්පත මත මවුස් එක තැබූ විට චලනය වීමට */
 .hero-card:hover {
     transform: translateY(-5px);
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
+}
+/* About Section එක මැදට ගැනීමට */
+#about {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .container {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* කාඩ්පත ලස්සනට තැබීමට */
+.hero-card {
+    text-align: center; /* අකුරු සහ බොත්තම් මැදට ගැනීමට */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* බොත්තම් මැදට ගැනීමට */
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
@@ -86,16 +107,9 @@ body {
 }
 
 
-.hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    color: #cbd5e1;
-}
 
-.hero-btns {
-    display: flex;
-    gap: 15px;
-}
+
+
 
 /* Education Section Styles */
 #education {
