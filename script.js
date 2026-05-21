@@ -76,25 +76,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
 
-// අයිකනය ක්ලික් කළ විට මෙනුව පෙන්වන්න/සඟවන්න
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // අයිකනය 'X' (Close) බවට පත් කිරීමට (Optional)
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-});
-
-// ලින්ක් එකක් ක්ලික් කළ පසු මෙනුව ඉබේම වැසීමට
-document.querySelectorAll('#nav-menu li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
 
 const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
