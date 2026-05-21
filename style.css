@@ -39,27 +39,7 @@ body {
     border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
 }
 
-/* CSS එක මෙසේ වෙනස් කරන්න */
-@media (max-width: 768px) {
-    /* hero-image-side වෙනුවට hero-image භාවිතා කරන්න */
-    .hero-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex;
-        justify-content: center;
-        padding: 0 10px;
-    }
 
-    /* hero-image-side img වෙනුවට hero-image img භාවිතා කරන්න */
-    .hero-image img {
-        width: 100% !important; 
-        max-width: 100% !important; 
-        height: auto !important;    
-        object-fit: contain;
-        border-radius: 20px;
-        margin: 0 auto;
-    }
-}
 
 
 
@@ -483,7 +463,7 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 768px) {
-    .hero-image-side {
+    .hero-image {
         width: 100%; /* Me div eka mulu width eka ganna one */
         text-align: center;
     }
