@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentYear = new Date().getFullYear();
     
     // සෑම වසරකම ජනවාරි 1 දා සිට වසර ස්වයංක්‍රීයව වෙනස් වේ
-    if (currentYear > 2025) {
-        dateSpan.innerText = `2025 - ${currentYear}`;
+    if (currentYear > 2024) {
+        dateSpan.innerText = `2024 - ${currentYear}`;
     }
 });
