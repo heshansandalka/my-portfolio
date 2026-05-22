@@ -357,3 +357,15 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true           
     });
 });
+
+// Education Date Update
+const dateSpan = document.getElementById('edu-date');
+const currentYear = new Date().getFullYear();
+
+// මෙහි 2025 යනු ඔබ පටන්ගත් වසරයි. 
+// වත්මන් වසර 2025 ට වඩා වැඩි නම් "2025 - 2026" ලෙස පෙන්වයි.
+if (currentYear > 2024) {
+    dateSpan.innerText = `2024 - ${currentYear}`;
+} else {
+    dateSpan.innerText = "2024 - Present";
+}
