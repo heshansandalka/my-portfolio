@@ -111,10 +111,14 @@ body {
 
 
 /* Education Section Styles */
-/* Education Section */
 #education {
-    padding: 80px 5%;
+    padding: 100px 10%;
     text-align: center;
+}
+
+.edu-container {
+    width: 100%;                          
+    max-width: 100%;
 }
 
 .edu-card {
@@ -122,41 +126,73 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center; /* සියල්ල මැදට ගැනීමට */
+    text-align: left;
     backdrop-filter: blur(10px);
     transition: 0.3s;
 }
-
-/* Date Label Style */
 .edu-date {
-    display: block;
-    width: 20%;
-    margin: 0 auto 15px; /* මැදට ගැනීමට */
-    background: rgba(56, 189, 248, 0.2);
-    padding: 8px 0;
-    border-radius: 50px;
+    display: block;                /* මෙය මගින් එය පේළිය පුරාම දිගු වේ */
+    width: 20%;                   /* කාඩ්පතේ සම්පූර්ණ පළල ලබා ගනී */
+    background: rgba(56, 189, 248, 0.2); 
+    padding: 8px 0;                /* ඉහළ සහ පහළ පෑඩින් පමණක් තබා ගනී */
+    border-radius: 50px; 
     font-size: 0.8rem;
-    text-align: center;
-    color: #38bdf8;
-    box-sizing: border-box;
+    margin-bottom: 15px;
+    text-align: center;            /* අකුරු මැදට ගැනීමට */
+    box-sizing: border-box;        /* දිගු වීම පාලනය කිරීමට */
+}
+@media (max-width: 768px) {
+    .edu-date {
+        width: 60%;         /* දුරකථනයේදී පළල වැඩි වේ (60%) */
+        font-size: 0.75rem; /* අකුරු ප්‍රමාණය තරමක් කුඩා කරයි */
+    }
+}
+.edu-card:hover {
+    border-color: #818cf8; /* Education walata purple/blue shade ekak */
+    transform: translateY(-5px);
 }
 
-/* දුරකථන සඳහා වගකීම් සහිත සැකසුම් */
+.edu-date {
+    color: #818cf8;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.edu-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.edu-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .edu-card {
-        padding: 25px 20px;
-        width: 90%;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 20px !important; 
+      
+        border-radius: 20px;
+        box-sizing: border-box;
     }
-    .edu-date {
-        width: 60%; /* දුරකථනයේදී ලේබලය විශාල වේ */
-        font-size: 0.75rem;
-    }
+
+
+
     .edu-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important; /* ඔබ ඉල්ලූ පරිදි අකුරු ප්‍රමාණය */
+        line-height: 1.4;
+    }
+
+    .edu-card p {
+        font-size: 0.9rem !important; /* විස්තරය සඳහා තරමක් කුඩා අකුරු */   
     }
 }
+
 /* --- Modern Floating Navbar --- */
 nav {
     display: flex;
