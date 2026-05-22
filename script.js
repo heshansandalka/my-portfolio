@@ -367,3 +367,25 @@ document.addEventListener("DOMContentLoaded", function() {
         dateSpan.innerText = `2024 - ${currentYear}`;
     }
 });
+
+const statusBadge = document.getElementById('status-badge');
+const statusText = document.getElementById('status-text');
+
+function checkConnection() {
+    const badge = document.getElementById('status-badge');
+    const text = document.getElementById('status-text');
+    
+    if (navigator.onLine) {
+        badge.className = 'status-badge online'; // CSS එකට ගැළපෙන්න
+        text.innerText = 'Active';
+    } else {
+        badge.className = 'status-badge offline';
+        text.innerText = 'Offline';
+    }
+}
+// පිටුව Load වන විට සහ Connection එක වෙනස් වන විට ක්‍රියාත්මක වේ
+window.addEventListener('online', checkConnection);
+window.addEventListener('offline', checkConnection);
+
+// ආරම්භයේදී පරීක්ෂා කරන්න
+checkConnection();

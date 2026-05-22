@@ -91,9 +91,54 @@ body {
         margin: 0 auto;
     }
 }
+.hero-image {
+    position: relative; /* මෙය ඉතාම වැදගත් */
+    display: inline-block;
+}
+.status-badge {
+   position: absolute;
+    bottom: 10px;      /* පින්තූරයේ පහළ සිට පරතරය */
+    right: -20px;      /* මෙය වැඩි කිරීමෙන් දකුණු පසට ගෙන යා හැක */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.8); /* තද නිල් පැහැති පසුබිම */
+    padding: 6px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    backdrop-filter: blur(10px);
+    font-size: 0.85rem;
+    z-index: 10;
+}
 
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
 
+/* Online */
+.status-badge.online .status-dot {
+    background-color: #22c55e; /* කොළ */
+    box-shadow: 0 0 10px #22c55e;
+}
 
+/* Offline */
+.status-badge.offline .status-dot {
+    background-color: #ef4444; /* රතු */
+    box-shadow: 0 0 10px #ef4444;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .status-badge {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        right: -10px; /* දුරකථනයේදී දකුණු පසින් මඳක් ඇතුළට ගැනීමට */
+        bottom: 5px;
+    }
+}
 .typed-cursor {
     color: #38bdf8;
     animation: typedjsBlink 0.7s infinite;
@@ -104,12 +149,6 @@ body {
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
-
-
-
-
-
-
 /* Education Section Styles */
 #education {
     padding: 100px 10%;
