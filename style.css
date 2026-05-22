@@ -135,8 +135,16 @@ body {
     .status-badge {
         padding: 4px 10px;
         font-size: 0.75rem;
-        right: -10px; /* දුරකථනයේදී දකුණු පසින් මඳක් ඇතුළට ගැනීමට */
+        right: -10px; 
         bottom: 5px;
+        /* දුරකථනයේදී බැජ් එකේ වර්ණය වෙනස් නොවීමට මෙය වැදගත් */
+        background: rgba(15, 23, 42, 0.9); /* තරමක් තද පැහැයක් */
+        border: 1px solid rgba(56, 189, 248, 0.5);
+    }
+    
+    .status-dot {
+        width: 10px; /* දුරකථනයට ගැළපෙන ලෙස තිත මඳක් කුඩා කළා */
+        height: 10px;
     }
 }
 .typed-cursor {
