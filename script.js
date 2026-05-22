@@ -292,7 +292,7 @@ const projects = [
         description: "Chatbot with Python.",
         image: "adf3.png",
         tech: ["Python"],
-        live: "#",
+        live: "https://sandalka.pythonanywhere.com/",
         github: "https://github.com/heshansandalka/chatbot-in-Python",
         badge: "Python"
     }
