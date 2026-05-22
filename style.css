@@ -788,6 +788,21 @@ nav ul li a:hover::after {
 .fa-github { color: #ffffff; }   /* GitHub White/Black */
 .fa-code { color: #007acc; }     /* VS Code Blue */
 
+
+
+.fa-docker { color: #0db7ed; }
+.fa-java { color: #f89820; }
+.fa-unity { color: #ffffff; }
+.fa-fire { color: #ffca28; } /* Firebase color */
+.fa-network-wired { color: #009688; } /* Nginx color */
+.fa-tools { color: #607d8b; }
+
+
+.fa-android { color: #3ddc84; }
+.fa-angular { color: #dd0031; }
+.fa-flutter { color: #02569b; }
+.fa-mobile-screen { color: #38bdf8; }
+
 /* =========================================
    5. Project Section (Glass Cards)
    ========================================= */
