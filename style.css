@@ -90,9 +90,7 @@ body {
         border-radius: 20px;
         margin: 0 auto;
 
-         /* Drop shadow එක සහ animation එක එකට තැබීම */
-    filter: drop-shadow(0 10px 20px rgba(29, 18, 185, 0.5));
-    
+        
     }
 }
 .hero-image {
