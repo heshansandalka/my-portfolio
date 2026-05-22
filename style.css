@@ -89,6 +89,10 @@ body {
         object-fit: contain;
         border-radius: 20px;
         margin: 0 auto;
+
+         /* Drop shadow එක සහ animation එක එකට තැබීම */
+    filter: drop-shadow(0 10px 20px rgba(29, 18, 185, 0.5));
+    
     }
 }
 .hero-image {
@@ -641,9 +645,7 @@ nav ul li a:hover::after {
     border-radius: 0;   
     border: none;
     
-    /* Drop shadow එක සහ animation එක එකට තැබීම */
-    filter: drop-shadow(0 10px 20px rgba(29, 18, 185, 0.5));
-    
+   
     /* Floating animation එක නැවත එකතු කිරීම */
     animation: float 3s ease-in-out infinite;
     
