@@ -283,7 +283,7 @@ const projects = [
         description: "Full-stack Employee Project Management system built with PHP and MySQL.",
         image: "adf5.png",
         tech: ["PHP", "MySQL", "Bootstrap"],
-        live: "http://localhost/epm_system/index.php",
+        live: "https://empsystem.42web.io",
         github: "https://github.com/heshansandalka/epm_system",
         badge: "Live"
     },
