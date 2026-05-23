@@ -310,9 +310,9 @@ const projects = [
 
     ,
     {
-        title: "Hyperlocal Weather Impact & Community Alert(Pending Group Project)",
-        description: "Pending Group  Project",
-        image: "ad.jpeg",
+        title: "Hyperlocal Weather App(Pending Group Project)",
+        description: "Hyperlocal Weather Impact & Community Alert(Pending Group  Project)",
+        image: "adf6.png",
         tech: ["React","HTML", "CSS", "JS","Json","Fire Base"],
         Pending: "#",
         github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
