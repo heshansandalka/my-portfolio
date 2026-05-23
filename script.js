@@ -280,16 +280,16 @@ const projects = [
     },
     {
         title: "EPM System",
-        description: "Full-stack Employee Project Management system built with PHP and MySQL.",
+        description: "Full-stack Employee Project Management system built with PHP and MySQL. This Host in infinityFree web site",
         image: "adf5.png",
-        tech: ["PHP", "MySQL", "Bootstrap"],
+        tech: ["PHP", "MySQL", "Bootstrap","Xampp","Firebase"],
         live: "https://empsystem.42web.io",
         github: "https://github.com/heshansandalka/epm_system",
         badge: "Live"
     },
     {
         title: "Simple chatBot",
-        description: "Chatbot with Python.",
+        description: "Chatbot with Python. This Host  in pythonanywhere.com",
         image: "adf3.png",
         tech: ["Python"],
         live: "https://sandalka.pythonanywhere.com/",
@@ -313,7 +313,7 @@ const projects = [
         title: "Hyperlocal Weather App(Pending Group Project)",
         description: "Hyperlocal Weather Impact & Community Alert(Pending Group  Project)",
         image: "adf6.png",
-        tech: ["React","HTML", "CSS", "JS","Json","Fire Base"],
+        tech: ["React","HTML", "CSS", "JS","Json","FireBase"],
         Pending: "#",
         github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
         badge: "Live"
