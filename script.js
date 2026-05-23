@@ -1,41 +1,41 @@
-// 1. AOS (Animate On Scroll) ආරම්භ කිරීම
-// මින් වෙබ් අඩවිය පහළට scroll කරන විට elements ලස්සනට දිස්වේ.
+// 1. Enable AOS (Animate On Scroll)
+// This makes the elements look nice when you scroll down the website.
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
-        duration: 1000, // animation එක තත්පර 1ක් පුරා සිදුවේ
-        once: true,     // එක් වරක් පමණක් animation එක පෙන්වයි
+        duration: 1000, // The animation runs for 1 second.
+        once: true,    // Show the animation only once
         easing: 'ease-in-out',
     });
 });
 
-// 2. EmailJS Config (ඔබේ Gmail එකට පණිවිඩ ලැබීමට)
+// 2. EmailJS Config (to receive messages in your Gmail)
 (function() {
-    // ඔබේ EmailJS Public Key එක මෙතැනට ඇතුළත් කරන්න
+    //Enter your EmailJS Public Key here.
     emailjs.init("zEDA7fLYScvC8_Nnt"); 
 })();
 
-// 3. Contact Form එක පාලනය කිරීම
+// 3. Controlling the Contact Form
 const contactForm = document.getElementById('contact-form');
 const sendBtn = document.getElementById('send-btn');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // පිටුව refresh වීම වළක්වයි
+        event.preventDefault(); // Prevents page refresh
 
-        // Button එකේ පෙනුම වෙනස් කිරීම
+// Changing the appearance of the button
         sendBtn.innerHTML = "Sending... <i class='fa-solid fa-spinner fa-spin'></i>";
         sendBtn.style.opacity = "0.7";
         sendBtn.disabled = true;
 
-        // EmailJS හරහා පණිවිඩය යැවීම
-        // YOUR_SERVICE_ID සහ YOUR_TEMPLATE_ID නිවැරදිව ඇතුළත් කරන්න
+      // Sending the message via EmailJS
+// Enter YOUR_SERVICE_ID and YOUR_TEMPLATE_ID correctly
         emailjs.sendForm('service_mrtx1k4', 'template_7e6ruba', this)
             .then(() => {
                 alert('Thank you! Your message was successfully received..');
                 sendBtn.innerHTML = "Send Message <i class='fa-solid fa-paper-plane'></i>";
                 sendBtn.style.opacity = "1";
                 sendBtn.disabled = false;
-                contactForm.reset(); // Form එක හිස් කරයි
+                contactForm.reset(); // Clears the form
             }, (error) => {
                 alert('Sorry, the message could not be sent. Please try again.');
                 console.error('EmailJS Error:', error);
@@ -46,7 +46,7 @@ if (contactForm) {
     });
 }
 
-// 4. Smooth Scrolling (Navigation links සඳහා)
+// 4. Smooth Scrolling (for navigation links)
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -57,7 +57,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// 5. Navbar එක Scroll කරන විට වෙනස් වීම (Glassmorphism effect)
+// 5. The navbar changes when scrolling (Glassmorphism effect)
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
     if (window.scrollY > 50) {
@@ -79,23 +79,23 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-// අයිකනය ක්ලික් කළ විට මෙනුව පෙන්වන්න/සඟවන්න
+// Show/hide the menu when the icon is clicked
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     
-    // අයිකනය 'X' (Close) බවට පත් කිරීමට (Optional)
+    // Change the icon to 'X' (Close) (Optional)
     const icon = menuToggle.querySelector('i');
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-xmark');
 });
 
-// ලින්ක් එකක් ක්ලික් කළ පසු මෙනුව ඉබේම වැසීමට සහ අයිකනය නැවත ඉරි 3 කිරීමට
+// To automatically close the menu and make the icon 3 lines again after clicking a link
 document.querySelectorAll('#nav-menu li a').forEach(link => {
     link.addEventListener('click', () => {
-        // 1. මෙනුව වසන්න
+       // 1. Close the menu
         navMenu.classList.remove('active');
         
-        // 2. අයිකනය නැවත ඉරි 3 (fa-bars) බවට පත් කරන්න
+        // 2. Change the icon back to 3 bars (fa-bars)
         const icon = menuToggle.querySelector('i');
         icon.classList.remove('fa-xmark');
         icon.classList.add('fa-bars');
@@ -108,7 +108,7 @@ let particlesArray;
 let mouse = {
     x: null,
     y: null,
-    radius: 150 // මවුස් එක වටා බලපෑම ඇති වන ප්‍රමාණය
+    radius: 150 //The size of the effect around the mouse
 }
 
 window.addEventListener('mousemove', function(event) {
@@ -116,7 +116,7 @@ window.addEventListener('mousemove', function(event) {
     mouse.y = event.y;
 });
 
-// Particle එකක ස්වභාවය
+// The nature of a particle
 class Particle {
     constructor(x, y, directionX, directionY, size, color) {
         this.x = x;
@@ -126,14 +126,14 @@ class Particle {
         this.size = size;
         this.color = color;
     }
-    // Particle එක ඇඳීම
+    //Drawing the particle
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#38bdf8'; // Particles වල පාට (Sky Blue)
+        ctx.fillStyle = '#38bdf8'; // Particles color (Sky Blue)
         ctx.fill();
     }
-    // තිරය ඇතුළේ චලනය පාලනය
+    // Control movement within the screen
     update() {
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX;
@@ -147,7 +147,7 @@ class Particle {
     }
 }
 
-// Particles සමූහය සෑදීම
+// Creating a group of particles
 function init() {
     particlesArray = [];
     let numberOfParticles = (canvas.height * canvas.width) / 9000;
@@ -163,7 +163,7 @@ function init() {
     }
 }
 
-// එකිනෙක යා කරමින් ඉරි ඇඳීම (Connect function)
+// Draw lines connecting each other (Connect function)
 function connect() {
     let opacityValue = 1;
     for (let a = 0; a < particlesArray.length; a++) {
@@ -184,7 +184,7 @@ function connect() {
     }
 }
 
-// ඇනිමේෂන් එක පවත්වාගෙන යාම
+// Maintaining the animation
 function animate() {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -195,14 +195,14 @@ function animate() {
     connect();
 }
 
-// Window එක resize කරන විට වෙනස් වීම
+// Changes when resizing the window
 window.addEventListener('resize', function() {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
     init();
 });
 
-// මුලින්ම පණ ගැන්වීම
+// First reboot
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 init();
@@ -215,16 +215,16 @@ window.addEventListener("mousemove", function (e) {
     const posX = e.clientX;
     const posY = e.clientY;
 
-    // තිත මවුස් එකත් එක්කම යයි
+   // The dot moves with the mouse.
     cursorDot.style.left = `${posX}px`;
     cursorDot.style.top = `${posY}px`;
 
-    // රවුම මඳක් ප්‍රමද වී smooth ලෙස පස්සෙන් එයි
+  // The circle will be slightly curved and follow smoothly.
     cursorOutline.style.left = `${posX}px`;
     cursorOutline.style.top = `${posY}px`;
 });
 
-// හැම link එකක් සහ WhatsApp button එකක් උඩටම mouse එක ගියපු ගමන් රවුම ලොකු වෙන්න
+// The circle will get bigger as you hover your mouse over every link and WhatsApp button.
 const links = document.querySelectorAll("a, button, .whatsapp-float");
 
 links.forEach(link => {
@@ -236,7 +236,7 @@ links.forEach(link => {
     });
 });
 
-// Smooth Scrolling සඳහා
+//for Smooth Scrolling 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -251,7 +251,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const backToTopButton = document.getElementById("backToTop");
 
-// පිටුව 300px වඩා පහළට Scroll කළහොත් බොත්තම පෙන්වන්න
+// Show button if page scrolls down more than 300px
 window.onscroll = function() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopButton.style.display = "block";
@@ -260,7 +260,7 @@ window.onscroll = function() {
     }
 };
 
-// බොත්තම ක්ලික් කළ විට ඉහළටම යන්න
+// Go to the top when the button is clicked
 backToTopButton.addEventListener("click", function() {
     window.scrollTo({
         top: 0,
@@ -327,7 +327,7 @@ const projectContainer = document.getElementById('project-list');
 function displayProjects() {
     projectContainer.innerHTML = projects.map((project, index) => {
         
-        // Live Button එක තීරණය කරන කොටස
+        // The part that determines the Live Button
         const liveButtonHtml = (project.live && project.live !== "#") 
             ? `<a href="${project.live}" target="_blank" class="link-btn demo">
                    <i class="fa-solid fa-rocket"></i> Live Demo
@@ -360,7 +360,7 @@ function displayProjects() {
     }).join('');
 }
 
-// Function එක call කිරීම
+//Calling the function
 displayProjects();
 
 // Typing Animation Setup
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const dateSpan = document.getElementById('edu-date');
     const currentYear = new Date().getFullYear();
     
-    // සෑම වසරකම ජනවාරි 1 දා සිට වසර ස්වයංක්‍රීයව වෙනස් වේ
+  // The year will automatically change from January 1st of each year
     if (currentYear > 2024) {
         dateSpan.innerText = `2024 - ${currentYear}`;
     }
@@ -397,16 +397,16 @@ function checkConnection() {
     const text = document.getElementById('status-text');
     
     if (navigator.onLine) {
-        badge.className = 'status-badge online'; // CSS එකට ගැළපෙන්න
+        badge.className = 'status-badge online'; //Match CSS
         text.innerText = 'Active';
     } else {
         badge.className = 'status-badge offline';
         text.innerText = 'Offline';
     }
 }
-// පිටුව Load වන විට සහ Connection එක වෙනස් වන විට ක්‍රියාත්මක වේ
+// Fires when the page loads and when the connection changes.
 window.addEventListener('online', checkConnection);
 window.addEventListener('offline', checkConnection);
 
-// ආරම්භයේදී පරීක්ෂා කරන්න
+//Check at startup
 checkConnection();

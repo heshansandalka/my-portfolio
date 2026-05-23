@@ -26,12 +26,12 @@ body {
     transition: 0.3s;
 }
 
-/* කාඩ්පත මත මවුස් එක තැබූ විට චලනය වීමට */
+/*To move when the mouse is placed on the card */
 .hero-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.5); /* Hover වීමේදී දාරය නිල් පැහැ ගැන්වේ */
+    border-color: rgba(56, 189, 248, 0.5); /* The border turns blue on hover. */
 }
-/* About Section එක මැදට ගැනීමට */
+/*To center the About Section */
 #about {
     padding: 100px 5%;
     display: flex;
@@ -44,14 +44,14 @@ body {
     max-width: 100%;
 }
 
-/* කාඩ්පත ලස්සනට තැබීමට */
+/* To place the card beautifully */
 .hero-card {
-    text-align: center; /* අකුරු සහ බොත්තම් මැදට ගැනීමට */
+    text-align: center; /* To center letters and buttons */
     width: 90%;
     margin: 0 auto;
 }
 
-/* බොත්තම් මැදට ගැනීමට */
+/* To center the buttons */
 .hero-btns {
     display: flex;
     justify-content: center;
@@ -70,9 +70,9 @@ body {
     }
 }
 
-/* CSS එක මෙසේ වෙනස් කරන්න */
+/*  CSS  */
 @media (max-width: 768px) {
-    /* hero-image-side වෙනුවට hero-image භාවිතා කරන්න */
+    
     .hero-image {
         width: 100% !important;
         max-width: 100% !important;
@@ -81,7 +81,7 @@ body {
         padding: 0 10px;
     }
 
-    /* hero-image-side img වෙනුවට hero-image img භාවිතා කරන්න */
+    
     .hero-image img {
         width: 100% !important; 
         max-width: 100% !important; 
@@ -94,17 +94,17 @@ body {
     }
 }
 .hero-image {
-    position: relative; /* මෙය ඉතාම වැදගත් */
+    position: relative; 
     display: inline-block;
 }
 .status-badge {
    position: absolute;
-    bottom: 10px;      /* පින්තූරයේ පහළ සිට පරතරය */
-    right: -20px;      /* මෙය වැඩි කිරීමෙන් දකුණු පසට ගෙන යා හැක */
+    bottom: 10px;      /* Spacing from bottom of image */
+    right: -20px;      /* This can be moved to the right by increasing it */
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(15, 23, 42, 0.8); /* තද නිල් පැහැති පසුබිම */
+    background: rgba(15, 23, 42, 0.8); /* Dark blue background */
     padding: 6px 15px;
     border-radius: 50px;
     border: 1px solid rgba(56, 189, 248, 0.3);
@@ -122,13 +122,13 @@ body {
 
 /* Online */
 .status-badge.online .status-dot {
-    background-color: #22c55e; /* කොළ */
+    background-color: #22c55e; 
     box-shadow: 0 0 10px #22c55e;
 }
 
 /* Offline */
 .status-badge.offline .status-dot {
-    background-color: #ef4444; /* රතු */
+    background-color: #ef4444; 
     box-shadow: 0 0 10px #ef4444;
 }
 
@@ -139,13 +139,12 @@ body {
         font-size: 0.75rem;
         right: -10px; 
         bottom: 5px;
-        /* දුරකථනයේදී බැජ් එකේ වර්ණය වෙනස් නොවීමට මෙය වැදගත් */
-        background: rgba(15, 23, 42, 0.9); /* තරමක් තද පැහැයක් */
+        background: rgba(15, 23, 42, 0.9); /* Slightly darker color */
         border: 1px solid rgba(56, 189, 248, 0.5);
     }
     
     .status-dot {
-        width: 10px; /* දුරකථනයට ගැළපෙන ලෙස තිත මඳක් කුඩා කළා */
+        width: 10px; /* Dot to fit the phone */
         height: 10px;
     }
 }
@@ -180,24 +179,24 @@ body {
     transition: 0.3s;
 }
 .edu-date {
-    display: block;                /* මෙය මගින් එය පේළිය පුරාම දිගු වේ */
-    width: 20%;                   /* කාඩ්පතේ සම්පූර්ණ පළල ලබා ගනී */
+    display: block;               /* The line becomes longer */
+    width: 20%;                  /* Full width of the card */
     background: rgba(56, 189, 248, 0.2); 
-    padding: 8px 0;                /* ඉහළ සහ පහළ පෑඩින් පමණක් තබා ගනී */
+    padding: 8px 0;                /* Keeps only top and bottom padding */
     border-radius: 50px; 
     font-size: 0.8rem;
     margin-bottom: 15px;
-    text-align: center;            /* අකුරු මැදට ගැනීමට */
-    box-sizing: border-box;        /* දිගු වීම පාලනය කිරීමට */
+    text-align: center;            /* To center the text */
+    box-sizing: border-box;       /* To control stretching */
 }
 @media (max-width: 768px) {
     .edu-date {
-        width: 60%;         /* දුරකථනයේදී පළල වැඩි වේ (60%) */
-        font-size: 0.75rem; /* අකුරු ප්‍රමාණය තරමක් කුඩා කරයි */
+        width: 60%;         /* Width increases on phone (60%) */
+        font-size: 0.75rem; /* Makes the font size slightly smaller */
     }
 }
 .edu-card:hover {
-    border-color: #818cf8; /* Education walata purple/blue shade ekak */
+    border-color: #818cf8; 
     transform: translateY(-5px);
 }
 
@@ -233,12 +232,12 @@ body {
 
 
     .edu-card h3 {
-        font-size: 1.2rem !important; /* ඔබ ඉල්ලූ පරිදි අකුරු ප්‍රමාණය */
+        font-size: 1.2rem !important;
         line-height: 1.4;
     }
 
     .edu-card p {
-        font-size: 0.9rem !important; /* විස්තරය සඳහා තරමක් කුඩා අකුරු */   
+        font-size: 0.9rem !important; /* Slightly smaller font for description */  
     }
 }
 
@@ -436,8 +435,7 @@ h2 {
         gap: 30px;
         z-index: 1000;
     }
-
-    /* JavaScript මගින් 'active' class එක එකතු වූ විට පෙන්වීමට */
+/* JavaScript to show when the 'active' class is added */
     nav ul.active {
         display: flex !important;
     }
@@ -445,10 +443,10 @@ h2 {
     .menu-icon {
         display: block;
         cursor: pointer;
-        z-index: 1001; /* මෙනුවට වඩා උඩින් තැබීමට */
+        z-index: 1001; /* To place above the menu */
     }
 
-    /* ඉතිරි කොටස් එලෙසම තබන්න */
+    
     nav {
         padding: 10px 25px;
         width: 94%;
@@ -579,17 +577,17 @@ nav ul li a:hover::after {
 /* =========================================
    3. Hero Section
    ========================================= */
-/* බොත්තම් දෙක පිහිටන ආකාරය */
-/* Hero Buttons Container - මැදට ගැනීමට */
+/* How to position the two buttons */
+/* Hero Buttons Container - center */
 .hero-btns {
     display: flex;
     gap: 20px;
     margin-top: 30px;
-    justify-content: center; /* මෙයයි වැදගත්ම කොටස */
+    justify-content: center; 
     align-items: center;
 }
 
-/* බොත්තම් වලට අමතර අලංකරණයක් (කැමති නම්) */
+/* Decoration for buttons */
 .contact-card-btn, .btn-outline {
     border: 2px solid #38bdf8;
     color: #38bdf8;
@@ -605,7 +603,7 @@ nav ul li a:hover::after {
 
 
 
-/* View Work (Outline) බොත්තම */
+/* View Work (Outline) button */
 .btn-outline {
     border: 2px solid #38bdf8;
     color: #38bdf8;
@@ -628,15 +626,14 @@ nav ul li a:hover::after {
     background: rgba(56, 189, 248, 0.1);
     transform: translateY(-5px);
 }
-
-/* Mobile වලදී බොත්තම් මැදට ගැනීමට */
+/* Center the buttons on mobile */
 @media (max-width: 768px) {
     .hero-btns {
         justify-content: center;
         flex-wrap: wrap;
     }
 }
-/* පින්තූරය මැදට ගැනීමට සහ රවුම් හැඩය ඉවත් කිරීමට */
+
 .hero-image img {
     width: 350px;       
     height: auto;
@@ -644,7 +641,7 @@ nav ul li a:hover::after {
     border: none;
     
    
-    /* Floating animation එක නැවත එකතු කිරීම */
+    /* Floating animation  */
     animation: float 3s ease-in-out infinite;
     
     background: transparent;
@@ -653,7 +650,7 @@ nav ul li a:hover::after {
     object-fit: contain;
 }
 
-/* Floating animation එකේ සැකසුම (මෙය CSS එකේ අවසානයට එක් කරන්න) */
+/* Floating animation */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -662,12 +659,12 @@ nav ul li a:hover::after {
 
 
 
-/* Typing Text Container - පින්තූරයට යටින් පරතරයක් සහිතව */
+/* Typing Text Container - */
 .typing-text-container {
     font-size: 1.5rem;
     color: #f8fafc;
     text-align: center;
-    margin-top: 30px; /* පින්තූරයෙන් පහළට පරතරය */
+    margin-top: 30px; /*Gap down from the picture */
     margin-bottom: 20px;
     width: 100%;
 }
@@ -678,10 +675,10 @@ nav ul li a:hover::after {
 }
 
 
-/* Phone සඳහා විශේෂ සැකසුම */
+/* Special setting for Phone */
 @media (max-width: 768px) {
     .typing-text-container {
-        font-size: 1.2rem; /* Phone එකේදී ටිකක් කුඩා අකුරු */
+        font-size: 1.2rem; /*The font is a bit small on the phone */
         margin-top: 20px;
     }
     
@@ -763,26 +760,26 @@ nav ul li a:hover::after {
     color: #0f172a;
 }
 .skill-item i {
-    font-size: 1.5rem; /* අයිකනයේ ප්‍රමාණය */
+    font-size: 1.5rem;/* Icon size */
 }
 .skill-item i {
     font-size: 1.5rem;
-    width: 30px; /* අයිකන සියල්ල එකම පේළියකට ගැනීමට */
+    width: 30px; /*To get all the icons in one row*/
     text-align: center;
 }
 
-/* එක් එක් ලාංඡනයට අදාළ වර්ණ */
+/* Colors associated with each logo */
 .fa-html5 { color: #e34c26; }
 .fa-css3-alt { color: #264de4; }
 .fa-js { color: #f7df1e; }
 .fa-react { color: #61dbfb; }
 
-/* අයිකන වලට වර්ණ එකතු කිරීම */
+
 .fa-php { color: #8993be; }
 .fa-node-js { color: #68a063; }
 .fa-python { color: #3776ab; }
 
-/* වර්ණ ගැන්වීම */
+
 .fa-database { color: #00758f; } /* MySQL Blue */
 .fa-leaf { color: #47a248; }     /* MongoDB Green */
 .fa-github { color: #ffffff; }   /* GitHub White/Black */
@@ -806,17 +803,18 @@ nav ul li a:hover::after {
 /* =========================================
    5. Project Section (Glass Cards)
    ========================================= */
-/* 1. Project Container - පේළියකට 2ක් එන ලෙස සකසා ඇත */
+
+/* 1. Project Container  */
 .project-container {
     display: grid;
-    /* 45% ක් අවම පළල දීමෙන් පේළියකට 2ක් ලැබෙන බව තහවුරු කරයි */
+    /* 45% minimum width  */
     grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
     gap: 30px;
     margin-top: 40px;
     width: 100%;
 }
 
-/* 2. Glass Card - වීදුරු ගතිය (Glass Effect) සමඟ */
+/* 2. Glass Card -(Glass Effect) */
 .glass-card {
     background: rgba(255, 255, 255, 0.03); 
     border: 1px solid rgba(255, 255, 255, 0.1); 
@@ -838,7 +836,7 @@ nav ul li a:hover::after {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* 3. Card Image - උස 180px ලෙස පවත්වාගෙන ඇත */
+/* 3. Card Image - Height 180px */
 .card-image {
     width: 100%;
     height: 180px; 
@@ -903,7 +901,7 @@ nav ul li a:hover::after {
     margin-top: 25px;
 }
 
-/* Mobile Devices - ෆෝන් එකේදී ලස්සනට එක යට එක වැටීමට */
+/* Mobile Devices  */
 @media (max-width: 950px) {
     .project-container {
         grid-template-columns: 1fr;
@@ -1096,7 +1094,7 @@ footer {
         background: rgba(15, 23, 42, 0.98);
         justify-content: center;
         align-items: center;
-        gap: 20px; /* ලැයිස්තු අතර පරතරය */
+        gap: 20px; /* Spacing between lists */
         z-index: 1000;
     }
 
@@ -1104,18 +1102,18 @@ footer {
         display: flex;
     }
 
-    /* Mobile Menu Items - අකුරු සහ වටකුරු හැඩය */
+    /* Mobile Menu Items -Font and round shape */
     nav ul li {
-        width: 80%; /* ලැයිස්තුවට පළලක් ලබා දීම */
+        width: 80%; /* Giving the list a width*/
         text-align: center;
     }
 
     nav ul li a {
         display: block;
         padding: 15px 20px;
-        background: rgba(255, 255, 255, 0.05); /* සැහැල්ලු පසුබිම */
-        border: 1px solid rgba(56, 189, 248, 0.3); /* නිල් පැහැති දාරය */
-        border-radius: 50px; /* වටකුරු හැඩය */
+        background: rgba(255, 255, 255, 0.05); /*Light background*/
+        border: 1px solid rgba(56, 189, 248, 0.3); /* Blue edge */
+        border-radius: 50px; /* Round shape*/
         color: #f8fafc;
         font-size: 1.2rem;
         transition: all 0.3s ease;
@@ -1232,16 +1230,16 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* අන්තර්ගතයට යටින් තැබීමට */
-    background: #0f172a; /* ඔබේ දැනට තියෙන background color එක */
+    z-index: -1; /* To place under content */
+    background: #0f172a; 
     pointer-events: none;
 }
 
 body {
-    cursor: none; /* සාමාන්‍ය මවුස් එක ඉවත් කරයි */
+    cursor: none; /* Removes the regular mouse */
 }
 
-/* මැද කුඩා තිත */
+/* Small dot in the middle */
 .cursor-dot {
     width: 8px;
     height: 8px;
@@ -1255,7 +1253,7 @@ body {
     z-index: 9999;
 }
 
-/* වටේ තියෙන විශාල රවුම */
+/*The big circle around*/
 .cursor-outline {
     width: 40px;
     height: 40px;
@@ -1267,7 +1265,7 @@ body {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9998;
-    transition: all 0.15s ease-out; /* රවුම මවුස් එක පස්සෙන් එන smooth ගතිය */
+    transition: all 0.15s ease-out; /* Smooth movement following the circle mouse */
 }
 body {
     cursor: none;
@@ -1296,7 +1294,7 @@ body {
     text-decoration: none;
 }
 
-/* මවුස් එක Hover වන විට රවුම ලොකු වෙන්න */
+/* The circle gets bigger when the mouse hovers. */
 .cursor-hover {
     width: 70px;
     height: 70px;
@@ -1316,18 +1314,18 @@ body {
     /* 1. සම්පූර්ණ රවුමක් කිරීම */
     border-radius: 50%; 
     
-    /* 2. Transparent Background (වීදුරුවක් වැනි පෙනුම) */
-    background: rgba(255, 255, 255, 0.1); /* ඉතා අඩු සුදු පැහැයක් */
-    backdrop-filter: blur(10px); /* පිටුපස ඇති දේවල් බොඳ කර පෙන්වීමට */
-    
-    /* 3. Border එකක් එක් කිරීම (බොත්තම පෙනෙන්නට) */
+    /* 2. Transparent Background  */
+    background: rgba(255, 255, 255, 0.1); /* Very little white */
+    backdrop-filter: blur(10px); /*To blur the background */
+
+/* 3. Adding a Border (to make the button visible)*/
     border: 2px solid rgba(56, 189, 248, 0.5); 
     
-    color: #38bdf8; /* අයිකනයේ වර්ණය Sky Blue */
+    color: #38bdf8; /* Sky Blue */
     z-index: 999;
     cursor: pointer;
     
-    /* අයිකනය මැදට ගැනීමට */
+    /*To center the icon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1336,12 +1334,12 @@ body {
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
-/* Hover කළ විට පෙනුම */
+/* Appearance on hover */
 #backToTop:hover {
-    background: rgba(56, 189, 248, 0.2); /* මඳක් නිල් පාට විනිවිද පෙනෙන ස්වභාවය */
+    background: rgba(56, 189, 248, 0.2); /*Slightly blue transparent nature */
     border-color: #38bdf8;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
-    color: #ffffff; /* Hover කළ විට ඊතලය සුදු වේ */
+    color: #ffffff; /*The arrow turns white when hovered */
 }
 
