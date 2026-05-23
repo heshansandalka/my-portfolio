@@ -308,13 +308,35 @@ const projects = [
         badge: "Live"
     }
 
+    ,
+    {
+        title: "Hyperlocal Weather Impact & Community Alert(Pending Group Project)",
+        description: "Pending Group  Project",
+        image: "ad.jpeg",
+        tech: ["React","HTML", "CSS", "JS","Json","Fire Base"],
+        Pending: "#",
+        github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
+        badge: "Live"
+    }
+
     
 ];
 
 const projectContainer = document.getElementById('project-list');
 
 function displayProjects() {
-    projectContainer.innerHTML = projects.map((project, index) => `
+    projectContainer.innerHTML = projects.map((project, index) => {
+        
+        // Live Button එක තීරණය කරන කොටස
+        const liveButtonHtml = (project.live && project.live !== "#") 
+            ? `<a href="${project.live}" target="_blank" class="link-btn demo">
+                   <i class="fa-solid fa-rocket"></i> Live Demo
+               </a>`
+            : `<button class="link-btn demo" style="background: #ef4444; cursor: not-allowed; border: none;">
+                   <i class="fa-solid fa-clock"></i> Pending
+               </button>`;
+
+        return `
         <div class="glass-card" data-aos="fade-up" data-aos-delay="${index * 200}">
             <div class="card-image">
                 <img src="${project.image}" alt="${project.title}">
@@ -330,13 +352,12 @@ function displayProjects() {
                     <a href="${project.github}" target="_blank" class="link-btn github">
                         <i class="fa-brands fa-github"></i> Code
                     </a>
-                    <a href="${project.live}" target="_blank" class="link-btn demo">
-                        <i class="fa-solid fa-rocket"></i> Live Demo
-                    </a>
+                    ${liveButtonHtml}
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Function එක call කිරීම
