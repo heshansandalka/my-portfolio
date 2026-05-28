@@ -789,7 +789,10 @@ nav ul li a:hover::after {
 
 
 
-.fa-database { color: #00758f; } /* MySQL Blue */
+
+.mysql-color { color: #00758f; }
+.mysql-orange { color: #f29111;/* MySQL Blue */
+
 .fa-leaf { color: #47a248; }     /* MongoDB Green */
 .fa-github { color: #ffffff; }   /* GitHub White/Black */
 .fa-code { color: #007acc; }     /* VS Code Blue */
