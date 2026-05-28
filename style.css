@@ -793,6 +793,12 @@ nav ul li a:hover::after {
 .fa-sql-server {
     color: #cc2927; /* SQL Server සඳහා වන නිල වර්ණය */
 }
+.skill-logo {
+    width: 24px;   
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
 .fa-c {color: #A8B9CC;}
 .fa-leaf { color: #47a248; }     /* MongoDB Green */
