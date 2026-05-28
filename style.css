@@ -782,6 +782,10 @@ nav ul li a:hover::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.fa-c {
+    color: #A8B9CC;
+}
+
 
 
 
