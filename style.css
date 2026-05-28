@@ -782,23 +782,19 @@ nav ul li a:hover::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.fa-c {
-    color: #A8B9CC;
-}
-
-
-
-
-
-/* CSS */
-.mysql-icon {
-    /* නිල් සහ තැඹිලි මිශ්‍රණය */
+/* MySQL Icon Color */
+.fa-mysql {
     background: linear-gradient(to right, #00758f, #f29111);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 24px; /* ඔබට අවශ්‍ය ප්‍රමාණය */
 }
 
+/* SQL Server Icon Color */
+.fa-sql-server {
+    color: #cc2927; /* SQL Server සඳහා වන නිල වර්ණය */
+}
+
+.fa-c {color: #A8B9CC;}
 .fa-leaf { color: #47a248; }     /* MongoDB Green */
 .fa-github { color: #ffffff; }   /* GitHub White/Black */
 .fa-code { color: #007acc; }     /* VS Code Blue */
