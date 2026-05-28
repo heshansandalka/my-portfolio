@@ -420,9 +420,9 @@ h2 {
 
 /* --- Mobile Responsive --- */
 @media (max-width: 768px) {
-    /* මෙනුව සැඟවීමට සහ පෙන්වීමට CSS */
+    /* CSS to hide and show the menu */
     nav ul {
-        display: none; /* මුලින් සැඟවේ */
+        display: none; /* Hide at first */
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -777,7 +777,12 @@ nav ul li a:hover::after {
 
 .fa-php { color: #8993be; }
 .fa-node-js { color: #68a063; }
-.fa-python { color: #3776ab; }
+.fa-python {
+    background: linear-gradient(to bottom, #3776ab 50%, #ffd43b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 
 .fa-database { color: #00758f; } /* MySQL Blue */
