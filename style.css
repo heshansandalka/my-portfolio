@@ -790,8 +790,14 @@ nav ul li a:hover::after {
 
 
 
-.fa-mysql-color { color: #00758f; }
-.fa-mysql-orange { color: #f29111;/* MySQL Blue */
+/* CSS */
+.mysql-icon {
+    /* නිල් සහ තැඹිලි මිශ්‍රණය */
+    background: linear-gradient(to right, #00758f, #f29111);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 24px; /* ඔබට අවශ්‍ය ප්‍රමාණය */
+}
 
 .fa-leaf { color: #47a248; }     /* MongoDB Green */
 .fa-github { color: #ffffff; }   /* GitHub White/Black */
