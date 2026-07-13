@@ -314,7 +314,7 @@ const projects = [
         description: "Hyperlocal Weather Impact & Community Alert(Pending Group  Project)",
         image: "adf6.png",
         tech: ["React","HTML", "CSS", "JS","Json","FireBase"],
-        Pending: "#",
+        live: "https://hyperlocal-weather-impact-and-commu-three.vercel.app/login",
         github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
         badge: "Live"
     }
