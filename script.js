@@ -310,8 +310,8 @@ const projects = [
 
     ,
     {
-        title: "Hyperlocal Weather App(Pending Group Project)",
-        description: "Hyperlocal Weather Impact & Community Alert( Group  Project)",
+        title: "Hyperlocal Weather App(Group Project)",
+        description: "Hyperlocal Weather Impact & Community Alert(Group  Project)",
         image: "adf6.png",
         tech: ["React","HTML", "CSS", "JS","Json","FireBase"],
         live: "https://hyperlocal-weather-impact-and-commu-three.vercel.app/login",
