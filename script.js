@@ -317,7 +317,17 @@ const projects = [
         live: "https://hyperlocal-weather-impact-and-commu-three.vercel.app/login",
         github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
         badge: "Live"
-    }
+    },
+
+    {
+    "title": "Health & Wellness App",
+    "description": "A modern mobile application built with Flutter for health tracking and wellness advice.",
+    "image": "health_app_image.png",
+    "tech": ["Flutter", "Dart", "Android"],
+    "live": "YOUR_APK_DIRECT_DOWNLOAD_LINK_HERE",
+    "github": "https://github.com/your-username/health_wellness_app",
+    "badge": "APK"
+}
 
     
 ];
