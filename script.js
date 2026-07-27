@@ -322,11 +322,11 @@ const projects = [
     {
     "title": "Health & Wellness App",
     "description": "A modern mobile application built with Flutter for health tracking and wellness advice.",
-    "image": "health_app_image.png",
+    "image": "adf7.png",
     "tech": ["Flutter", "Dart", "Android"],
-    "live": "YOUR_APK_DIRECT_DOWNLOAD_LINK_HERE",
-    "github": "https://github.com/your-username/health_wellness_app",
-    "badge": "APK"
+    "live": "https://drive.google.com/file/d/1gcYqMEAHE1Awct3BgcX4MwwPzu2wpuQq/view?usp=drivesdk",
+    "github": "https://github.com/heshansandalka/health_wellness_app",
+    "badge": "APK Install"
 }
 
     
@@ -338,9 +338,11 @@ function displayProjects() {
     projectContainer.innerHTML = projects.map((project, index) => {
         
         // The part that determines the Live Button
+        const liveButtonLabel = project.badge === "APK Install" ? "APK Install" : "Live Demo";
+        const liveButtonIcon = project.badge === "APK Install" ? "fa-download" : "fa-rocket";
         const liveButtonHtml = (project.live && project.live !== "#") 
             ? `<a href="${project.live}" target="_blank" class="link-btn demo">
-                   <i class="fa-solid fa-rocket"></i> Live Demo
+                   <i class="fa-solid ${liveButtonIcon}"></i> ${liveButtonLabel}
                </a>`
             : `<button class="link-btn demo" style="background: #ef4444; cursor: not-allowed; border: none;">
                    <i class="fa-solid fa-clock"></i> Pending
