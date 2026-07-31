@@ -711,6 +711,29 @@ nav ul li a:hover::after {
     transform: translateY(-3px);
 }
 
+/* Make hero buttons identical size */
+.hero-btns .contact-card-btn,
+.hero-btns .btn-outline,
+.hero-btns .btn {
+    width: 220px; /* same fixed width for visual consistency */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .hero-btns .contact-card-btn,
+    .hero-btns .btn-outline,
+    .hero-btns .btn {
+        width: 100%;
+        max-width: none;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
 /* =========================================
    4. Skills Section
    ========================================= */
