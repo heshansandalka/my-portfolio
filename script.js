@@ -1,41 +1,36 @@
 // 1. Enable AOS (Animate On Scroll)
-// This makes the elements look nice when you scroll down the website.
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
-        duration: 700, // Reduced animation duration for better performance.
-        once: true,    // Show the animation only once
+        duration: 700,
+        once: true,
         easing: 'ease-in-out',
     });
 });
 
-// 2. EmailJS Config (to receive messages in your Gmail)
+// 2. EmailJS Config
 (function() {
-    //Enter your EmailJS Public Key here.
     emailjs.init("zEDA7fLYScvC8_Nnt"); 
 })();
 
-// 3. Controlling the Contact Form
+// 3. Contact Form
 const contactForm = document.getElementById('contact-form');
 const sendBtn = document.getElementById('send-btn');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevents page refresh
+        event.preventDefault();
 
-        // Changing the appearance of the button
         sendBtn.innerHTML = "Sending... <i class='fa-solid fa-spinner fa-spin'></i>";
         sendBtn.style.opacity = "0.7";
         sendBtn.disabled = true;
 
-        // Sending the message via EmailJS
-        // Enter YOUR_SERVICE_ID and YOUR_TEMPLATE_ID correctly
         emailjs.sendForm('service_mrtx1k4', 'template_7e6ruba', this)
             .then(() => {
                 alert('Thank you! Your message was successfully received..');
                 sendBtn.innerHTML = "Send Message <i class='fa-solid fa-paper-plane'></i>";
                 sendBtn.style.opacity = "1";
                 sendBtn.disabled = false;
-                contactForm.reset(); // Clears the form
+                contactForm.reset();
             }, (error) => {
                 alert('Sorry, the message could not be sent. Please try again.');
                 console.error('EmailJS Error:', error);
@@ -46,7 +41,7 @@ if (contactForm) {
     });
 }
 
-// Smooth Scroll with Navbar Offset
+// 4. Smooth Scroll with Navbar Offset
 document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -58,7 +53,7 @@ document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
 
         const nav = document.querySelector('nav');
         const navHeight = nav ? nav.offsetHeight : 80;
-        const offset = navHeight + 20; // Extra 20px padding
+        const offset = navHeight + 20;
 
         const rect = target.getBoundingClientRect();
         window.scrollTo({
@@ -68,37 +63,69 @@ document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
     });
 });
 
-// 5. Keep the navbar fixed and visible while scrolling
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('main-nav');
-    if (!nav) return;
-    nav.style.background = "rgba(15, 23, 42, 0.95)";
+// 5. Navbar Scroll Effect & Active Link
+const navbar = document.querySelector('nav');
+const sections = document.querySelectorAll('section, #home');
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// ✅ 
+window.addEventListener('scroll', function() {
+    // Scroll Effect
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
+// Active Link Highlighting
+const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+// 6. Mobile Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-// Show/hide the menu when the icon is clicked
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Change the icon to 'X' (Close) (Optional)
-    const icon = menuToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-});
-
-// ** NEW: Close mobile menu when a link is clicked **
-document.querySelectorAll('#nav-menu li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
         const icon = menuToggle.querySelector('i');
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
     });
-});
 
-// ====== Background Canvas ======
+    document.querySelectorAll('#nav-menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        });
+    });
+}
+
+// 7. Background Canvas
 const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
 
@@ -110,7 +137,6 @@ function resizeBGCanvas() {
 
 function drawGlassBackground() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     gradient.addColorStop(0, 'rgba(10, 16, 32, 0.98)');
     gradient.addColorStop(1, 'rgba(7, 11, 24, 1)');
@@ -119,56 +145,53 @@ function drawGlassBackground() {
 }
 
 window.addEventListener('resize', resizeBGCanvas);
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 drawGlassBackground();
 
-// ====== Custom Cursor ======
+// 8. Custom Cursor
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 
-window.addEventListener("mousemove", function (e) {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    cursorOutline.style.left = `${posX}px`;
-    cursorOutline.style.top = `${posY}px`;
-});
-
-const links = document.querySelectorAll("a, button, .whatsapp-float");
-
-links.forEach(link => {
-    link.addEventListener("mouseenter", () => {
-        cursorOutline.classList.add("cursor-hover");
+if (cursorDot && cursorOutline) {
+    window.addEventListener("mousemove", function(e) {
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+        cursorOutline.style.left = e.clientX + 'px';
+        cursorOutline.style.top = e.clientY + 'px';
     });
-    link.addEventListener("mouseleave", () => {
-        cursorOutline.classList.remove("cursor-hover");
-    });
-});
 
-// ====== Back to Top Button ======
+    document.querySelectorAll("a, button, .whatsapp-float").forEach(link => {
+        link.addEventListener("mouseenter", () => {
+            cursorOutline.classList.add("cursor-hover");
+        });
+        link.addEventListener("mouseleave", () => {
+            cursorOutline.classList.remove("cursor-hover");
+        });
+    });
+}
+
+// 9. Back to Top Button
 const backToTopButton = document.getElementById("backToTop");
 
-window.onscroll = function() {
+window.addEventListener('scroll', function() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopButton.style.display = "block";
     } else {
         backToTopButton.style.display = "none";
     }
-};
-
-backToTopButton.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 });
 
-// ====== Projects Data ======
+if (backToTopButton) {
+    backToTopButton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
+
+// 10. Projects Data
 const projects = [
     {
         title: "CineMate Movie App",
@@ -266,7 +289,7 @@ function displayProjects() {
 
 displayProjects();
 
-// ====== Typing Animation ======
+// 11. Typing Animation
 document.addEventListener('DOMContentLoaded', () => {
     new Typed('.typing-text', {
         strings: [
@@ -282,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ====== Education Date Auto-Update ======
+// 12. Education Date Auto-Update
 document.addEventListener("DOMContentLoaded", function() {
     const dateSpan = document.getElementById('edu-date');
     const currentYear = new Date().getFullYear();
@@ -292,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// ====== Online/Offline Status ======
+// 13. Online/Offline Status
 function checkConnection() {
     const badge = document.getElementById('status-badge');
     const text = document.getElementById('status-text');
@@ -310,7 +333,7 @@ window.addEventListener('online', checkConnection);
 window.addEventListener('offline', checkConnection);
 checkConnection();
 
-// ====== Split Main Words (white & green) ======
+// 14. Split Main Words (white & green)
 function escapeHtml(str) {
     return String(str)
         .replace(/&/g, '&amp;')
