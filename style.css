@@ -278,6 +278,14 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
+/* Restore logo color explicitly (keep original gradient) */
+.logo, .logo-text {
+    background: linear-gradient(90deg, #38bdf8, #818cf8) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -1397,6 +1405,56 @@ nav ul li a:hover::after {
     box-shadow: none;
     overflow: visible;
 }
+
+/* Final overrides: force full dark-green background and green lines/accents
+   Keep `.logo-text` unchanged. These rules come last to override earlier blues. */
+:root {
+    --full-green-1: #043226; /* deep dark green */
+    --full-green-2: #0f6e58; /* accent green */
+}
+
+body {
+    background: linear-gradient(180deg, #021d16 0%, var(--full-green-1) 100%) !important;
+    background-image: none !important;
+    color: #eafef4 !important;
+}
+
+/* Panels and cards */
+.hero-card, .glass-card, .edu-card, .skill-category, .contact-card, .hero-code-panel {
+    background: rgba(2, 20, 16, 0.6) !important;
+    border-color: rgba(10, 90, 70, 0.18) !important;
+    box-shadow: 0 10px 30px rgba(4, 80, 60, 0.06) !important;
+}
+
+/* Underlines, borders and interactive accents */
+nav ul li a::after,
+.glass-card:hover, .glass-card:hover .card-image img,
+.skill-category:hover, .link-btn.demo:hover, .link-btn.github:hover,
+.badge, .card-links .link-btn.demo, .card-links .link-btn.github {
+    box-shadow: 0 0 12px var(--full-green-2) !important;
+}
+
+nav ul li a::after { background: var(--full-green-2) !important; }
+.stat-card span, .panel-label, .highlight, .typing-text, .skill-item, .skill-item i {
+    color: var(--full-green-2) !important;
+}
+
+/* Replace blue backgrounds for skill items and buttons */
+.skill-item { background: rgba(15,110,88,0.06) !important; border-color: rgba(15,110,88,0.12) !important; }
+.skill-item:hover { background: var(--full-green-2) !important; color: #021d16 !important; }
+
+.btn, .btn-outline, .contact-card-btn, .link-btn.demo { background: linear-gradient(90deg, var(--full-green-2), var(--full-green-1)) !important; border-color: rgba(15,110,88,0.12) !important; color: #021d16 !important; }
+
+.card-image::before { background: linear-gradient(180deg, rgba(2,18,16,0.12), rgba(2,18,16,0.7)) !important; }
+
+.badge { border-color: rgba(15,110,88,0.22) !important; box-shadow: 0 18px 40px rgba(7,90,70,0.06) !important; }
+
+/* Form inputs and separators */
+input, textarea { background: rgba(2, 20, 18, 0.35) !important; border: 1px solid rgba(15,110,88,0.12) !important; color: #eafef4 !important; }
+hr { border-color: rgba(15,110,88,0.12) !important; }
+
+/* Keep logo color / gradient intact by not selecting `.logo-text` here */
+
 
 .contact-left {
     flex: 1;
