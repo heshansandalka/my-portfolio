@@ -713,12 +713,49 @@ nav ul li a:hover::after {
     color: #ffffff;
 }
 
+/* Make the split halves of the hero name slightly larger */
+.hero-title-name.main-word { display: inline-block; }
+.hero-title-name.main-word .first,
+.hero-title-name.main-word .second {
+    display: inline-block;
+    font-size: 1.12em; /* a bit larger than the base name */
+    font-weight: 900;
+}
+.hero-title-name.main-word .second {
+    color: #2ecc71; /* green for the second half */
+    margin-left: 0.18rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title-name.main-word .first,
+    .hero-title-name.main-word .second {
+        font-size: 1.06em; /* reduce on small screens */
+    }
+}
+
 .hero-description-hero {
     max-width: 560px;
     color: #cbd5e1;
     line-height: 1.8;
     font-size: 1.05rem;
     margin-top: 10px;
+}
+
+/* Small green 'a' in the typing line */
+/* Dark green prefix 'I am a' in the typing line */
+.typing-text-container .static-green {
+    color: #2ecc71; /* darker green */
+    font-weight: 800;
+    font-size: 0.98em;
+    display: inline-block;
+    margin-right: 0.24rem;
+    transform: translateY(0.02em);
+}
+
+@media (max-width: 768px) {
+    .typing-text-container .static-green {
+        font-size: 1.02em; /* slightly larger on small screens for readability */
+    }
 }
 
 

@@ -328,3 +328,39 @@ window.addEventListener('offline', checkConnection);
 
 //Check at startup
 checkConnection();
+
+// 6. Split main words into two spans: first half white, second half green
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function splitMainWords() {
+    document.querySelectorAll('.main-word').forEach(el => {
+        const text = el.textContent.trim();
+        if (!text) return;
+
+        // If the text contains a space (e.g. "First Last"), split on the first space
+        // so initials like "A" attach to the second (green) half.
+        let first = '';
+        let second = '';
+        const parts = text.split(/\s+/);
+        if (parts.length > 1) {
+            first = parts.shift();
+            second = parts.join(' ');
+        } else {
+            const len = text.length;
+            const mid = Math.ceil(len / 2);
+            first = text.slice(0, mid);
+            second = text.slice(mid);
+        }
+
+        el.innerHTML = `<span class="first">${escapeHtml(first)}</span> <span class="second">${escapeHtml(second)}</span>`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', splitMainWords);
