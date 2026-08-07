@@ -1311,6 +1311,10 @@ footer {
     background: #0077b5;
 }
 
+.instagram-card .contact-card-icon {
+    background: radial-gradient(135deg, #feda75, #d62976 30%, #962fbf 60%, #4f5bd5 100%);
+}
+
 .facebook-card .contact-card-icon {
     background: #1877f2;
 }
@@ -1333,6 +1337,33 @@ footer {
 @media (max-width: 768px) {
     .contact-cards {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-card {
+        padding: 18px 22px;
+        border-radius: 20px;
+        gap: 14px;
+        min-height: 90px;
+    }
+
+    .contact-card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+    }
+
+    .contact-card-content {
+        text-align: left;
+        flex: 1;
+    }
+
+    .contact-card-content h4 {
+        margin-bottom: 4px;
+    }
+
+    .contact-left {
+        text-align: left;
     }
 }
 
