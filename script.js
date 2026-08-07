@@ -2,7 +2,7 @@
 // This makes the elements look nice when you scroll down the website.
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
-        duration: 1000, // The animation runs for 1 second.
+        duration: 700, // Reduced animation duration for better performance.
         once: true,    // Show the animation only once
         easing: 'ease-in-out',
     });
@@ -114,28 +114,10 @@ function drawGlassBackground() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, 'rgba(15, 23, 42, 0.95)');
-    gradient.addColorStop(0.4, 'rgba(15, 23, 42, 0.92)');
-    gradient.addColorStop(1, 'rgba(7, 10, 25, 0.98)');
+    gradient.addColorStop(0, 'rgba(10, 16, 32, 0.98)');
+    gradient.addColorStop(1, 'rgba(7, 11, 24, 1)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    function drawGlow(x, y, radius, color, alpha) {
-        ctx.save();
-        ctx.globalCompositeOperation = 'screen';
-        ctx.fillStyle = `rgba(${color}, ${alpha})`;
-        ctx.shadowBlur = radius * 1.1;
-        ctx.shadowColor = `rgba(${color}, ${alpha * 0.7})`;
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-    }
-
-    drawGlow(canvas.width * 0.22, canvas.height * 0.18, 220, '79, 70, 229', 0.18);
-    drawGlow(canvas.width * 0.78, canvas.height * 0.12, 180, '14, 165, 233', 0.14);
-    drawGlow(canvas.width * 0.65, canvas.height * 0.75, 240, '15, 23, 42', 0.16);
-    drawGlow(canvas.width * 0.38, canvas.height * 0.62, 160, '255, 255, 255', 0.04);
 }
 
 window.addEventListener('resize', resizeBGCanvas);

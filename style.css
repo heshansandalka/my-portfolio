@@ -11,13 +11,17 @@ html {
 }
 
 body {
-    background: radial-gradient(circle at 20% 15%, rgba(30, 41, 59, 0.85), transparent 15%),
-                radial-gradient(circle at 85% 10%, rgba(79, 70, 229, 0.16), transparent 14%),
-                radial-gradient(circle at 70% 80%, rgba(14, 165, 233, 0.10), transparent 18%),
-                linear-gradient(180deg, #020617, #0f172a);
+    background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
+    background-image:
+        radial-gradient(circle at 15% 14%, rgba(56, 189, 248, 0.08), transparent 18%),
+        radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
+    background-blend-mode: overlay;
+    background-attachment: fixed;
     color: #f8fafc;
     line-height: 1.6;
     overflow-x: hidden;
+    min-height: 100vh;
+    backdrop-filter: blur(6px);
 }
 .hero-card {
    background: rgba(255, 255, 255, 0.03);
@@ -497,11 +501,18 @@ h2 {
 }
 
 body {
-    background: #0f172a;
+    background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
+    background-image:
+        radial-gradient(circle at 15% 14%, rgba(56, 189, 248, 0.08), transparent 18%),
+        radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
+    background-blend-mode: overlay;
+    background-attachment: fixed;
     color: #f8fafc;
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    backdrop-filter: blur(6px);
 }
 
 section {
@@ -1066,20 +1077,20 @@ nav ul li a:hover::after {
     display: flex;
     max-width: 1050px;
     margin: 40px auto 0;
-    background: #1e293b;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    gap: 30px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
 }
 
 .contact-left {
     flex: 1;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    padding: 50px;
+    background: transparent;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: left;
 }
 
@@ -1102,7 +1113,10 @@ nav ul li a:hover::after {
 .modern-form {
     flex: 1.4;
     padding: 50px;
-    background: #111827;
+    background: rgba(15, 23, 42, 0.95);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
 .modern-form input, 
@@ -1255,56 +1269,71 @@ footer {
         justify-content: center;
     }
 }
-/* Container settings */
-.contact-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* Contact card grid */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
-/* Base button style */
-.btn-icon {
+.contact-card {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 25px;
-    border-radius: 12px;
+    gap: 16px;
+    padding: 5px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-decoration: none;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: #f8fafc;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* LinkedIn specific color */
-.linkedin {
-    background-color: #0077b5;
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
 }
 
-/* GitHub specific color */
-.github {
-    background-color: #333;
-}
-
-
-/* Icon size */
-.btn-icon i {
+.contact-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
     font-size: 1.5rem;
+    color: #fff;
 }
 
-/* Hover effects */
-.btn-icon:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.1);
+.linkedin-card .contact-card-icon {
+    background: #0077b5;
 }
 
-/* Active effect when clicking */
-.btn-icon:active {
-    transform: translateY(0);
+.facebook-card .contact-card-icon {
+    background: #1877f2;
+}
+
+.github-card .contact-card-icon {
+    background: #111;
+}
+
+.contact-card-content h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contact-card-content p {
+    margin: 5px 0 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 #bg-animation {
@@ -1313,36 +1342,10 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -3; /* Place behind the glass overlays */
+    z-index: -1;
     background: transparent;
     pointer-events: none;
-}
-
-body {
-    cursor: none; /* Removes the regular mouse */
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    pointer-events: none;
-    z-index: -2;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.08), transparent 10%),
-                radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.12), transparent 8%),
-                radial-gradient(circle at 60% 80%, rgba(14, 165, 233, 0.08), transparent 12%),
-                linear-gradient(180deg, rgba(15, 23, 42, 0.18), rgba(7, 10, 25, 0.45));
-    pointer-events: none;
-    z-index: -1;
+    opacity: 0.95;
 }
 
 /* Small dot in the middle */
@@ -1372,9 +1375,6 @@ body::after {
     pointer-events: none;
     z-index: 9998;
     transition: all 0.15s ease-out; /* Smooth movement following the circle mouse */
-}
-body {
-    cursor: none;
 }
 
 
