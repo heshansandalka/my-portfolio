@@ -659,10 +659,7 @@ nav ul li a:hover::after {
     }
 }
 
-.hero {
-    padding-top: 140px;
-    padding-bottom: 120px;
-}
+
 
 .hero-container {
     display: flex;
@@ -723,6 +720,8 @@ nav ul li a:hover::after {
     font-size: 1.05rem;
     margin-top: 10px;
 }
+
+
 
 @media (max-width: 768px) {
     .hero-title-name {
@@ -867,6 +866,7 @@ nav ul li a:hover::after {
     .hero-right {
         display: contents;
     }
+    
 
     .hero-image {
         order: 1;
