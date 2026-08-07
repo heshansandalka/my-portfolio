@@ -10,15 +10,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Ensure fragment/anchor navigation and smooth scrolling account for the fixed navbar */
-html { scroll-padding-top: 140px; }
-section { scroll-margin-top: 140px; }
-
-/* Mobile: smaller top offset to match compact navbar */
-@media (max-width: 768px) {
-    html { scroll-padding-top: 80px; }
-    section { scroll-margin-top: 80px; }
-}
 
 body {
     background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
@@ -249,95 +240,7 @@ body {
     }
 }
 
-/* --- Modern Floating Navbar --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 8%;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    position: fixed;
-    top: 20px;
-    left: 5%;
-    right: 5%;
-    width: 90%;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    z-index: 2000;
-    transition: all 0.4s ease;
-}
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(90deg, #3ddc84, #0f6e58);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.logo,
-.logo-text {
-    background: linear-gradient(90deg, #3ddc84, #0f6e58) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    color: transparent !important;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #94a3b8;
-    font-size: 0.95rem;
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #22c55e;
-    transition: width 0.3s ease;
-    box-shadow: 0 0 10px #22c55e;
-}
-
-nav ul li a:hover {
-    color: var(--full-green-2);
-}
-
-nav ul li a.active,
-nav ul li a:focus {
-    color: var(--full-green-2);
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-nav ul li a.active::after {
-    width: 100%;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 1.8rem;
-    color: #22c55e;
-    cursor: pointer;
-}
 
 @keyframes floating {
     0%, 100% { transform: translateY(0); }

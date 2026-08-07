@@ -46,8 +46,7 @@ if (contactForm) {
     });
 }
 
-// 4. Smooth Scrolling (for navigation links) – with dynamic navbar offset
-// (This replaces the old scrollIntoView code)
+// Smooth Scroll with Navbar Offset
 document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -57,14 +56,10 @@ document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
 
         e.preventDefault();
 
-        // Get the actual height of the fixed navbar
         const nav = document.querySelector('nav');
         const navHeight = nav ? nav.offsetHeight : 80;
+        const offset = navHeight + 20; // Extra 20px padding
 
-        // Add a small extra padding (10px) for visual comfort
-        const offset = navHeight + 10;
-
-        // Calculate the target’s position and scroll to it
         const rect = target.getBoundingClientRect();
         window.scrollTo({
             top: rect.top + window.scrollY - offset,
