@@ -114,7 +114,7 @@ body {
     background: rgba(15, 23, 42, 0.8); /* Dark blue background */
     padding: 6px 15px;
     border-radius: 50px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    border: 1px solid #22c55e(56, 189, 248, 0.3);
     backdrop-filter: blur(10px);
     font-size: 0.85rem;
     z-index: 10;
@@ -147,7 +147,7 @@ body {
         right: -10px; 
         bottom: 5px;
         background: rgba(15, 23, 42, 0.9); /* Slightly darker color */
-        border: 1px solid rgba(56, 189, 248, 0.5);
+        border: 1px solid #22c55e(56, 189, 248, 0.5);
     }
     
     .status-dot {
@@ -188,7 +188,7 @@ body {
 .edu-date {
     display: block;               /* The line becomes longer */
     width: 20%;                  /* Full width of the card */
-    background: rgba(56, 189, 248, 0.2); 
+    background: #22c55e(56, 189, 248, 0.2); 
     padding: 8px 0;                /* Keeps only top and bottom padding */
     border-radius: 50px; 
     font-size: 0.8rem;
@@ -273,14 +273,14 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    background: linear-gradient(90deg, #3ddc84, #0f6e58);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 /* Restore logo color explicitly (keep original gradient) */
 .logo, .logo-text {
-    background: linear-gradient(90deg, #38bdf8, #818cf8) !important;
+    background: linear-gradient(90deg, #3ddc84, #0f6e58) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     color: transparent !important;
@@ -371,7 +371,7 @@ h2 {
 .skill-category:hover {
     border-color: #38bdf8;
     transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.05);
+    background: #22c55e(56, 189, 248, 0.05);
 }
 
 .skills-list {
@@ -381,12 +381,12 @@ h2 {
 }
 
 .skill-item {
-    background: rgba(56, 189, 248, 0.1);
+    background: #22c55e(56, 189, 248, 0.1);
     color: #38bdf8;
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid #22c55e(56, 189, 248, 0.2);
     transition: 0.3s;
 }
 
@@ -403,8 +403,8 @@ h2 {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #22c55e(255, 255, 255, 0.03);
+    border: 1px solid #22c55e(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
     transition: 0.4s ease;
@@ -414,7 +414,7 @@ h2 {
 .glass-card:hover {
     transform: translateY(-10px);
     border-color: #38bdf8;
-    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 20px 40px #22c55e(56, 189, 248, 0.15);
 }
 
 .card-image img {
@@ -444,7 +444,7 @@ h2 {
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(15, 23, 42, 0.98);
+        background: #22c55e(15, 23, 42, 0.98);
         justify-content: center;
         align-items: center;
         gap: 30px;
@@ -509,10 +509,10 @@ h2 {
 }
 
 body {
-    background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
+    background: linear-gradient(180deg, #22c55e(10, 16, 32, 0.96), #22c55e(7, 11, 24, 1));
     background-image:
-        radial-gradient(circle at 15% 14%, rgba(56, 189, 248, 0.08), transparent 18%),
-        radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
+        radial-gradient(circle at 15% 14%, #22c55e(56, 189, 248, 0.08), transparent 18%),
+        radial-gradient(circle at 80% 18%, #22c55e(139, 92, 246, 0.06), transparent 20%);
     background-blend-mode: overlay;
     background-attachment: fixed;
     color: #f8fafc;
@@ -536,7 +536,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 8%;
-    background: rgba(15, 23, 42, 0.7);
+    background: #22c55e(15, 23, 42, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     position: fixed;
@@ -545,8 +545,8 @@ nav {
     right: 5%;
     width: 90%;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #22c55e(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px #22c55e(0, 0, 0, 0.3);
     z-index: 2000;
     transition: all 0.4s ease;
 }
@@ -651,12 +651,12 @@ nav ul li a:hover::after {
 
 .contact-card-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 15px 30px #22c55e(56, 189, 248, 0.4);
     filter: brightness(1.1);
 }
 
 .btn-outline:hover {
-    background: rgba(56, 189, 248, 0.1);
+    background: #22c55e(56, 189, 248, 0.1);
     transform: translateY(-5px);
 }
 /* Center the buttons on mobile */
@@ -752,12 +752,17 @@ nav ul li a:hover::after {
 /* Small green 'a' in the typing line */
 /* Dark green prefix 'I am a' in the typing line */
 .typing-text-container .static-green {
-    color: #2ecc71; /* darker green */
+    color: #f8fafc; /* keep prefix white */
     font-weight: 800;
     font-size: 0.98em;
     display: inline-block;
     margin-right: 0.24rem;
     transform: translateY(0.02em);
+}
+
+.typing-text {
+    color: var(--full-green-2);
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -781,8 +786,8 @@ nav ul li a:hover::after {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #22c55e(255, 255, 255, 0.04);
+    border: 1px solid #22c55e(255, 255, 255, 0.1);
     padding: 24px 20px;
     border-radius: 20px;
     backdrop-filter: blur(14px);
@@ -791,7 +796,7 @@ nav ul li a:hover::after {
 
 .stat-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(56, 189, 248, 0.4);
+    border-color: #22c55e(56, 189, 248, 0.4);
 }
 
 .stat-card span {
@@ -818,12 +823,12 @@ nav ul li a:hover::after {
 .hero-code-panel {
     width: 100%;
     max-width: 460px;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.18);
+    background: #22c55e(15, 23, 42, 0.9);
+    border: 1px solid #22c55e(56, 189, 248, 0.18);
     border-radius: 24px;
     padding: 24px 22px;
     color: #e2e8f0;
-    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 40px #22c55e(255, 255, 255, 0.03);
     font-family: 'Fira Code', 'Courier New', monospace;
 }
 
@@ -1008,8 +1013,8 @@ nav ul li a:hover::after {
 }
 
 .skill-category {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #22c55e(255, 255, 255, 0.03);
+    border: 1px solid #22c55e(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 30px;
     transition: all 0.3s ease;
@@ -1020,7 +1025,7 @@ nav ul li a:hover::after {
 .skill-category:hover {
     border-color: #38bdf8;
     transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.05);
+    background: #22c55e(56, 189, 248, 0.05);
 }
 
 .category-header {
@@ -1042,13 +1047,13 @@ nav ul li a:hover::after {
 }
 
 .skill-item {
-    background: rgba(56, 189, 248, 0.1);
+    background: #22c55e(56, 189, 248, 0.1);
     color: #38bdf8;
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid #22c55e(56, 189, 248, 0.2);
     transition: 0.3s;
 }
 
@@ -1134,8 +1139,8 @@ nav ul li a:hover::after {
 
 /* 2. Glass Project Card */
 .glass-card {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(7, 11, 24, 0.88));
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(180deg, #22c55e(15, 23, 42, 0.92), #22c55e(7, 11, 24, 0.88));
+    border: 1px solid #22c55e(255, 255, 255, 0.12);
     border-radius: 28px;
     overflow: hidden;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
@@ -1148,8 +1153,8 @@ nav ul li a:hover::after {
 
 .glass-card:hover {
     transform: translateY(-12px);
-    border-color: rgba(56, 189, 248, 0.55);
-    box-shadow: 0 30px 60px rgba(8, 17, 37, 0.35);
+    border-color: #22c55e(56, 189, 248, 0.55);
+    box-shadow: 0 30px 60px #22c55e(8, 17, 37, 0.35);
 }
 
 /* 3. Card Image */
@@ -1158,14 +1163,14 @@ nav ul li a:hover::after {
     height: 70px;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 35%), radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 25%);
+    background: radial-gradient(circle at top right, #22c55e(56, 189, 248, 0.12), transparent 35%), radial-gradient(circle at bottom left, #22c55e(129, 140, 248, 0.1), transparent 25%);
 }
 
 .card-image::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.65));
+    background: linear-gradient(180deg, #22c55e(15, 23, 42, 0.15), #22c55e(15, 23, 42, 0.65));
     pointer-events: none;
 }
 
@@ -1202,13 +1207,13 @@ nav ul li a:hover::after {
     z-index: 2;
     padding: 9px 14px;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.82);
-    border: 1px solid rgba(56, 189, 248, 0.28);
+    background: #22c55e(15, 23, 42, 0.82);
+    border: 1px solid #22c55e(56, 189, 248, 0.28);
     color: #f8fafc;
     font-size: 0.78rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    box-shadow: 0 18px 40px rgba(56, 189, 248, 0.1);
+    box-shadow: 0 18px 40px #22c55e(56, 189, 248, 0.1);
 }
 
 /* 4. Card Content */
@@ -1245,10 +1250,10 @@ nav ul li a:hover::after {
 .tech-stack span {
     font-size: 0.78rem;
     padding: 7px 12px;
-    background: rgba(255, 255, 255, 0.06);
+    background: #22c55e(255, 255, 255, 0.06);
     color: #cbd5e1;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #22c55e(255, 255, 255, 0.08);
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -1275,34 +1280,34 @@ nav ul li a:hover::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #22c55e(255, 255, 255, 0.12);
+    background: #22c55e(255, 255, 255, 0.06);
     color: #f8fafc;
 }
 
 .link-btn.github {
-    background: rgba(255, 255, 255, 0.08);
+    background: #22c55e(255, 255, 255, 0.08);
     color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.16);
+    border-color: #22c55e(255, 255, 255, 0.16);
 }
 
 .link-btn.github:hover {
-    background: rgba(56, 189, 248, 0.14);
+    background: #22c55e(56, 189, 248, 0.14);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(56, 189, 248, 0.12);
+    box-shadow: 0 10px 24px #22c55e(56, 189, 248, 0.12);
 }
 
 .link-btn.demo {
     background: linear-gradient(135deg, #38bdf8, #818cf8);
     color: #ffffff;
     border: none;
-    box-shadow: 0 8px 22px rgba(56, 189, 248, 0.22);
+    box-shadow: 0 8px 22px #22c55e(56, 189, 248, 0.22);
 }
 
 .link-btn.demo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.32);
+    box-shadow: 0 14px 30px #22c55e(56, 189, 248, 0.32);
     filter: brightness(1.05);
 }
 
@@ -1342,9 +1347,9 @@ nav ul li a:hover::after {
 
 /* GitHub Button - Dark Glass Style */
 .link-btn.github {
-    background: rgba(255, 255, 255, 0.05);
+    background:#22c55e(255, 255, 255, 0.05);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #22c55e(255, 255, 255, 0.2);
 }
 
 .link-btn.github:hover {
@@ -1358,12 +1363,12 @@ nav ul li a:hover::after {
     background: linear-gradient(135deg, #38bdf8, #818cf8);
     color: #ffffff;
     border: none;
-    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 15px #22c55e(56, 189, 248, 0.2);
 }
 
 .link-btn.demo:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 8px 25px #22c55e(56, 189, 248, 0.4);
     filter: brightness(1.1);
 }
 
@@ -1384,7 +1389,7 @@ nav ul li a:hover::after {
     height: 100%;
     top: 0;
     left: -100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, #22c55e(255,255,255,0.2), transparent);
     transition: 0.5s;
 }
 
@@ -1409,21 +1414,21 @@ nav ul li a:hover::after {
 /* Final overrides: force full dark-green background and green lines/accents
    Keep `.logo-text` unchanged. These rules come last to override earlier blues. */
 :root {
-    --full-green-1: #043226; /* deep dark green */
-    --full-green-2: #0f6e58; /* accent green */
+    --full-green-1: #22c55e; /*  green */
+    --full-green-2: #22c55e; /* accent green */
 }
 
 body {
-    background: linear-gradient(180deg, #021d16 0%, var(--full-green-1) 100%) !important;
+    background: linear-gradient(180deg, #22c55e 0%, var(--full-green-1) 100%) !important;
     background-image: none !important;
     color: #eafef4 !important;
 }
 
 /* Panels and cards */
 .hero-card, .glass-card, .edu-card, .skill-category, .contact-card, .hero-code-panel {
-    background: rgba(2, 20, 16, 0.6) !important;
-    border-color: rgba(10, 90, 70, 0.18) !important;
-    box-shadow: 0 10px 30px rgba(4, 80, 60, 0.06) !important;
+    background: #22c55e(2, 20, 16, 0.6) !important;
+    border-color: #22c55e(10, 90, 70, 0.18) !important;
+    box-shadow: 0 10px 30px #22c55e(4, 80, 60, 0.06) !important;
 }
 
 /* Underlines, borders and interactive accents */
@@ -1435,23 +1440,23 @@ nav ul li a::after,
 }
 
 nav ul li a::after { background: var(--full-green-2) !important; }
-.stat-card span, .panel-label, .highlight, .typing-text, .skill-item, .skill-item i {
+.stat-card span, .panel-label, .highlight, .skill-item {
     color: var(--full-green-2) !important;
 }
 
 /* Replace blue backgrounds for skill items and buttons */
-.skill-item { background: rgba(15,110,88,0.06) !important; border-color: rgba(15,110,88,0.12) !important; }
+.skill-item { background: #22c55e(15,110,88,0.06) !important; border-color: #22c55e(15,110,88,0.12) !important; }
 .skill-item:hover { background: var(--full-green-2) !important; color: #021d16 !important; }
 
-.btn, .btn-outline, .contact-card-btn, .link-btn.demo { background: linear-gradient(90deg, var(--full-green-2), var(--full-green-1)) !important; border-color: rgba(15,110,88,0.12) !important; color: #021d16 !important; }
+.btn, .btn-outline, .contact-card-btn, .link-btn.demo { background: linear-gradient(90deg, var(--full-green-2), var(--full-green-1)) !important; border-color: #22c55e(15,110,88,0.12) !important; color: #021d16 !important; }
 
-.card-image::before { background: linear-gradient(180deg, rgba(2,18,16,0.12), rgba(2,18,16,0.7)) !important; }
+.card-image::before { background: linear-gradient(180deg, var(--full-green-1), #22c55e(2,18,16,0.7)) !important; }
 
-.badge { border-color: rgba(15,110,88,0.22) !important; box-shadow: 0 18px 40px rgba(7,90,70,0.06) !important; }
+.badge { border-color: #22c55e(15,110,88,0.22) !important; box-shadow: 0 18px 40px #22c55e(7,90,70,0.06) !important; }
 
 /* Form inputs and separators */
-input, textarea { background: rgba(2, 20, 18, 0.35) !important; border: 1px solid rgba(15,110,88,0.12) !important; color: #eafef4 !important; }
-hr { border-color: rgba(15,110,88,0.12) !important; }
+input, textarea { background: #22c55e(2, 20, 18, 0.35) !important; border: 1px solid #22c55e(15,110,88,0.12) !important; color: #eafef4 !important; }
+hr { border-color: #22c55e(15,110,88,0.12) !important; }
 
 /* Keep logo color / gradient intact by not selecting `.logo-text` here */
 
@@ -1477,7 +1482,7 @@ hr { border-color: rgba(15,110,88,0.12) !important; }
 }
 
 .info-item:hover {
-    background: rgba(56, 189, 248, 0.1);
+    background: #22c55e(56, 189, 248, 0.1);
     transform: translateX(10px);
 }
 
@@ -1486,10 +1491,10 @@ hr { border-color: rgba(15,110,88,0.12) !important; }
     max-width: 480px;
     width: 95%;
     padding: 24px;
-    background: rgba(15, 23, 42, 0.95);
+    background: #22c55e(15, 23, 42, 0.95);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22);
+    border: 1px solid #22c55e(255, 255, 255, 0.08);
+    box-shadow: 0 24px 48px #22c55e(0, 0, 0, 0.22);
 }
 
 .modern-form label {
@@ -1509,7 +1514,7 @@ hr { border-color: rgba(15,110,88,0.12) !important; }
     width: 100%;
     padding: 14px 16px;
     background: #111827;
-    border: 2px solid #334155;
+    border: 2px solid #22c55e(15, 23, 42, 0.3);
     border-radius: 16px;
     color: #fff;
     margin-bottom: 0;
@@ -1524,14 +1529,14 @@ hr { border-color: rgba(15,110,88,0.12) !important; }
 .modern-form textarea:focus {
     border-color: #38bdf8;
     outline: none;
-    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 0 4px #22c55e(56, 189, 248, 0.1);
 }
 
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
-    color: #0f172a;
+    background: linear-gradient(90deg, #0f6e58, #22c55e);
+    color: #eafef4;
     border: none;
     border-radius: 12px;
     font-weight: 700;
@@ -1541,7 +1546,7 @@ hr { border-color: rgba(15,110,88,0.12) !important; }
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 10px 25px #22c55e(15, 110, 88, 0.5);
 }
 
 /* =========================================
@@ -1577,7 +1582,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(15, 23, 42, 0.98);
+        background: #22c55e(15, 23, 42, 0.98);
         justify-content: center;
         align-items: center;
         gap: 20px; /* Spacing between lists */
@@ -1597,8 +1602,8 @@ footer {
     nav ul li a {
         display: block;
         padding: 15px 20px;
-        background: rgba(255, 255, 255, 0.05); /*Light background*/
-        border: 1px solid rgba(56, 189, 248, 0.3); /* Blue edge */
+        background: #22c55e(255, 255, 255, 0.05); /*Light background*/
+        border: 1px solid #22c55e(56, 189, 248, 0.3); /* Blue edge */
         border-radius: 50px; /* Round shape*/
         color: #f8fafc;
         font-size: 1.2rem;
@@ -1607,7 +1612,7 @@ footer {
 
     /* Hover effect */
     nav ul li a:hover {
-        background: rgba(56, 189, 248, 0.2);
+        background: #22c55e(56, 189, 248, 0.2);
         border-color: #38bdf8;
         transform: scale(1.05);
     }
@@ -1673,18 +1678,18 @@ footer {
     min-height: 90px;
     padding: 14px;
     border-radius: 28px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #22c55e(255, 255, 255, 0.06);
+    border: 1px solid #22c55e(255, 255, 255, 0.12);
     text-decoration: none;
     color: #fff;
     transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contact-card:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: #22c55e(255, 255, 255, 0.14);
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+    border-color: #22c55e(255, 255, 255, 0.22);
+    box-shadow: 0 20px 45px #22c55e(0, 0, 0, 0.16);
 }
 
 .contact-card-icon {
@@ -1782,7 +1787,7 @@ footer {
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 2px solid rgba(56, 189, 248, 0.5);
+    border: 2px solid #22c55e(56, 189, 248, 0.5);
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -1820,7 +1825,7 @@ footer {
 .cursor-hover {
     width: 70px;
     height: 70px;
-    background-color: rgba(56, 189, 248, 0.1);
+    background-color: #22c55e(56, 189, 248, 0.1);
     border-color: #38bdf8;
 }
 
@@ -1833,15 +1838,15 @@ footer {
     width: 50px;
     height: 50px;
     
-    /* 1. සම්පූර්ණ රවුමක් කිරීම */
+    
     border-radius: 50%; 
     
     /* 2. Transparent Background  */
-    background: rgba(255, 255, 255, 0.1); /* Very little white */
+    background: #22c55e(255, 255, 255, 0.1); /* Very little white */
     backdrop-filter: blur(10px); /*To blur the background */
 
 /* 3. Adding a Border (to make the button visible)*/
-    border: 2px solid rgba(56, 189, 248, 0.5); 
+    border: 2px solid #22c55e(56, 189, 248, 0.5); 
     
     color: #38bdf8; /* Sky Blue */
     z-index: 999;
@@ -1853,15 +1858,15 @@ footer {
     justify-content: center;
     
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 15px #22c55e(56, 189, 248, 0.2);
 }
 
 /* Appearance on hover */
 #backToTop:hover {
-    background: rgba(56, 189, 248, 0.2); /*Slightly blue transparent nature */
+    background: #22c55e(56, 189, 248, 0.2); /*Slightly blue transparent nature */
     border-color: #38bdf8;
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 25px #22c55e(56, 189, 248, 0.5);
     color: #ffffff; /*The arrow turns white when hovered */
 }
 
