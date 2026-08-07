@@ -842,40 +842,60 @@ nav ul li a:hover::after {
     object-fit: contain;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+    .typing-text-container {
+        font-size: 1.5rem;
+        color: #f8fafc;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .typing-text {
+        color: #38bdf8;
+        font-weight: 600;
+    }
+
     .hero-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .hero-left,
     .hero-right {
+        display: contents;
+    }
+
+    .hero-image {
+        order: 1;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero-left {
+        order: 2;
+        align-items: center;
+        text-align: center;
         width: 100%;
         max-width: 760px;
     }
 
-    .hero-left {
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-description-hero {
+    .hero-code-panel {
+        order: 3;
         max-width: 100%;
         margin: 0 auto;
     }
 
+    .hero-description-hero,
     .hero-stats {
-        grid-template-columns: 1fr;
-        width: 100%;
-    }
-
-    .hero-code-panel {
         max-width: 100%;
+        margin: 0 auto;
     }
 
-    .hero-right .hero-image img {
-        max-width: 280px;
+    .hero-title-name {
+        font-size: clamp(2.4rem, 8vw, 3.4rem);
     }
 }
 
@@ -888,30 +908,10 @@ nav ul li a:hover::after {
 
 
 
-/* Typing Text Container - */
-.typing-text-container {
-    font-size: 1.5rem;
-    color: #f8fafc;
-    text-align: center;
-    margin-top: 30px; /*Gap down from the picture */
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.typing-text {
-    color: #38bdf8;
-    font-weight: 600;
-}
 
 
-/* Special setting for Phone */
-@media (max-width: 768px) {
-    .typing-text-container {
-        font-size: 1.2rem; /*The font is a bit small on the phone */
-        margin-top: 20px;
-    }
-    
-}
+
+
 .btn {
     display: inline-block;
     margin-top: 20px;

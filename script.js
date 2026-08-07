@@ -57,23 +57,11 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// 5. The navbar changes when scrolling (Glassmorphism effect)
+// 5. Keep the navbar fixed and visible while scrolling
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
-    if (window.scrollY > 50) {
-        nav.style.background = "rgba(15, 23, 42, 0.95)";
-        nav.style.top = "0";
-        nav.style.width = "100%";
-        nav.style.left = "0";
-        nav.style.right = "0";
-        nav.style.borderRadius = "0";
-    } else {
-        nav.style.background = "rgba(15, 23, 42, 0.8)";
-        nav.style.top = "20px";
-        nav.style.width = "90%";
-        nav.style.left = "5%";
-        nav.style.borderRadius = "50px";
-    }
+    if (!nav) return;
+    nav.style.background = "rgba(15, 23, 42, 0.95)";
 });
 
 const menuToggle = document.getElementById('menu-toggle');
