@@ -104,109 +104,45 @@ document.querySelectorAll('#nav-menu li a').forEach(link => {
 const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
 
-let particlesArray;
-let mouse = {
-    x: null,
-    y: null,
-    radius: 150 //The size of the effect around the mouse
+function resizeBGCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    drawGlassBackground();
 }
 
-window.addEventListener('mousemove', function(event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
-});
+function drawGlassBackground() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-// The nature of a particle
-class Particle {
-    constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-    }
-    //Drawing the particle
-    draw() {
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, 'rgba(15, 23, 42, 0.95)');
+    gradient.addColorStop(0.4, 'rgba(15, 23, 42, 0.92)');
+    gradient.addColorStop(1, 'rgba(7, 10, 25, 0.98)');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    function drawGlow(x, y, radius, color, alpha) {
+        ctx.save();
+        ctx.globalCompositeOperation = 'screen';
+        ctx.fillStyle = `rgba(${color}, ${alpha})`;
+        ctx.shadowBlur = radius * 1.1;
+        ctx.shadowColor = `rgba(${color}, ${alpha * 0.7})`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#38bdf8'; // Particles color (Sky Blue)
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
+        ctx.restore();
     }
-    // Control movement within the screen
-    update() {
-        if (this.x > canvas.width || this.x < 0) {
-            this.directionX = -this.directionX;
-        }
-        if (this.y > canvas.height || this.y < 0) {
-            this.directionY = -this.directionY;
-        }
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-    }
+
+    drawGlow(canvas.width * 0.22, canvas.height * 0.18, 220, '79, 70, 229', 0.18);
+    drawGlow(canvas.width * 0.78, canvas.height * 0.12, 180, '14, 165, 233', 0.14);
+    drawGlow(canvas.width * 0.65, canvas.height * 0.75, 240, '15, 23, 42', 0.16);
+    drawGlow(canvas.width * 0.38, canvas.height * 0.62, 160, '255, 255, 255', 0.04);
 }
 
-// Creating a group of particles
-function init() {
-    particlesArray = [];
-    let numberOfParticles = (canvas.height * canvas.width) / 9000;
-    for (let i = 0; i < numberOfParticles; i++) {
-        let size = (Math.random() * 2) + 1;
-        let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-        let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * 2) - 1;
-        let directionY = (Math.random() * 2) - 1;
-        let color = '#38bdf8';
+window.addEventListener('resize', resizeBGCanvas);
 
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-    }
-}
-
-// Draw lines connecting each other (Connect function)
-function connect() {
-    let opacityValue = 1;
-    for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-            
-            if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = `rgba(56, 189, 248, ${opacityValue})`;
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
-
-// Maintaining the animation
-function animate() {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, innerWidth, innerHeight);
-
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-    }
-    connect();
-}
-
-// Changes when resizing the window
-window.addEventListener('resize', function() {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    init();
-});
-
-// First reboot
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-init();
-animate();
+drawGlassBackground();
 
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");

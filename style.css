@@ -11,7 +11,10 @@ html {
 }
 
 body {
-    background: #0f172a;
+    background: radial-gradient(circle at 20% 15%, rgba(30, 41, 59, 0.85), transparent 15%),
+                radial-gradient(circle at 85% 10%, rgba(79, 70, 229, 0.16), transparent 14%),
+                radial-gradient(circle at 70% 80%, rgba(14, 165, 233, 0.10), transparent 18%),
+                linear-gradient(180deg, #020617, #0f172a);
     color: #f8fafc;
     line-height: 1.6;
     overflow-x: hidden;
@@ -1310,13 +1313,36 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* To place under content */
-    background: #0f172a; 
+    z-index: -3; /* Place behind the glass overlays */
+    background: transparent;
     pointer-events: none;
 }
 
 body {
     cursor: none; /* Removes the regular mouse */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.08), transparent 10%),
+                radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.12), transparent 8%),
+                radial-gradient(circle at 60% 80%, rgba(14, 165, 233, 0.08), transparent 12%),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.18), rgba(7, 10, 25, 0.45));
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Small dot in the middle */
