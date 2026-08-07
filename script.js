@@ -22,13 +22,13 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevents page refresh
 
-// Changing the appearance of the button
+        // Changing the appearance of the button
         sendBtn.innerHTML = "Sending... <i class='fa-solid fa-spinner fa-spin'></i>";
         sendBtn.style.opacity = "0.7";
         sendBtn.disabled = true;
 
-      // Sending the message via EmailJS
-// Enter YOUR_SERVICE_ID and YOUR_TEMPLATE_ID correctly
+        // Sending the message via EmailJS
+        // Enter YOUR_SERVICE_ID and YOUR_TEMPLATE_ID correctly
         emailjs.sendForm('service_mrtx1k4', 'template_7e6ruba', this)
             .then(() => {
                 alert('Thank you! Your message was successfully received..');
@@ -46,12 +46,28 @@ if (contactForm) {
     });
 }
 
-// 4. Smooth Scrolling (for navigation links)
-document.querySelectorAll('nav ul li a').forEach(anchor => {
+// 4. Smooth Scrolling (for navigation links) – with dynamic navbar offset
+// (This replaces the old scrollIntoView code)
+document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
+
+        // Get the actual height of the fixed navbar
+        const nav = document.querySelector('nav');
+        const navHeight = nav ? nav.offsetHeight : 80;
+
+        // Add a small extra padding (10px) for visual comfort
+        const offset = navHeight + 10;
+
+        // Calculate the target’s position and scroll to it
+        const rect = target.getBoundingClientRect();
+        window.scrollTo({
+            top: rect.top + window.scrollY - offset,
             behavior: 'smooth'
         });
     });
@@ -77,18 +93,17 @@ menuToggle.addEventListener('click', () => {
     icon.classList.toggle('fa-xmark');
 });
 
-// To automatically close the menu and make the icon 3 lines again after clicking a link
+// ** NEW: Close mobile menu when a link is clicked **
 document.querySelectorAll('#nav-menu li a').forEach(link => {
     link.addEventListener('click', () => {
-       // 1. Close the menu
         navMenu.classList.remove('active');
-        
-        // 2. Change the icon back to 3 bars (fa-bars)
         const icon = menuToggle.querySelector('i');
         icon.classList.remove('fa-xmark');
         icon.classList.add('fa-bars');
     });
 });
+
+// ====== Background Canvas ======
 const canvas = document.getElementById('bg-animation');
 const ctx = canvas.getContext('2d');
 
@@ -114,6 +129,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 drawGlassBackground();
 
+// ====== Custom Cursor ======
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 
@@ -121,16 +137,13 @@ window.addEventListener("mousemove", function (e) {
     const posX = e.clientX;
     const posY = e.clientY;
 
-   // The dot moves with the mouse.
     cursorDot.style.left = `${posX}px`;
     cursorDot.style.top = `${posY}px`;
 
-  // The circle will be slightly curved and follow smoothly.
     cursorOutline.style.left = `${posX}px`;
     cursorOutline.style.top = `${posY}px`;
 });
 
-// The circle will get bigger as you hover your mouse over every link and WhatsApp button.
 const links = document.querySelectorAll("a, button, .whatsapp-float");
 
 links.forEach(link => {
@@ -142,22 +155,9 @@ links.forEach(link => {
     });
 });
 
-//for Smooth Scrolling 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
+// ====== Back to Top Button ======
 const backToTopButton = document.getElementById("backToTop");
 
-// Show button if page scrolls down more than 300px
 window.onscroll = function() {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopButton.style.display = "block";
@@ -166,7 +166,6 @@ window.onscroll = function() {
     }
 };
 
-// Go to the top when the button is clicked
 backToTopButton.addEventListener("click", function() {
     window.scrollTo({
         top: 0,
@@ -174,6 +173,7 @@ backToTopButton.addEventListener("click", function() {
     });
 });
 
+// ====== Projects Data ======
 const projects = [
     {
         title: "CineMate Movie App",
@@ -201,9 +201,7 @@ const projects = [
         live: "https://sandalka.pythonanywhere.com/",
         github: "https://github.com/heshansandalka/chatbot-in-Python",
         badge: "Python"
-    }
-
-    ,
+    },
     {
         title: "Sky Plains",
         description: "The natural beauty of Horton Plains.",
@@ -212,9 +210,7 @@ const projects = [
         live: "https://heshansandalka.github.io/Sky-Plains/",
         github: "https://github.com/heshansandalka/Sky-Plains",
         badge: "Live"
-    }
-
-    ,
+    },
     {
         title: "Hyperlocal Weather App(Group Project)",
         description: "Hyperlocal Weather Impact & Community Alert(Group  Project)",
@@ -224,26 +220,21 @@ const projects = [
         github: "https://github.com/pabasaramalshi29-ai/Hyperlocal-Weather-Impact-and-Community-Alert-Web-App/tree/heshan",
         badge: "Live"
     },
-
     {
-    "title": "Health & Wellness App",
-    "description": "A modern mobile application built with Flutter for health tracking and wellness advice.",
-    "image": "adf7.png",
-    "tech": ["Flutter", "Dart", "Android"],
-    "live": "https://drive.google.com/file/d/1gcYqMEAHE1Awct3BgcX4MwwPzu2wpuQq/view?usp=drivesdk",
-    "github": "https://github.com/heshansandalka/health_wellness_app",
-    "badge": "APK Install"
-}
-
-    
+        "title": "Health & Wellness App",
+        "description": "A modern mobile application built with Flutter for health tracking and wellness advice.",
+        "image": "adf7.png",
+        "tech": ["Flutter", "Dart", "Android"],
+        "live": "https://drive.google.com/file/d/1gcYqMEAHE1Awct3BgcX4MwwPzu2wpuQq/view?usp=drivesdk",
+        "github": "https://github.com/heshansandalka/health_wellness_app",
+        "badge": "APK Install"
+    }
 ];
 
 const projectContainer = document.getElementById('project-list');
 
 function displayProjects() {
     projectContainer.innerHTML = projects.map((project, index) => {
-        
-        // The part that determines the Live Button
         const liveButtonLabel = project.badge === "APK Install" ? "APK Install" : "Live Demo";
         const liveButtonIcon = project.badge === "APK Install" ? "fa-download" : "fa-rocket";
         const liveButtonHtml = (project.live && project.live !== "#") 
@@ -278,10 +269,9 @@ function displayProjects() {
     }).join('');
 }
 
-//Calling the function
 displayProjects();
 
-// Typing Animation Setup
+// ====== Typing Animation ======
 document.addEventListener('DOMContentLoaded', () => {
     new Typed('.typing-text', {
         strings: [
@@ -297,39 +287,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ====== Education Date Auto-Update ======
 document.addEventListener("DOMContentLoaded", function() {
     const dateSpan = document.getElementById('edu-date');
     const currentYear = new Date().getFullYear();
     
-  // The year will automatically change from January 1st of each year
     if (currentYear > 2024) {
         dateSpan.innerText = `2024 - ${currentYear}`;
     }
 });
 
-const statusBadge = document.getElementById('status-badge');
-const statusText = document.getElementById('status-text');
-
+// ====== Online/Offline Status ======
 function checkConnection() {
     const badge = document.getElementById('status-badge');
     const text = document.getElementById('status-text');
     
     if (navigator.onLine) {
-        badge.className = 'status-badge online'; //Match CSS
+        badge.className = 'status-badge online';
         text.innerText = 'Active';
     } else {
         badge.className = 'status-badge offline';
         text.innerText = 'Offline';
     }
 }
-// Fires when the page loads and when the connection changes.
+
 window.addEventListener('online', checkConnection);
 window.addEventListener('offline', checkConnection);
-
-//Check at startup
 checkConnection();
 
-// 6. Split main words into two spans: first half white, second half green
+// ====== Split Main Words (white & green) ======
 function escapeHtml(str) {
     return String(str)
         .replace(/&/g, '&amp;')
@@ -344,8 +330,6 @@ function splitMainWords() {
         const text = el.textContent.trim();
         if (!text) return;
 
-        // If the text contains a space (e.g. "First Last"), split on the first space
-        // so initials like "A" attach to the second (green) half.
         let first = '';
         let second = '';
         const parts = text.split(/\s+/);
