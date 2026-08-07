@@ -77,6 +77,21 @@ menuToggle.addEventListener('click', () => {
     icon.classList.toggle('fa-xmark');
 });
 
+// Highlight clicked nav link as active
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('#nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // remove active from all
+            navLinks.forEach(l => l.classList.remove('active'));
+            // add active to clicked link
+            link.classList.add('active');
+            // close mobile menu if open
+            if (navMenu.classList.contains('active')) navMenu.classList.remove('active');
+        });
+    });
+});
+
 // To automatically close the menu and make the icon 3 lines again after clicking a link
 document.querySelectorAll('#nav-menu li a').forEach(link => {
     link.addEventListener('click', () => {
