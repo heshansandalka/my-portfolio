@@ -664,7 +664,14 @@ nav ul li a:hover::after {
     .hero-title-name {
         font-size: clamp(2.4rem, 8vw, 3.4rem);
     }
+       .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .hero-stats-full {
+        padding: 0 10px;
+    }
+}
 
 .hero-stats {
     display: grid;
