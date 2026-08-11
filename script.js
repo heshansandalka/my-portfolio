@@ -41,42 +41,14 @@ if (contactForm) {
     });
 }
 
-// 4. Smooth Scroll with Navbar Offset
-document.querySelectorAll('nav ul li a, a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (!href || href === '#') return;
-        const target = document.querySelector(href);
-        if (!target) return;
 
-        e.preventDefault();
-
-        const nav = document.querySelector('nav');
-        const navHeight = nav ? nav.offsetHeight : 80;
-        const offset = navHeight + 20;
-
-        const rect = target.getBoundingClientRect();
-        window.scrollTo({
-            top: rect.top + window.scrollY - offset,
-            behavior: 'smooth'
-        });
-    });
-});
 
 // 5. Navbar Scroll Effect & Active Link
 const navbar = document.querySelector('nav');
 const sections = document.querySelectorAll('section, #home');
 const navLinks = document.querySelectorAll('nav ul li a');
 
-// ✅ 
-window.addEventListener('scroll', function() {
-    // Scroll Effect
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+
 
 // Active Link Highlighting
 const observerOptions = {
@@ -149,27 +121,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 drawGlassBackground();
 
-// 8. Custom Cursor
-const cursorDot = document.querySelector(".cursor-dot");
-const cursorOutline = document.querySelector(".cursor-outline");
-
-if (cursorDot && cursorOutline) {
-    window.addEventListener("mousemove", function(e) {
-        cursorDot.style.left = e.clientX + 'px';
-        cursorDot.style.top = e.clientY + 'px';
-        cursorOutline.style.left = e.clientX + 'px';
-        cursorOutline.style.top = e.clientY + 'px';
-    });
-
-    document.querySelectorAll("a, button, .whatsapp-float").forEach(link => {
-        link.addEventListener("mouseenter", () => {
-            cursorOutline.classList.add("cursor-hover");
-        });
-        link.addEventListener("mouseleave", () => {
-            cursorOutline.classList.remove("cursor-hover");
-        });
-    });
-}
 
 // 9. Back to Top Button
 const backToTopButton = document.getElementById("backToTop");

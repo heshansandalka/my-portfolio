@@ -1,30 +1,7 @@
-/* --- General Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
 html {
     scroll-behavior: smooth;
 }
-
-
-body {
-    background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
-    background-image:
-        radial-gradient(circle at 15% 14%, rgba(56, 189, 248, 0.08), transparent 18%),
-        radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
-    background-blend-mode: overlay;
-    background-attachment: fixed;
-    color: #f8fafc;
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
-    backdrop-filter: blur(6px);
-}
-
 .hero-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -421,7 +398,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     min-height: 100vh;
-    backdrop-filter: blur(6px);
+   
 }
 
 section {
@@ -432,6 +409,7 @@ section {
 /* =========================================
    2. Modern Floating Navigation
    ========================================= */
+   
 nav {
     display: flex;
     justify-content: space-between;
@@ -449,19 +427,18 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 2000;
-    transition: all 0.4s ease;
+    
 }
 
 
-.logo-text {
-    font-size: 1.5rem;
+#main-nav .logo {
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    background: linear-gradient(135deg, #22c55e, #16a34a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
-
 nav ul {
     display: flex;
     list-style: none;
@@ -479,7 +456,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #fff;
+    color: #22c55e;
 }
 
 nav ul li a::after {
@@ -505,6 +482,8 @@ nav ul li a:hover::after {
     cursor: pointer;
     z-index: 2001;
 }
+
+
 
 /* =========================================
    3. Hero Section
@@ -733,7 +712,7 @@ nav ul li a:hover::after {
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: #2ecc71;
-    color: ;
+    
 }
 
 .hero-code-panel pre {
@@ -791,7 +770,7 @@ nav ul li a:hover::after {
     }
 
     .typing-text {
-        color: #38bdf8;
+    color: #2ecc71;
         font-weight: 600;
     }
 
@@ -1413,7 +1392,7 @@ hr {
     width: 100%;
     padding: 14px 16px;
     background: #111827;
-    border: 2px solid rgba(15, 23, 42, 0.3);
+    border: 2px solid #22c55e(15, 23, 42, 0.3);
     border-radius: 16px;
     color: #fff;
     margin-bottom: 0;
@@ -1486,16 +1465,16 @@ footer {
     }
 
     nav ul li {
-        width: 80%;
+        width: 50%;
         text-align: center;
     }
 
     nav ul li a {
         display: block;
-        padding: 12px 18px;
+        padding: 10px 18px;
         background: rgba(255, 255, 255, 0.02);
         border: 1px solid var(--full-green-2);
-        border-radius: 12px;
+        border-radius: 8px;
         color: var(--full-green-2);
         font-size: 1.05rem;
         font-weight: 600;
@@ -1664,33 +1643,6 @@ footer {
     opacity: 0.95;
 }
 
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #38bdf8;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    transition: background-color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
-}
-
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #38bdf8;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9998;
-    transition: all 0.15s ease-out;
-}
 
 .whatsapp-float {
     position: fixed;
@@ -1712,19 +1664,7 @@ footer {
     text-decoration: none;
 }
 
-.cursor-outline.cursor-hover {
-    width: 70px;
-    height: 70px;
-    border-color: var(--full-green-2);
-    box-shadow: 0 4px 18px rgba(15, 110, 88, 0.25);
-    transform: translate(-50%, -50%) scale(1.02);
-}
 
-.cursor-dot.cursor-hover {
-    background-color: var(--full-green-2);
-    box-shadow: 0 0 10px rgba(15, 110, 88, 0.4);
-    transform: translate(-50%, -50%) scale(1.1);
-}
 
 #backToTop {
     display: none;
@@ -1736,21 +1676,21 @@ footer {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(56, 189, 248, 0.5);
-    color: #38bdf8;
+    border: 2px solid #22c55e(56, 189, 248, 0.3);
+    color: #22c55e;
     z-index: 999;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 15px #22c55e(56, 189, 248, 0.2);
 }
 
 #backToTop:hover {
     background: rgba(56, 189, 248, 0.2);
-    border-color: #38bdf8;
+    border-color: #22c55e;
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 25px #22c55e(56, 189, 248, 0.5);
     color: #ffffff;
 }
