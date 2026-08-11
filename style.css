@@ -1336,8 +1336,10 @@ hr {
     gap: 20px;
     padding: 15px;
     transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
-
 .info-item:hover {
     background: rgba(56, 189, 248, 0.1);
     transform: translateX(10px);
@@ -1526,83 +1528,155 @@ footer {
 
 .contact-card {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
+    gap: 16px;
     min-height: 90px;
-    padding: 14px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     text-decoration: none;
     color: #fff;
-    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card:hover::before {
+    opacity: 1;
 }
 
 .contact-card:hover {
-    background: rgba(255, 255, 255, 0.14);
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 .contact-card-icon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-    border-radius: 18px;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 14px;
     display: grid;
     place-items: center;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: #fff;
-    transition: transform 0.25s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover .contact-card-icon {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(-3deg);
 }
 
 .linkedin-card .contact-card-icon {
-    background: #0077b5;
+    background: #0a66c2;
+}
+.linkedin-card:hover {
+    box-shadow: 0 20px 40px rgba(10, 102, 194, 0.25);
+    border-color: rgba(10, 102, 194, 0.4);
 }
 
 .facebook-card .contact-card-icon {
     background: #1877f2;
 }
+.facebook-card:hover {
+    box-shadow: 0 20px 40px rgba(24, 119, 242, 0.25);
+    border-color: rgba(24, 119, 242, 0.4);
+}
 
 .github-card .contact-card-icon {
-    background: #181717;
+    background: #24292e;
+}
+.github-card:hover {
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .email-card .contact-card-icon {
-    background: #dd4b39;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.email-card:hover {
+    box-shadow: 0 20px 40px rgba(214, 36, 159, 0.3);
+    border-color: rgba(214, 36, 159, 0.4);
 }
 
 .contact-card-content {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-card-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: #f8fafc;
+}
+
+.contact-card-content p {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
     .contact-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .contact-card {
-        justify-content: center;
-        padding: 12px;
+        padding: 12px 12px;
         border-radius: 16px;
         min-height: auto;
+        gap: 10px;
     }
 
     .contact-card-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
-        font-size: 1.4rem;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        border-radius: 12px;
+        font-size: 1.05rem;
     }
 
     .contact-card-content {
-        display: none;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .contact-card-content h4 {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .contact-card-content p {
+        font-size: 0.7rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .contact-left {
