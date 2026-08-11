@@ -621,43 +621,21 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 768px) {
-    .hero-title-name.main-word .first,
-    .hero-title-name.main-word .second {
-        font-size: 1.06em;
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px;
     }
 
-    .hero-title-name.main-word .first {
-        font-size: 1.2em;
-        -webkit-text-stroke: 1.5px #ffffff;
+    .stat-card {
+        padding: 18px 14px;
     }
 
-
-.hero-description-hero {
-    max-width: 560px;
-    color: #cbd5e1;
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-top: 10px;
-}
-
-
-
-
-    .typing-text-container .static-green {
-        font-size: 1.02em;
+    .stat-card span {
+        font-size: 1.6rem;
     }
 
-
-
-    .hero-title-name {
-        font-size: clamp(2.4rem, 8vw, 3.4rem);
-    }
-       .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero-stats-full {
-        padding: 0 10px;
+    .stat-card p {
+        font-size: 0.85rem;
     }
 }
 .typing-text-container .static-green {
@@ -673,17 +651,7 @@ nav ul li a:hover::after {
     color: var(--full-green-2);
     font-weight: 600;
 }
-.hero-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    width: 100%;
-    align-self: stretch;
-}
 
-    .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
 
 .hero-stats {
@@ -829,7 +797,7 @@ nav ul li a:hover::after {
 .hero-btns .contact-card-btn,
 .hero-btns .btn-outline,
 .hero-btns .btn {
-    width: 220px;
+    width: 180px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -841,7 +809,7 @@ nav ul li a:hover::after {
     .hero-btns .contact-card-btn,
     .hero-btns .btn-outline,
     .hero-btns .btn {
-        width: 100%;
+        width: 60%;
         max-width: none;
         padding-left: 18px;
         padding-right: 18px;
