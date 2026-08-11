@@ -608,8 +608,8 @@ nav ul li a:hover::after {
 .hero-title-name.main-word .first {
     font-size: 1.35em;
     color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-    text-stroke: 2px #ffffff;
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
 }
 
 .hero-title-name.main-word .second {
@@ -704,61 +704,59 @@ nav ul li a:hover::after {
     align-items: center;
 }
 
-.hero-code-panel {
-    width: 100%;
-    max-width: 460px;
-    background: rgba(15, 23, 42, 0.9);
-    color: #2ecc71;
-    border: 1px solid (56, 189, 248, 0.18);
-    border-radius: 24px;
-    padding: 24px 22px;
-    color: #e2e8f0;
-    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.03);
-    font-family: 'Fira Code', 'Courier New', monospace;
-}
-
-.panel-label {
-    display: inline-flex;
+.hero-social-panel {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 14px;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #2ecc71;
-    
+    justify-content: center;
+    gap: 22px;
 }
 
-.hero-code-panel pre {
-    margin: 0;
-    overflow-x: auto;
-    white-space: pre;
-    font-size: 0.95rem;
-    line-height: 1.7;
+.social-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: #cbd5e1;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
-.hero-code-panel code {
-    color: #f8fafc;
+.social-circle:hover {
+    transform: translateY(-5px);
+    border-color: #22c55e;
+    color: #22c55e;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
 }
 
+@media (max-width: 768px) {
+    .hero-social-panel {
+        gap: 16px;
+    }
+
+    .social-circle {
+        width: 56px;
+        height: 56px;
+        font-size: 1.2rem;
+    }
+}
 .hero-image {
     position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: -180px;   
 }
-
-.hero-right .hero-image img {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    border-radius: 0;
-    border: none;
-    animation: float 3s ease-in-out infinite;
-    background: transparent;
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    justify-content: flex-start;   
 }
 
 .hero-image img {
