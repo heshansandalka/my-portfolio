@@ -151,7 +151,7 @@ html {
 
 .edu-card {
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #22c55e(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 20px;
     text-align: left;
@@ -179,12 +179,12 @@ html {
 }
 
 .edu-card:hover {
-    border-color: #818cf8;
+    border-color: #22c55e;
     transform: translateY(-5px);
 }
 
 .edu-date {
-    color: #818cf8;
+    color: #22c55e;
     font-weight: 600;
     display: block;
     margin-bottom: 10px;
@@ -198,7 +198,7 @@ html {
 
 .edu-card p {
     color: #cbd5e1;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 @media (max-width: 768px) {
@@ -392,7 +392,7 @@ h2 {
 body {
     background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
     background-image:
-        radial-gradient(circle at 15% 14%, rgba(56, 189, 248, 0.08), transparent 18%),
+        radial-gradient(circle at 15% 14%, #22c55e(56, 189, 248, 0.08), transparent 18%),
         radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
     background-blend-mode: overlay;
     background-attachment: fixed;
@@ -427,7 +427,7 @@ nav {
     right: 5%;
     width: 90%;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #22c55e;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 2000;
     
@@ -435,7 +435,7 @@ nav {
 
 
 #main-nav .logo {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     background: linear-gradient(135deg, #22c55e, #16a34a);
     -webkit-background-clip: text;
@@ -640,19 +640,7 @@ nav ul li a:hover::after {
     margin-top: 10px;
 }
 
-.typing-text-container .static-green {
-    color: #f8fafc;
-    font-weight: 800;
-    font-size: 0.98em;
-    display: inline-block;
-    margin-right: 0.24rem;
-    transform: translateY(0.02em);
-}
 
-.typing-text {
-    color: var(--full-green-2);
-    font-weight: 600;
-}
 
 
     .typing-text-container .static-green {
@@ -672,7 +660,19 @@ nav ul li a:hover::after {
         padding: 0 10px;
     }
 }
+.typing-text-container .static-green {
+    color: #f8fafc;
+    font-weight: 800;
+    font-size: 0.98em;
+    display: inline-block;
+    margin-right: 0.24rem;
+    transform: translateY(0.02em);
+}
 
+.typing-text {
+    color: var(--full-green-2);
+    font-weight: 600;
+}
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -684,7 +684,7 @@ nav ul li a:hover::after {
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+
 
 .hero-stats {
     display: grid;
