@@ -1567,10 +1567,10 @@ footer {
 }
 
 .contact-card-icon {
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    border-radius: 14px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 8px;
     display: grid;
     place-items: center;
     font-size: 1.4rem;
@@ -1609,14 +1609,15 @@ footer {
     border-color: rgba(255, 255, 255, 0.25);
 }
 
+/* Email - Gmail Original  */
 .email-card .contact-card-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-}
-.email-card:hover {
-    box-shadow: 0 20px 40px rgba(214, 36, 159, 0.3);
-    border-color: rgba(214, 36, 159, 0.4);
+    background: linear-gradient(135deg, #EA4335 0%, #FBBC05 40%, #34A853 70%, #4285F4 100%);
 }
 
+.email-card:hover {
+    box-shadow: 0 20px 40px rgba(234, 67, 53, 0.3); /*  shadow */
+    border-color: rgba(234, 67, 53, 0.4);
+}
 .contact-card-content {
     display: flex;
     flex-direction: column;
