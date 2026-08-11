@@ -1316,12 +1316,12 @@ hr {
     cursor: pointer;
 }
 .info-item:hover {
-     color: var(--accent-primary);
+     color: var(--full-green-2);
 }
 .info-item:hover {     
 
       background: #22c55e0d;
-    box-shadow: 0 0 5px var(--accent-glow);
+    box-shadow: 0 0 5px var(--full-green-2);
 }
 
 .modern-form {
@@ -1367,13 +1367,13 @@ hr {
 .modern-form textarea:focus {
     border-color: #38bdf8;
     outline: none;
-    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 0 4px #22c55e;
 }
 
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(90deg, #0f6e58, #22c55e);
+    background: linear-gradient(90deg, #1d6b0b, #22c55e);
     color: #eafef4;
     border: none;
     border-radius: 12px;
