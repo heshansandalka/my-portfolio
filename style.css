@@ -715,7 +715,8 @@ nav ul li a:hover::after {
     width: 100%;
     max-width: 460px;
     background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.18);
+    color: #2ecc71;
+    border: 1px solid (56, 189, 248, 0.18);
     border-radius: 24px;
     padding: 24px 22px;
     color: #e2e8f0;
@@ -731,7 +732,8 @@ nav ul li a:hover::after {
     font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: #38bdf8;
+    color: #2ecc71;
+    color: ;
 }
 
 .hero-code-panel pre {
