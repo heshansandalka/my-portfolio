@@ -1341,8 +1341,12 @@ hr {
     cursor: pointer;
 }
 .info-item:hover {
-    background: rgba(56, 189, 248, 0.1);
-    transform: translateX(10px);
+     color: var(--accent-primary);
+}
+.info-item:hover {     
+
+      background: #22c55e0d;
+    box-shadow: 0 0 5px var(--accent-glow);
 }
 
 .modern-form {
@@ -1352,7 +1356,7 @@ hr {
     padding: 24px;
     background: rgba(15, 23, 42, 0.95);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #22c55e;
     box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22);
 }
 
