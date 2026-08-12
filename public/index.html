@@ -1,89 +1,333 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="8VDkH5ojhTdZqHgOvuS4R0tWk_c8pGth6jKyjsadF20" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandalka Atthanayake | Software Engineer</title>
+    <link rel="canonical" href="https://heshansandalka.github.io/my-portfolio/" />
+    <meta name="description" content="Sandalka Atthanayake - Software Engineering Undergraduate at CINEC Campus. Portfolio showcasing projects in Web Development, AI, and Software Architecture.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": " Sandalka Atthanayake",
+  "url": "https://heshansandalka.github.io/my-portfolio/",
+  "image": "https://heshansandalka.github.io/my-portfolio/sandalka-atthanayake.png",
+  "jobTitle": "Software Engineer",
+  "sameAs": [
+    "https://www.linkedin.com/in/sandalka-atthanayake-9b98a0367?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    "https://github.com/heshansandalka"
+  ]
+}
+</script>
+    <link rel="icon" type="image/png" href="adf.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.17.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.17.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.17.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<body>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<button id="backToTop" title="Go to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<!-- Background Animation Container -->
+<canvas id="bg-animation"></canvas>
+
+
+   <nav id="main-nav">
+    <div class="logo">Sandalka</div>
+    
+    <div class="menu-icon" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+       <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+ <section class="hero" id="home">
+    <div class="hero-container">
+        <div class="hero-left" data-aos="fade-right">
+            <div class="hero-copy">
+                <p class="hero-subtitle">Software Engineer & Web Creator</p>
+                <h1 class="hero-title">
+                    <span class="hero-title-greeting">Hi, I’m</span>
+                    <span class="hero-title-name main-word">Sandalka Atthanayake</span>
+                </h1>
+                <p class="hero-description-hero">
+                    I build polished web experiences, AI-enhanced tools, and modern software interfaces with a bold dark glass aesthetic.
+                </p>
+                <h2 class="typing-text-container">
+                    <span class="static-green">I am a</span> <span class="typing-text"></span>
+                </h2>
+                <div class="hero-btns">
+                    <a href="#contact" class="contact-card-btn">Let's Connect</a>
+                    <a href="AKH_Sandalka_Atthanayake_FlowCV_Resume.pdf" class="btn-outline" download>Download CV</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="hero-right" data-aos="fade-left">
+            <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
+                <img src="sandalka-atthanayake.png" alt="Sandalka's Profile Photo">
+                <div class="status-badge" id="status-badge">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">Checking...</span>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="hero-stats-full">
+    <div class="hero-stats">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <span>6+</span>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="350">
+                    <span>3+</span>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <span>10+</span>
+                    <p>Tech Tools</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="450">
+                    <span>4.8</span>
+                    <p>Client Rating</p>
+                </div>
+            </div>
+    </div>
+</section>
+
+<section id="about" class="section-padding">
+    <div class="container">
+        <h2 data-aos="fade-up" style="text-align: center; margin-bottom: 30px;">About <span class="highlight">Me</span></h2>
+        <div class="hero-card" data-aos="fade-up" data-aos-delay="400">
+            <h3 class="card-title main-word">Crafting Digital Experiences</h3>
+            <br>
+            <p class="hero-description">
+                I’m an aspiring <strong>Software Engineer</strong> currently at CINEC Campus. 
+                I don't just write code; I craft digital experiences. By blending 
+                AI-driven innovation with aesthetic UI/UX design, I strive to build web applications that are not only functional but also visually immersive.
+            </p>
+            <div class="hero-btns">
+                
+                <a href="#projects" class="btn-outline">Explore My Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/94755935750?text=Hello! I saw your portfolio and would like to chat." 
+   class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<section id="education" class="section-padding">
+    <div class="container">
+        <h2 data-aos="fade-up">Education & <span class="highlight">Milestones</span></h2>
+        
+        <div class="edu-card" data-aos="fade-up">
+            <span class="edu-date" id="edu-date">2025 - Present</span>
+            
+            <h3>Software Engineering Undergraduate</h3>
+            <p><strong>CINEC Campus (UGC-Batch 05)</strong> - Pursuing my degree with a focus on modern web technologies and software architecture.</p>
+        </div>
+    </div>
+</section>
+   <section id="skills" class="section-padding">
+    <div class="container">
+        <h2 data-aos="fade-up">Technical <span class="highlight">Expertise</span></h2>
+        <div class="skills-grid">
+            
+         <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+    <div class="category-header">
+        <i class="fa-solid fa-code"></i>
+        <h3>Frontend Development</h3>
+    </div>
+    <div class="skills-list">
+        <div class="skill-item"><i class="fa-brands fa-html5"></i> <span>HTML5</span></div>
+        <div class="skill-item"><i class="fa-brands fa-css3-alt"></i> <span>CSS3</span></div>
+        <div class="skill-item"><i class="fa-brands fa-js"></i> <span>JavaScript</span></div>
+        <div class="skill-item"><i class="fa-brands fa-react"></i> <span>React</span></div>
+        <div class="skill-item"><i class="fa-brands fa-angular"></i> <span>Angular</span></div>
+    </div>
+</div>
+
+           <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+    <div class="category-header">
+        <i class="fa-solid fa-server"></i>
+        <h3>Backend Development</h3>
+    </div>
+    <div class="skills-list">
+        <div class="skill-item"><i class="fa-brands fa-php"></i> <span>PHP</span></div>
+        <div class="skill-item"><i class="fa-brands fa-node-js"></i> <span>Node.js</span></div>
+        <div class="skill-item"><i class="fa-brands fa-python"></i> <span>Python</span></div>
+        <div class="skill-item"><i class="fa-brands fa-java"></i> <span>Java</span></div>
+        <div class="skill-item"><i class="fa-solid fa-c"></i> <span>C</span></div>
+    </div>
+</div>
+
+           <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+    <div class="category-header">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>Mobile Development</h3>
+    </div>
+    <div class="skills-list">
+        <div class="skill-item"><i class="devicon-flutter-plain"></i> <span>Flutter</span></div>
+        <div class="skill-item"><i class="fa-brands fa-android"></i> <span>Android</span></div>
+    </div>
+</div>
+
+<div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+    <div class="category-header">
+        <i class="fa-solid fa-database"></i>
+        <h3>Database & Servers</h3>
+    </div>
+    <div class="skills-list">
+    <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="skill-logo" alt="MySQL">
+        <span>MySQL</span>
+    </div>
+    <div class="skill-item"><i class="fa-solid fa-network-wired"></i> <span>Nginx</span></div>
+    <div class="skill-item"><i class="fa-solid fa-fire"></i> <span>Firebase</span></div>
+
+    <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" class="skill-logo" alt="SQL Server">
+        <span>SQL Server</span>
+    </div>
+
+        <div class="skill-item"><i class="fa-solid fa-leaf"></i> <span>MongoDB</span></div>
+    
+      
+    </div>
+</div>
+
+<div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+    <div class="category-header">
+        <i class="fa-solid fa-tools"></i>
+        <h3>Tools & Engines</h3>
+    </div>
+    <div class="skills-list">
+        <div class="skill-item"><i class="fa-brands fa-docker"></i> <span>Docker</span></div>
+        <div class="skill-item"><i class="fa-brands fa-unity"></i> <span>Unity</span></div>
+        <div class="skill-item"><i class="fa-brands fa-github"></i> <span>GitHub</span></div>
+        <div class="skill-item"><i class="fa-solid fa-code"></i> <span>VS Code</span></div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="projects" class="section-padding">
+    <h2 data-aos="fade-up">Recent <span class="highlight">Projects</span></h2>
+    <!-- This is the container into which the cards are dropped from JS -->
+    <div id="project-list" class="project-container"></div>
+</section>
+    <section id="contact" class="section-padding">
+    <div class="container">
+       
+        
+
+        <div class="contact-box-container" data-aos="zoom-in">
+            <div class="contact-left">
+                <h1>Connect  <span class="highlight">With Me</span></h1>
+                <p class="contact-note">Feel free to reach out via social media or send a direct message.</p>
+
+                <div class="contact-cards">
+    <a href="https://www.linkedin.com/in/sandalka-atthanayake-9b98a0367?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-card linkedin-card">
+        <div class="contact-card-icon"><i class="fab fa-linkedin-in profile-icon"></i></div>
+        <div class="contact-card-content">
+            <h4>LinkedIn</h4>
+            <p>Sandalka Atthanayake</p>
+        </div>
+    </a>
+    
+    <a href="https://www.facebook.com/share/1DAErhwZMz/" target="_blank" class="contact-card facebook-card">
+        <div class="contact-card-icon"><i class="fa-brands fa-facebook-f"></i></div>
+        <div class="contact-card-content">
+            <h4>Facebook</h4>
+            <p>Sandalka Atthanayake</p>
+        </div>
+    </a>
+    <a href="https://github.com/heshansandalka" target="_blank" class="contact-card github-card">
+        <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+        <div class="contact-card-content">
+            <h4>GitHub</h4>
+            <p>heshansandalka</p>
+        </div>
+    </a>
+    <a href="mailto:heshanatthanayake@gmail.com" target="_blank" class="contact-card email-card">
+    <div class="contact-card-icon">
+        <i class="fas fa-envelope profile-icon"></i> <!-- envelope icon  -->
+    </div>
+    <div class="contact-card-content">
+        <h4>Email</h4>
+        <p>heshanatthanayake</p>
+    </div>
+</a>
+</div>
+<div class="info-details">
+    <a href="tel:+94757877477" class="info-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>+94 75 787 7477</span>
+    </a>
+    <a href="https://www.google.com/maps/place/Sri+Lanka" target="_blank" class="info-item">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <span>Sri Lanka</span>
+    </a>
+</div>
+            </div>
+
+            <form id="contact-form" class="modern-form">
+                <h1>Send a <span class="highlight">Message</span></h1>
+                <div class="form-row">
+                    <div class="input-wrap">
+                        <label>Full Name</label>
+                        <input type="text" name="user_name" placeholder="Your name" required>
+                    </div>
+                    <div class="input-wrap">
+                        <label>Email Address</label>
+                        <input type="email" name="user_email" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <label>Your Message</label>
+                    <textarea name="message" placeholder="How can I help you?" rows="8" required></textarea>
+                </div>
+                <button type="submit" id="send-btn" class="submit-btn">
+                    Send Message <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+    
+
+    <footer>
+        <p>&copy; 2026 Sandalka Atthanayake. All Rights Reserved.</p>
+    </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+    
+</body>
 </html>
