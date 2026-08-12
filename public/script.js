@@ -241,7 +241,7 @@ function displayProjects() {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <div class="tech-stack">
-                    ${project.tech.map(t => `<span>${t}</span>`).join('')}
+                 ${project.tech.map(t => `<span class="tech-${t.toLowerCase().replace(/[.\s]/g, '')}">${t}</span>`).join('')}
                 </div>
                 <div class="card-links">
                     <a href="${project.github}" target="_blank" rel="noopener" class="link-btn github">
