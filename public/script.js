@@ -217,7 +217,7 @@ function displayProjects() {
         return `
         <div class="glass-card" data-aos="fade-up" data-aos-delay="${index * 200}">
             <div class="card-image">
-                <img src="${project.image}" alt="${project.title}">
+                <img src="${project.image}" alt="${project.title}" loading="lazy" decoding="async" width="400" height="250">
                 <span class="badge">${project.badge}</span>
             </div>
             <div class="card-content">
