@@ -1054,21 +1054,21 @@ nav ul li a:hover::after {
 }
 
 /* Language / Tool specific colors */
-.tech-html { color: #e34c26; border-color: rgba(227, 76, 38, 0.3); background: rgba(227, 76, 38, 0.08); }
-.tech-css { color: #264de4; border-color: rgba(38, 77, 228, 0.3); background: rgba(38, 77, 228, 0.08); }
-.tech-js { color: #f7df1e; border-color: rgba(247, 223, 30, 0.3); background: rgba(247, 223, 30, 0.08); }
-.tech-json { color: #8bc34a; border-color: rgba(139, 195, 74, 0.3); background: rgba(139, 195, 74, 0.08); }
-.tech-xml { color: #ff6f00; border-color: rgba(255, 111, 0, 0.3); background: rgba(255, 111, 0, 0.08); }
-.tech-react { color: #61dbfb; border-color: rgba(97, 219, 251, 0.3); background: rgba(97, 219, 251, 0.08); }
-.tech-firebase { color: #ffca28; border-color: rgba(255, 202, 40, 0.3); background: rgba(255, 202, 40, 0.08); }
-.tech-flutter { color: #02569b; border-color: rgba(2, 86, 155, 0.3); background: rgba(2, 86, 155, 0.08); }
-.tech-dart { color: #0175c2; border-color: rgba(1, 117, 194, 0.3); background: rgba(1, 117, 194, 0.08); }
-.tech-android { color: #3ddc84; border-color: rgba(61, 220, 132, 0.3); background: rgba(61, 220, 132, 0.08); }
-.tech-php { color: #8993be; border-color: rgba(137, 147, 190, 0.3); background: rgba(137, 147, 190, 0.08); }
-.tech-mysql { color: #00758f; border-color: rgba(0, 117, 143, 0.3); background: rgba(0, 117, 143, 0.08); }
-.tech-bootstrap { color: #7952b3; border-color: rgba(121, 82, 179, 0.3); background: rgba(121, 82, 179, 0.08); }
-.tech-xampp { color: #fb7a24; border-color: rgba(251, 122, 36, 0.3); background: rgba(251, 122, 36, 0.08); }
-.tech-python { color: #3776ab; border-color: rgba(55, 118, 171, 0.3); background: rgba(55, 118, 171, 0.08); }
+.tech-stack .tech-html { color: #e34c26; border-color: rgba(227, 76, 38, 0.3); background: rgba(227, 76, 38, 0.08); }
+.tech-stack .tech-css { color: #264de4; border-color: rgba(38, 77, 228, 0.3); background: rgba(38, 77, 228, 0.08); }
+.tech-stack .tech-js { color: #f7df1e; border-color: rgba(247, 223, 30, 0.3); background: rgba(247, 223, 30, 0.08); }
+.tech-stack .tech-json { color: #8bc34a; border-color: rgba(139, 195, 74, 0.3); background: rgba(139, 195, 74, 0.08); }
+.tech-stack .tech-xml { color: #ff6f00; border-color: rgba(255, 111, 0, 0.3); background: rgba(255, 111, 0, 0.08); }
+.tech-stack .tech-react { color: #61dbfb; border-color: rgba(97, 219, 251, 0.3); background: rgba(97, 219, 251, 0.08); }
+.tech-stack .tech-firebase { color: #ffca28; border-color: rgba(255, 202, 40, 0.3); background: rgba(255, 202, 40, 0.08); }
+.tech-stack .tech-flutter { color: #02569b; border-color: rgba(2, 86, 155, 0.3); background: rgba(2, 86, 155, 0.08); }
+.tech-stack .tech-dart { color: #0175c2; border-color: rgba(1, 117, 194, 0.3); background: rgba(1, 117, 194, 0.08); }
+.tech-stack .tech-android { color: #3ddc84; border-color: rgba(61, 220, 132, 0.3); background: rgba(61, 220, 132, 0.08); }
+.tech-stack .tech-php { color: #8993be; border-color: rgba(137, 147, 190, 0.3); background: rgba(137, 147, 190, 0.08); }
+.tech-stack .tech-mysql { color: #00758f; border-color: rgba(0, 117, 143, 0.3); background: rgba(0, 117, 143, 0.08); }
+.tech-stack .tech-bootstrap { color: #7952b3; border-color: rgba(121, 82, 179, 0.3); background: rgba(121, 82, 179, 0.08); }
+.tech-stack .tech-xampp { color: #fb7a24; border-color: rgba(251, 122, 36, 0.3); background: rgba(251, 122, 36, 0.08); }
+.tech-stack .tech-python { color: #3776ab; border-color: rgba(55, 118, 171, 0.3); background: rgba(55, 118, 171, 0.08); }
 
 .card-links {
     display: flex;
