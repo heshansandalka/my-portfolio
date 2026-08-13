@@ -1211,7 +1211,7 @@ nav ul li a:hover::after {
     display: flex;
     max-width: 1050px;
     margin: 40px auto 0;
-    gap: 30px;
+    gap: 60px;
     background: transparent;
     border: none;
     box-shadow: none;
