@@ -1158,7 +1158,7 @@ nav ul li a:hover::after {
 
 .link-btn.github {
     background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
+    color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -1170,7 +1170,7 @@ nav ul li a:hover::after {
 
 .link-btn.demo {
     background: linear-gradient(135deg, #38bdf8, #818cf8);
-    color: #ffffff;
+    color: transparent;
     border: none;
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }
