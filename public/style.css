@@ -1301,6 +1301,22 @@ nav ul li a::after { background: var(--full-green-2) !important; }
     box-shadow: 0 18px 40px rgba(7, 90, 70, 0.06) !important;
 }
 
+/* GitHub Button - Dark Glass with White Text */
+.link-btn.github,
+.card-links .link-btn.github {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.link-btn.github:hover,
+.card-links .link-btn.github:hover {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #ffffff !important;
+    transform: translateY(-3px);
+}
+
 /* APK Install Button - Blue Color */
 .link-btn.apk,
 .card-links .link-btn.apk {
