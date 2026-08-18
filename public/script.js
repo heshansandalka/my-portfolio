@@ -199,6 +199,16 @@ const projects = [
         live: "https://drive.google.com/file/d/1gcYqMEAHE1Awct3BgcX4MwwPzu2wpuQq/view?usp=drivesdk",
         github: "https://github.com/heshansandalka/health_wellness_app",
         badge: "APK Install"
+    },
+
+    {
+        title: "FloodGuardLK",
+        description: "An IoT-driven flood early warning system for Sri Lanka. Features multi-sensor fusion, edge computing for offline resilience, Azure IoT Hub analytics, and a multilingual citizen mobile app for real-time alerts.",
+        image: "png",
+        tech: ["IOT", "AZURE", "LORAWAN", "MQTT", "RASPBERRY PI"],
+        live: "#",
+        github: "#",
+        badge: "Pending"
     }
 ];
 
