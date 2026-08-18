@@ -1301,6 +1301,71 @@ nav ul li a::after { background: var(--full-green-2) !important; }
     box-shadow: 0 18px 40px rgba(7, 90, 70, 0.06) !important;
 }
 
+/* APK Install Button - Blue Color */
+.link-btn.apk,
+.card-links .link-btn.apk {
+    background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35) !important;
+}
+
+.link-btn.apk:hover,
+.card-links .link-btn.apk:hover {
+    background: linear-gradient(135deg, #0369a1, #0284c7) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.65) !important;
+    transform: translateY(-3px);
+}
+
+/* Pending Button - Red Color */
+.link-btn.pending,
+.card-links .link-btn.pending {
+    background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.35) !important;
+    cursor: not-allowed !important;
+    opacity: 0.95;
+}
+
+.link-btn.pending:hover,
+.card-links .link-btn.pending:hover {
+    background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.65) !important;
+    cursor: not-allowed !important;
+}
+
+/* Badge colors */
+.badge.badge-pending {
+    background: rgba(239, 68, 68, 0.25) !important;
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.4) !important;
+}
+
+.badge.badge-apk {
+    background: rgba(56, 189, 248, 0.25) !important;
+    border-color: rgba(56, 189, 248, 0.6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+}
+
+.badge.badge-live {
+    background: rgba(34, 197, 94, 0.25) !important;
+    border-color: rgba(34, 197, 94, 0.6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.4) !important;
+}
+
+.badge.badge-python {
+    background: rgba(55, 118, 171, 0.25) !important;
+    border-color: rgba(55, 118, 171, 0.6) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(55, 118, 171, 0.4) !important;
+}
+
 input,
 textarea {
     background: rgba(2, 20, 18, 0.35) !important;

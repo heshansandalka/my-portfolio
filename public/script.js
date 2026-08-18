@@ -231,21 +231,31 @@ function displayProjects() {
     if (!projectContainer) return;
 
     projectContainer.innerHTML = projects.map((project, index) => {
-        const liveButtonLabel = project.badge === "APK Install" ? "APK Install" : "Live Demo";
-        const liveButtonIcon = project.badge === "APK Install" ? "fa-download" : "fa-rocket";
-        const liveButtonHtml = (project.live && project.live !== "#")
-            ? `<a href="${project.live}" target="_blank" rel="noopener" class="link-btn demo">
-                   <i class="fa-solid ${liveButtonIcon}"></i> ${liveButtonLabel}
-               </a>`
-            : `<button class="link-btn demo" style="background: #ef4444; cursor: not-allowed; border: none;">
+        let liveButtonHtml = '';
+        let badgeClass = 'badge-live';
+
+        if (!project.live || project.live === "#" || project.badge === "Pending") {
+            badgeClass = 'badge-pending';
+            liveButtonHtml = `<button class="link-btn pending" disabled style="cursor: not-allowed;">
                    <i class="fa-solid fa-clock"></i> Pending
                </button>`;
+        } else if (project.badge === "APK Install") {
+            badgeClass = 'badge-apk';
+            liveButtonHtml = `<a href="${project.live}" target="_blank" rel="noopener" class="link-btn apk">
+                   <i class="fa-solid fa-download"></i> APK Install
+               </a>`;
+        } else {
+            badgeClass = project.badge === "Python" ? 'badge-python' : 'badge-live';
+            liveButtonHtml = `<a href="${project.live}" target="_blank" rel="noopener" class="link-btn demo">
+                   <i class="fa-solid fa-rocket"></i> Live Demo
+               </a>`;
+        }
 
         return `
         <div class="glass-card" data-aos="fade-up" data-aos-delay="${index * 200}">
             <div class="card-image">
                 <img data-src="${project.image}" alt="${escapeHtml(project.title)}" width="400" height="250" class="lazy-img" decoding="async">
-                <span class="badge">${project.badge}</span>
+                <span class="badge ${badgeClass}">${project.badge}</span>
             </div>
             <div class="card-content">
                 <h3>${project.title}</h3>
