@@ -247,28 +247,69 @@ html {
 
     .about-card,
     .hero-card {
-        padding: 26px 20px !important;
-        border-radius: 20px !important;
+        padding: 18px 16px !important;
+        border-radius: 18px !important;
     }
 
     .about-headline {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .about-description {
+        font-size: 0.84rem;
+        line-height: 1.55;
+        margin-bottom: 16px;
     }
 
     .about-features {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .about-feature-item {
+        padding: 12px 12px;
+        gap: 8px;
+    }
+
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .feature-text h4 {
+        font-size: 0.85rem;
+    }
+
+    .feature-text p {
+        font-size: 0.74rem;
+    }
+
+    .about-quick-info {
+        gap: 6px;
+        margin-bottom: 16px;
+        padding-top: 8px;
+    }
+
+    .info-pill {
+        font-size: 0.74rem;
+        padding: 4px 10px;
     }
 
     .about-btns {
         flex-direction: column;
         width: 100%;
+        gap: 8px;
     }
 
     .about-btn-primary,
     .about-btn-secondary {
         width: 100%;
         justify-content: center;
+        padding: 10px 18px;
+        font-size: 0.85rem;
         box-sizing: border-box;
     }
 }
@@ -619,43 +660,82 @@ html {
 @media (max-width: 768px) {
     .timeline-container {
         padding-left: 0;
-        gap: 20px;
+        gap: 14px;
     }
 
     .timeline-container::before {
-        left: 20px;
+        left: 18px;
     }
 
     .timeline-item {
-        gap: 16px;
+        gap: 12px;
     }
 
     .timeline-dot {
-        width: 42px;
-        height: 42px;
-        font-size: 0.95rem;
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
     }
 
     .timeline-card,
     .glass-card-edu,
     .edu-card {
-        padding: 20px 16px !important;
-        border-radius: 16px !important;
+        padding: 14px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    .edu-card-header {
+        margin-bottom: 8px;
     }
 
     .edu-title,
     .edu-card h3 {
-        font-size: 1.05rem !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 4px !important;
     }
 
     .edu-institution {
-        font-size: 0.82rem;
+        font-size: 0.78rem;
+        margin-bottom: 8px;
+    }
+
+    .edu-description,
+    .edu-card p {
+        font-size: 0.78rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .edu-tags {
+        gap: 4px;
+        padding-top: 8px;
+    }
+
+    .edu-tags span {
+        font-size: 0.68rem;
+        padding: 2px 7px;
     }
 
     .edu-role-info {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
         gap: 6px;
+    }
+
+    .edu-date-badge,
+    .edu-date {
+        font-size: 0.68rem !important;
+        padding: 3px 8px !important;
+    }
+
+    .edu-status-pill {
+        font-size: 0.65rem;
+        padding: 3px 8px;
     }
 }
 
@@ -2110,9 +2190,11 @@ nav ul li a.active::after {
     border-color: rgba(10, 102, 194, 0.25);
     color: #f1f5f9;
 }
+
 .social-tile.linkedin-tile i {
     color: #0a66c2;
 }
+
 .social-tile.linkedin-tile:hover {
     background: rgba(10, 102, 194, 0.22);
     border-color: #0a66c2;
@@ -2127,9 +2209,11 @@ nav ul li a.active::after {
     border-color: rgba(255, 255, 255, 0.14);
     color: #f1f5f9;
 }
+
 .social-tile.github-tile i {
     color: #ffffff;
 }
+
 .social-tile.github-tile:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.35);
@@ -2144,9 +2228,11 @@ nav ul li a.active::after {
     border-color: rgba(24, 119, 242, 0.25);
     color: #f1f5f9;
 }
+
 .social-tile.facebook-tile i {
     color: #1877f2;
 }
+
 .social-tile.facebook-tile:hover {
     background: rgba(24, 119, 242, 0.22);
     border-color: #1877f2;
@@ -2161,9 +2247,11 @@ nav ul li a.active::after {
     border-color: rgba(37, 211, 102, 0.25);
     color: #f1f5f9;
 }
+
 .social-tile.whatsapp-tile i {
     color: #25d366;
 }
+
 .social-tile.whatsapp-tile:hover {
     background: rgba(37, 211, 102, 0.22);
     border-color: #25d366;
