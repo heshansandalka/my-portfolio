@@ -263,9 +263,8 @@ html {
     }
 
     .about-features {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin-bottom: 16px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px;
     }
 
     .about-feature-item {
