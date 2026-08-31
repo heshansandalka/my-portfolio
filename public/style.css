@@ -247,22 +247,64 @@ html {
 
     .about-card,
     .hero-card {
-        padding: 26px 20px !important;
-        border-radius: 20px !important;
+        padding: 18px 16px !important;
+        border-radius: 16px !important;
+    }
+
+    .about-badge {
+        font-size: 0.72rem;
+        padding: 5px 12px;
     }
 
     .about-headline {
-        font-size: 1.3rem;
+        font-size: 1.1rem !important;
+        margin-bottom: 10px;
+    }
+
+    .about-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
     }
 
     .about-features {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .about-feature-item {
+        padding: 12px;
+    }
+
+    .feature-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+
+    .feature-text h4 {
+        font-size: 0.85rem;
+    }
+
+    .feature-text p {
+        font-size: 0.72rem;
+    }
+
+    .about-quick-info {
+        gap: 6px;
+        margin-bottom: 16px;
+    }
+
+    .info-pill {
+        font-size: 0.72rem;
+        padding: 4px 10px;
     }
 
     .about-btns {
         flex-direction: column;
         width: 100%;
+        gap: 10px;
     }
 
     .about-btn-primary,
@@ -270,6 +312,8 @@ html {
         width: 100%;
         justify-content: center;
         box-sizing: border-box;
+        padding: 10px 18px;
+        font-size: 0.82rem;
     }
 }
 
@@ -619,43 +663,86 @@ html {
 @media (max-width: 768px) {
     .timeline-container {
         padding-left: 0;
-        gap: 20px;
-    }
-
-    .timeline-container::before {
-        left: 20px;
-    }
-
-    .timeline-item {
         gap: 16px;
     }
 
+    .timeline-container::before {
+        left: 18px;
+    }
+
+    .timeline-item {
+        gap: 12px;
+    }
+
     .timeline-dot {
-        width: 42px;
-        height: 42px;
-        font-size: 0.95rem;
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
     }
 
     .timeline-card,
     .glass-card-edu,
     .edu-card {
-        padding: 20px 16px !important;
-        border-radius: 16px !important;
+        padding: 14px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    .edu-date-badge,
+    .edu-date {
+        font-size: 0.68rem !important;
+        padding: 3px 10px !important;
+    }
+
+    .edu-status-pill {
+        font-size: 0.64rem;
+        padding: 3px 10px;
     }
 
     .edu-title,
     .edu-card h3 {
-        font-size: 1.05rem !important;
+        font-size: 0.92rem !important;
+        margin-bottom: 4px !important;
     }
 
     .edu-institution {
-        font-size: 0.82rem;
+        font-size: 0.74rem;
+        margin-bottom: 8px;
+    }
+
+    .edu-description,
+    .edu-card p {
+        font-size: 0.76rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
     }
 
     .edu-role-info {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
         gap: 6px;
+    }
+
+    /* Tags in one scrollable line */
+    .edu-tags {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 6px;
+        padding-top: 8px;
+        padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .edu-tags::-webkit-scrollbar {
+        display: none;
+    }
+
+    .edu-tags span {
+        flex-shrink: 0;
+        font-size: 0.66rem;
+        padding: 4px 9px;
+        white-space: nowrap;
     }
 }
 
