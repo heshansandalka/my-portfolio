@@ -177,4 +177,3 @@ if (heroRight && heroImage) {
     });
 }
 
-
