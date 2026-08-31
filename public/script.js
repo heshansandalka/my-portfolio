@@ -147,3 +147,34 @@ function checkConnection() {
 window.addEventListener('online', checkConnection);
 window.addEventListener('offline', checkConnection);
 checkConnection();
+
+
+// Hero Image  Mouse Movement 3D Effect 
+const heroRight = document.querySelector('.hero-right');
+const heroImage = document.querySelector('.hero-image');
+
+if (heroRight && heroImage) {
+    heroRight.addEventListener('mousemove', (e) => {
+        const rect = heroRight.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        const rotateX = -y * 25; 
+        const rotateY = x * 25;
+
+        heroImage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        heroImage.style.animation = 'none'; // Mouse  float animation 
+    });
+
+    heroRight.addEventListener('mouseleave', () => {
+        heroImage.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        heroImage.style.transition = `transform 0.5s ease`;
+        heroImage.style.animation = 'float 4s ease-in-out infinite'; //  float 
+    });
+
+    heroRight.addEventListener('mouseenter', () => {
+        heroImage.style.transition = `transform 0.1s ease-out`;
+    });
+}
+
+
