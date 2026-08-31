@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateSpan = document.getElementById('edu-date');
     const currentYear = new Date().getFullYear();
     if (dateSpan && currentYear > 2024) {
-        dateSpan.innerText = `2024 - ${currentYear}`;
+        dateSpan.innerHTML = `<i class="fa-solid fa-calendar-days"></i> 2024 - ${currentYear}`;
     }
 });
 
