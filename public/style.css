@@ -336,10 +336,7 @@ html {
     }
 }
 
-.hero-image {
-    position: relative;
-    display: inline-block;
-}
+
 
 .status-badge {
     position: absolute;
@@ -1241,7 +1238,7 @@ nav ul li a.active::after {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: -100px;
+    margin-top: -40px;
 }
 
 
