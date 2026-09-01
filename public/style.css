@@ -1372,226 +1372,200 @@ nav ul li a.active::after {
         padding-right: 18px;
     }
 }
-
 /* =========================================
-   4. Skills Section
+   Skills Orbit Showcase (All Skills + Original Colors)
    ========================================= */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.skill-category {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    text-align: left;
-    backdrop-filter: blur(10px);
+.skills-orbit-wrapper {
     position: relative;
-    overflow: hidden;
-}
-
-.skill-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background:transparent;
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.3;
-    z-index: -1;
-}
-
-.skill-category1 {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    text-align: left;
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-.skill-category1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('sandalka.png');
-    background-size: cover;
-    background-position: center top;
-    opacity: 0.8;
-    z-index: -1;
-}
-.skill-category1:hover {
-    border-color: #22c55e;
-    transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.05);
-}
-
-.skill-category:hover {
-    border-color: #22c55e;
-    transform: translateY(-5px);
-    background: rgba(56, 189, 248, 0.05);
-}
-
-.category-header {
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    margin: 60px auto 30px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-content: center;
 }
 
-.category-header i {
-    font-size: 1.8rem;
-    color: #22c55e;
+.orbit-center {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #22c55e;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4), 0 0 60px rgba(34, 197, 94, 0.15);
+    z-index: 5;
 }
 
-.skills-list {
+.orbit-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(34, 197, 94, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitSpin linear infinite;
+}
+
+.orbit-ring-1 {
+    width: 300px;
+    height: 300px;
+    animation-duration: 84s;
+}
+
+.orbit-ring-2 {
+    width: 420px;
+    height: 420px;
+    animation-duration: 94s;
+    animation-direction: reverse;
+}
+
+.orbit-ring-3 {
+    width: 540px;
+    height: 540px;
+    animation-duration: 84s;
+}
+
+@keyframes orbitSpin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-pos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.orbit-icon {
+    width: 52px;
+    height: 52px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13, 22, 38, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    font-size: 1.35rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    animation: counterSpin linear infinite;
+    animation-duration: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.skill-item {
-    background: rgba(56, 189, 248, 0.1);
-    color: #22c55e;
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid #22c55e;
-    transition: 0.3s;
+.orbit-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
-.skill-item:hover {
-    background: #22c55e;
-    color: #0f172a;
+.orbit-ring-2 .orbit-icon {
+    animation-direction: reverse;
 }
 
-.skill-item i {
-    font-size: 1.5rem;
+@keyframes counterSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
 
-.skill-item i {
-    font-size: 1.5rem;
-    width: 30px;
-    text-align: center;
-}
+/* Position each .orbit-pos around the ring */
+.orbit-ring-1 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(51.4deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(102.8deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(154.2deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(205.6deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(257deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(308.4deg) translateX(150px); }
 
-.fa-html5 {
-    color: #e34c26;
-}
+.orbit-ring-2 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateX(210px); }
 
-.fa-css3-alt {
-    color: #264de4;
-}
+.orbit-ring-3 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(180deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateX(270px); }
 
-.fa-js {
-    color: #f7df1e;
-}
-
-.fa-react {
-    color: #61dbfb;
-}
-
-.fa-php {
-    color: #8993be;
-}
-
-.fa-node-js {
-    color: #68a063;
-}
-
-.fa-python {
+.orbit-icon .fa-html5 { color: #e34c26; }
+.orbit-icon .fa-css3-alt { color: #264de4; }
+.orbit-icon .fa-js { color: #f7df1e; }
+.orbit-icon .fa-react { color: #61dbfb; }
+.orbit-icon .fa-angular { color: #dd0031; }
+.orbit-icon .fa-php { color: #8993be; }
+.orbit-icon .fa-node-js { color: #68a063; }
+.orbit-icon .fa-python {
     background: linear-gradient(to bottom, #3776ab 50%, #ffd43b 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.orbit-icon .fa-java { color: #f89820; }
+.orbit-icon .fa-c { color: #a8b9cc; }
+.orbit-icon .devicon-flutter-plain { color: #2391ec; }
+.orbit-icon .fa-android { color: #3ddc84; }
+.orbit-icon .fa-docker { color: #0db7ed; }
+.orbit-icon .fa-github { color: #ffffff; }
+.orbit-icon .fa-unity { color: #ffffff; }
+.orbit-icon .fa-network-wired { color: #009688; }
+.orbit-icon .fa-fire { color: #ffca28; }
+.orbit-icon .fa-leaf { color: #47a248; }
+.orbit-icon .fa-code { color: #007acc; }
 
-.fa-mysql {
-    background: linear-gradient(to right, #00758f, #f29111);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.orbit-icon:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 18px rgba(34, 197, 94, 0.5);
+    z-index: 10;
 }
 
-.fa-sql-server {
-    color: #cc2927;
-}
+@media (max-width: 768px) {
+    .skills-orbit-wrapper {
+        max-width: 340px;
+        margin: 40px auto 20px;
+    }
+    .orbit-center { width: 90px; height: 90px; }
+    .orbit-ring-1 { width: 190px; height: 190px; }
+    .orbit-ring-2 { width: 260px; height: 260px; }
+    .orbit-ring-3 { width: 330px; height: 330px; }
+    .orbit-icon { width: 32px; height: 32px; font-size: 0.95rem; }
+    .orbit-icon img { width: 16px; height: 16px; }
 
-.skill-logo {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+    .orbit-ring-1 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(51.4deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(102.8deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(154.2deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(205.6deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(257deg) translateX(95px); }
+    .orbit-ring-1 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(308.4deg) translateX(95px); }
 
-.fa-c {
-    color: #A8B9CC;
-}
+    .orbit-ring-2 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateX(130px); }
+    .orbit-ring-2 .orbit-pos:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateX(130px); }
 
-.fa-leaf {
-    color: #47a248;
+    .orbit-ring-3 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(165px); }
+    .orbit-ring-3 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg) translateX(165px); }
+    .orbit-ring-3 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg) translateX(165px); }
+    .orbit-ring-3 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(180deg) translateX(165px); }
+    .orbit-ring-3 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateX(165px); }
+    .orbit-ring-3 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateX(165px); }
 }
-
-.fa-github {
-    color: #ffffff;
-}
-
-.fa-code {
-    color: #007acc;
-}
-
-.fa-docker {
-    color: #0db7ed;
-}
-
-.fa-java {
-    color: #f89820;
-}
-
-.fa-unity {
-    color: #ffffff;
-}
-
-.fa-fire {
-    color: #ffca28;
-}
-
-.fa-network-wired {
-    color: #009688;
-}
-
-.fa-tools {
-    color: #607d8b;
-}
-
-.fa-android {
-    color: #3ddc84;
-}
-
-.fa-angular {
-    color: #dd0031;
-}
-
-.devicon-flutter-plain {
-    color: #2391ec;
-}
-
-.fa-mobile-screen {
-    color: #38bdf8;
-}
-
 /* =========================================
    5. Project Section (Modern Compact Glass Cards)
    ========================================= */
