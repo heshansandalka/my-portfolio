@@ -1380,7 +1380,7 @@ nav ul li a.active::after {
     width: 100%;
     max-width: 560px;
     aspect-ratio: 1 / 1;
-    margin: 60px auto 30px;
+    margin: -60px auto 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1408,28 +1408,28 @@ nav ul li a.active::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px dashed rgba(34, 197, 94, 0.2);
+    border: 1px dashed #22c55e;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: orbitSpin linear infinite;
 }
 
 .orbit-ring-1 {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     animation-duration: 84s;
 }
 
 .orbit-ring-2 {
-    width: 420px;
-    height: 420px;
+    width: 370px;
+    height: 370px;
     animation-duration: 94s;
     animation-direction: reverse;
 }
 
 .orbit-ring-3 {
-    width: 540px;
-    height: 540px;
+    width: 490px;
+    height: 490px;
     animation-duration: 84s;
 }
 
@@ -1445,13 +1445,13 @@ nav ul li a.active::after {
 }
 
 .orbit-icon {
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(13, 22, 38, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid #22c55e;
     border-radius: 50%;
     font-size: 1.35rem;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
@@ -1476,29 +1476,29 @@ nav ul li a.active::after {
 }
 
 /* Position each .orbit-pos around the ring */
-.orbit-ring-1 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(51.4deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(102.8deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(154.2deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(205.6deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(257deg) translateX(150px); }
-.orbit-ring-1 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(308.4deg) translateX(150px); }
+.orbit-ring-1 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(51.4deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(102.8deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(154.2deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(205.6deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(257deg) translateX(120px); }
+.orbit-ring-1 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(308.4deg) translateX(120px); }
 
-.orbit-ring-2 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateX(210px); }
-.orbit-ring-2 .orbit-pos:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateX(210px); }
+.orbit-ring-2 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateX(180px); }
+.orbit-ring-2 .orbit-pos:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateX(180px); }
 
-.orbit-ring-3 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(270px); }
-.orbit-ring-3 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg) translateX(270px); }
-.orbit-ring-3 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg) translateX(270px); }
-.orbit-ring-3 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(180deg) translateX(270px); }
-.orbit-ring-3 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateX(270px); }
-.orbit-ring-3 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateX(270px); }
+.orbit-ring-3 .orbit-pos:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translateX(240px); }
+.orbit-ring-3 .orbit-pos:nth-child(2) { transform: translate(-50%, -50%) rotate(60deg) translateX(240px); }
+.orbit-ring-3 .orbit-pos:nth-child(3) { transform: translate(-50%, -50%) rotate(120deg) translateX(240px); }
+.orbit-ring-3 .orbit-pos:nth-child(4) { transform: translate(-50%, -50%) rotate(180deg) translateX(240px); }
+.orbit-ring-3 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateX(240px); }
+.orbit-ring-3 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateX(240px); }
 
 .orbit-icon .fa-html5 { color: #e34c26; }
 .orbit-icon .fa-css3-alt { color: #264de4; }
