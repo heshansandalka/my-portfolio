@@ -317,24 +317,8 @@ html {
     }
 }
 
-@media (max-width: 768px) {
-    .hero-image {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex;
-        justify-content: center;
-        padding: 0 10px;
-    }
 
-    .hero-image img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        object-fit: contain;
-        border-radius: 20px;
-        margin: 0 auto;
-    }
-}
+
 
 
 
@@ -1301,13 +1285,22 @@ nav ul li a.active::after {
 
     .hero-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column-reverse !important; 
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-left {
+        order: 1;
+        width: 100%;
         text-align: center;
     }
 
     .hero-right {
-        display: contents;
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-image {
