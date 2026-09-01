@@ -892,20 +892,31 @@ h2 {
 }
 
 body {
+    position: relative;
     background: linear-gradient(180deg, rgba(10, 16, 32, 0.96), rgba(7, 11, 24, 1));
-    background-image:
-        radial-gradient(circle at 15% 14%, #22c55e(56, 189, 248, 0.08), transparent 18%),
-        radial-gradient(circle at 80% 18%, rgba(139, 92, 246, 0.06), transparent 20%);
-    background-blend-mode: overlay;
-    background-attachment: fixed;
     color: #f8fafc;
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
     min-height: 100vh;
-
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url();
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    filter: blur(1px);
+    z-index: -1;
+    pointer-events: none;
+}
 section {
     padding: 100px 10%;
     text-align: center;
@@ -1018,6 +1029,8 @@ nav ul li a.active::after {
 /* =========================================
    3. Hero Section
    ========================================= */
+
+   
 .hero-btns {
     display: flex;
     gap: 20px;
@@ -1385,6 +1398,22 @@ nav ul li a.active::after {
     transition: all 0.3s ease;
     text-align: left;
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('sandalka.png');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .skill-category:hover {
@@ -1418,7 +1447,7 @@ nav ul li a.active::after {
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    border: 1px solid #22c55e;
     transition: 0.3s;
 }
 
@@ -1547,6 +1576,8 @@ nav ul li a.active::after {
     padding: 90px 6%;
     max-width: 1300px;
     margin: 0 auto;
+    scroll-snap-type: y mandatory;
+
 }
 
 .project-container {
@@ -1572,6 +1603,8 @@ nav ul li a.active::after {
     flex-direction: column;
     position: relative;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
+    scroll-snap-align: start;
+    scroll-margin-top: 100px;
 }
 
 .glass-card:hover {
@@ -2551,8 +2584,7 @@ nav ul li a.active::after {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background: linear-gradient(180deg, rgba(10, 16, 32, 0.98), rgba(7, 11, 24, 1));
+    z-index: -2;
     pointer-events: none;
     opacity: 0.95;
 }
