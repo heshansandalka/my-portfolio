@@ -177,3 +177,34 @@ if (heroRight && heroImage) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const ratingCard = document.getElementById('ratingCard');
+    const ratingCount = document.getElementById('ratingCount');
+
+    //  Save  Rating 
+    const savedRating = localStorage.getItem('clientRating');
+    if (savedRating) {
+        ratingCount.textContent = parseFloat(savedRating).toFixed(1);
+    }
+
+    ratingCard.addEventListener('click', () => {
+        let currentRating = parseFloat(ratingCount.textContent);
+
+        //  5.0  0.1 
+        if (currentRating < 5.0) {
+            currentRating = Math.min(5.0, currentRating + 0.1);
+            
+            // UI  update ක
+            ratingCount.textContent = currentRating.toFixed(1);
+            
+            // Browser  LocalStorage  save 
+            localStorage.setItem('clientRating', currentRating.toFixed(1));
+
+            // Click  Animation 
+            ratingCard.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                ratingCard.style.transform = 'scale(1)';
+            }, 150);
+        }
+    });
+});
