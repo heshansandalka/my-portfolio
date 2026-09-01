@@ -1674,7 +1674,7 @@ nav ul li a.active::after {
     }
     
     #skills .skills-title,
-    #skills h2.skills-title {
+    #skills h1.skills-title {
         text-align: center !important;
         margin-bottom: 30px !important;
         font-size: clamp(2.5rem, 8vw, 3.8rem) !important;
