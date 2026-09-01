@@ -1402,11 +1402,41 @@ nav ul li a.active::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('sandalka.png');
+    background:transparent;
     background-size: cover;
     background-position: center top;
     opacity: 0.3;
     z-index: -1;
+}
+
+.skill-category1 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+.skill-category1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('sandalka.png');
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.8;
+    z-index: -1;
+}
+.skill-category1:hover {
+    border-color: #22c55e;
+    transform: translateY(-5px);
+    background: rgba(56, 189, 248, 0.05);
 }
 
 .skill-category:hover {
