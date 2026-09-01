@@ -1402,6 +1402,8 @@ nav ul li a.active::after {
     transform: translate(-50%, -50%);
     width: 380px;
     height: 380px;
+    margin-left: auto;
+    margin-right: 0;
     background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, transparent 70%);
     filter: blur(60px);
     z-index: 1;
@@ -1613,6 +1615,70 @@ nav ul li a.active::after {
     .orbit-ring-3 .orbit-pos:nth-child(5) { transform: translate(-50%, -50%) rotate(240deg) translateX(165px); }
     .orbit-ring-3 .orbit-pos:nth-child(6) { transform: translate(-50%, -50%) rotate(300deg) translateX(165px); }
 }
+/* Container  Flexbox  Orbit Title */
+#skills .skills-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Topic CSS (Font size ) */
+#skills .skills-title,
+#skills h1.skills-title {
+    text-align: left !important;
+    margin: 0 !important;
+    font-size: 6rem !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1.5px !important;
+    flex: 0 0 auto !important;
+}
+
+/*  White Outline / Text Stroke Style */
+#skills .skills-title .stroke-text {
+    color: transparent !important;
+    -webkit-text-stroke: 2px #ffffff !important;
+    text-stroke: 2px #ffffff !important;
+    display: inline-block !important;
+}
+
+/*  Solid Green Fill Style */
+#skills .skills-title .solid-text {
+    color: #22c55e !important;
+    display: inline-block !important;
+}
+
+/* Orbit circle  */
+#skills .skills-orbit-wrapper {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* Responsive: Mobile / Screen  Orbit Center ව*/
+@media (max-width: 992px) {
+    #skills .skills-container {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    #skills .skills-title,
+    #skills h2.skills-title {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+        font-size: clamp(2.5rem, 8vw, 3.8rem) !important;
+    }
+
+    #skills .skills-orbit-wrapper {
+        margin: 0 auto !important;
+    }
+}
+
+
+
+
+
+
 /* =========================================
    5. Project Section (Modern Compact Glass Cards)
    ========================================= */
