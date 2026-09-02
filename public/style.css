@@ -2687,9 +2687,7 @@ nav ul li a.active::after {
         text-align: center;
     }
 
-    .contact-box-container {
-        flex-direction: column;
-    }
+    
 
     .hero-image img {
         width: 220px;
