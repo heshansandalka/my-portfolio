@@ -389,7 +389,7 @@ html, body {
 }
 
 .typed-cursor {
-    color: #22c55e;
+    color: #f8f8f8;
     animation: typedjsBlink 0.7s infinite;
 }
 
