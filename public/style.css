@@ -1443,7 +1443,7 @@ nav ul li a.active::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 4px dashed #fbfefc;
+    
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: orbitSpin linear infinite;
@@ -1452,7 +1452,7 @@ nav ul li a.active::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 4px dashed #2ceb3f;
+   
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: orbitSpin linear infinite;
@@ -1461,7 +1461,7 @@ nav ul li a.active::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 4px dashed #fdfffd;
+    
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: orbitSpin linear infinite;
