@@ -323,6 +323,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .filter-btn, 
         .hero-btn, 
         .social-icon, 
+        .cyber-social-row,
+        .cyber-send-btn,
         [role="button"]
     `;
 
