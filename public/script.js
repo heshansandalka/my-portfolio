@@ -233,6 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(outline);
     }
 
+    dot.style.pointerEvents = 'none';
+    outline.style.pointerEvents = 'none';
+
     let mouseX = -100;
     let mouseY = -100;
     let outlineX = -100;
@@ -283,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isVisible) return;
         const ripple = document.createElement('div');
         ripple.className = 'cursor-ripple';
+        ripple.style.pointerEvents = 'none';
         ripple.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
         document.body.appendChild(ripple);
         setTimeout(() => {
