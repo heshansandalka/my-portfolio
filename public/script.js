@@ -209,3 +209,131 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 7. Luxury Glowing Custom Cursor
+document.addEventListener('DOMContentLoaded', () => {
+    // Only activate on non-touch devices with fine pointers
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
+    let dot = document.getElementById('cursorDot');
+    let outline = document.getElementById('cursorOutline');
+
+    if (!dot) {
+        dot = document.createElement('div');
+        dot.id = 'cursorDot';
+        dot.className = 'cursor-dot';
+        dot.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(dot);
+    }
+
+    if (!outline) {
+        outline = document.createElement('div');
+        outline.id = 'cursorOutline';
+        outline.className = 'cursor-outline';
+        outline.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(outline);
+    }
+
+    let mouseX = -100;
+    let mouseY = -100;
+    let outlineX = -100;
+    let outlineY = -100;
+    let isVisible = false;
+
+    // Instant tracking for center dot with GPU acceleration
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isVisible) {
+            dot.style.opacity = '1';
+            outline.style.opacity = '1';
+            outlineX = mouseX;
+            outlineY = mouseY;
+            isVisible = true;
+        }
+
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    }, { passive: true });
+
+    // Smooth physics loop for follower outline ring
+    function renderCursor() {
+        if (isVisible) {
+            // Lerp with responsive damping factor
+            outlineX += (mouseX - outlineX) * 0.16;
+            outlineY += (mouseY - outlineY) * 0.16;
+            outline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
+        }
+        requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Mouse Down / Up interactions
+    window.addEventListener('mousedown', () => {
+        dot.classList.add('cursor-active');
+        outline.classList.add('cursor-active');
+    });
+
+    window.addEventListener('mouseup', () => {
+        dot.classList.remove('cursor-active');
+        outline.classList.remove('cursor-active');
+    });
+
+    // Click Ripple effect
+    window.addEventListener('click', (e) => {
+        if (!isVisible) return;
+        const ripple = document.createElement('div');
+        ripple.className = 'cursor-ripple';
+        ripple.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        document.body.appendChild(ripple);
+        setTimeout(() => {
+            ripple.remove();
+        }, 550);
+    });
+
+    // Mouse Leave / Enter window
+    document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        outline.style.opacity = '0';
+        isVisible = false;
+    });
+
+    document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '1';
+        outline.style.opacity = '1';
+        isVisible = true;
+    });
+
+    // Dynamic hover states for all clickable & interactive elements
+    const interactiveSelector = `
+        a, 
+        button, 
+        input[type="submit"], 
+        input[type="button"], 
+        .rating-card, 
+        .menu-icon, 
+        .whatsapp-float, 
+        #backToTop, 
+        .project-card, 
+        .skill-card, 
+        .service-card, 
+        .filter-btn, 
+        .hero-btn, 
+        .social-icon, 
+        [role="button"]
+    `;
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelector)) {
+            dot.classList.add('cursor-hover');
+            outline.classList.add('cursor-hover');
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelector)) {
+            dot.classList.remove('cursor-hover');
+            outline.classList.remove('cursor-hover');
+        }
+    });
+});
+
