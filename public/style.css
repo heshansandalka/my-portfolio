@@ -2680,7 +2680,7 @@ nav ul li a.active::after {
 
 .cyber-field input,
 .cyber-field textarea {
-    width: 100%;
+    width: 90%;
     border-radius: 11px !important;
     background: rgba(12, 22, 38, 0.65) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -2713,7 +2713,7 @@ nav ul li a.active::after {
 
 /* Cyber Send Button */
 .cyber-send-btn {
-    width: 100%;
+    width: 90%;
     border-radius: 11px;
     padding: 11px 22px;
     font-size: 0.92rem;
