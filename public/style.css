@@ -2633,6 +2633,12 @@ nav ul li a.active::after {
     background: rgba(34, 197, 94, 0.08);
 }
 
+.cyber-icon-box.Call-box {
+    color: #0088ff;
+    border-color: rgba(0, 136, 255, 0.3);
+    background: rgba(0, 136, 255, 0.08);
+}
+
 .cyber-icon-box.location-box {
     color: #c084fc;
     border-color: rgba(192, 132, 252, 0.3);
