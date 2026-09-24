@@ -1418,32 +1418,26 @@ nav ul li a.active::after {
 }
 
 @media (max-width: 768px) {
-    .typing-text-container {
-        font-size: 1.25rem;
-        color: #f8fafc;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .typing-text {
-        color: #2ecc71;
-        font-weight: 600;
-    }
-
-
     .hero-container {
         display: flex;
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
+        align-items: center;
         text-align: center;
-        gap: 20px;
+        gap: 15px;
     }
 
-    .hero-left {
+    .hero-left,
+    .hero-copy {
+        display: contents;
+    }
+
+    .hero-subtitle {
         order: 1;
-        width: 100%;
+        font-size: 0.88rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 5px;
         text-align: center;
+        width: 100%;
     }
 
     .hero-right {
@@ -1451,26 +1445,60 @@ nav ul li a.active::after {
         width: 100%;
         display: flex;
         justify-content: center;
+        margin: 10px 0 15px 0;
     }
 
     .hero-image {
-        order: 1;
         width: 100%;
-        max-width: 320px;
-        margin-top: 0;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
+    .hero-image img {
+        width: 100% !important;
+        max-width: 260px !important;
+        height: auto !important;
+        object-fit: contain;
+    }
 
-
-    .hero-left {
-        order: 2;
-        align-items: center;
+    .hero-title {
+        order: 3;
         text-align: center;
         width: 100%;
-        max-width: 760px;
+        margin-bottom: 12px;
     }
 
+    .hero-title-greeting {
+        font-size: 0.85rem;
+    }
 
+    .hero-title-name {
+        font-size: clamp(2rem, 8vw, 3.2rem);
+    }
+
+    .hero-description-hero {
+        order: 4;
+        text-align: center;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .typing-text-container {
+        font-size: 1.15rem;
+        color: #f8fafc;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+        order: 5;
+    }
+
+    .typing-text {
+        color: #2ecc71;
+        font-weight: 600;
+    }
 }
 
 @keyframes float {
@@ -2888,21 +2916,6 @@ nav ul li a.active::after {
         box-shadow: 0 10px 24px rgba(34, 197, 94, 0.2);
         background: rgba(34, 197, 94, 0.15);
         color: #22c55e;
-    }
-
-    .hero-container {
-        flex-direction: column-reverse !important;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .hero-content {
-        text-align: center;
-    }
-
-    .hero-image img {
-        width: 220px;
-        height: 220px;
     }
 }
 
