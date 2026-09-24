@@ -2891,7 +2891,7 @@ nav ul li a.active::after {
     }
 
     .hero-container {
-        flex-direction: column;
+        flex-direction: column-reverse !important;
         text-align: center;
         gap: 40px;
     }
