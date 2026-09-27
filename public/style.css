@@ -1473,16 +1473,19 @@ nav ul li a.active::after {
     }
 
     .hero-title-name {
-        font-size: clamp(2rem, 8vw, 3.2rem);
+        font-size: clamp(2.15rem, 8.5vw, 3.4rem);
     }
 
     .hero-description-hero {
         order: 4;
         text-align: center;
-        font-size: 0.92rem;
-        line-height: 1.6;
-        max-width: 90%;
+        width: calc(100% - 2rem);
+        max-width: 36ch;
+        color: #cbd5e1;
+        font-size: 0.98rem;
+        line-height: 1.75;
         margin: 0 auto;
+        text-wrap: pretty;
     }
 
     .typing-text-container {
